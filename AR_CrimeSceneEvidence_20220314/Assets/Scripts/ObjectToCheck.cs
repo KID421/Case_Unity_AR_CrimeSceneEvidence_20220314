@@ -13,5 +13,9 @@ namespace KID
         public DataObject dataOriginal;
         [Header("要顯示的指紋")]
         public GameObject[] goFingerPrints;
+        [Header("特效")]
+        public ParticleSystem psEffect;
+        [Header("比例尺")]
+        public GameObject goScale;
     }
 }

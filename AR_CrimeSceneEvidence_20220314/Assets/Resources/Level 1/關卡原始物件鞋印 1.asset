@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   needCamera: 0
   needEvidenceBag: 0
-  needScale: 0
+  needScale: 1
   needDNA: 0
   needFingerPrint: 0
   needFlashLight: 0

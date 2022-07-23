@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 namespace KID
 {
@@ -8,13 +9,29 @@ namespace KID
     /// </summary>
     public class ManagerInteracte : MonoBehaviour
     {
+        #region 資料
         [SerializeField, Header("AR Camera")]
         private Camera cam;
         [SerializeField, Header("射線距離"), Range(0, 100)]
         private float camLength = 10;
         [SerializeField, Header("要偵測的物件圖層")]
         private LayerMask layerToCheck;
+        [SerializeField, Header("圖示棉花棒")]
+        private Sprite spriteIconCottonSwab;
+        [SerializeField, Header("圖示比例尺")]
+        private Sprite spriteIconScale;
+        [SerializeField, Header("圖示毛刷")]
+        private Sprite spriteIconBrush;
+        [SerializeField, Header("圖示相機")]
+        private Sprite spriteIconCamera;
+        [SerializeField, Header("圖示證物袋")]
+        private Sprite spriteIconEvidenceBag;
 
+        /// <summary>
+        /// 工具圖示
+        /// </summary>
+        private Image imgIconTool;
+        private RectTransform rectImgIconTool;
         /// <summary>
         /// 選中的物件
         /// </summary>
@@ -31,10 +48,6 @@ namespace KID
         /// 工具證物袋
         /// </summary>
         private Button btnEvidenceBag;
-        /// <summary>
-        /// 工具DNA
-        /// </summary>
-        private Button btnDNA;
         /// <summary>
         /// 工具比例尺
         /// </summary>
@@ -57,6 +70,10 @@ namespace KID
         private DataObject dataTargetOriginal;
         private TypeChooseTool typeChooseTool;
         private GameObject goTarget;
+        private ObjectToCheck objectToCheckCurrent;
+        private Image imgCameraEffectTop;
+        private Image imgCameraEffectBottom;
+        #endregion
 
         private void OnDrawGizmos()
         {
@@ -69,6 +86,10 @@ namespace KID
             cam = GameObject.Find("AR Camera").GetComponent<Camera>();
             textChooseObject = GameObject.Find("選中的物件").GetComponent<Text>();
             textActionMessage = GameObject.Find("動作訊息").GetComponent<Text>();
+            imgIconTool = GameObject.Find("工具圖示").GetComponent<Image>();
+            rectImgIconTool = imgIconTool.GetComponent<RectTransform>();
+            imgCameraEffectTop = GameObject.Find("拍照效果上方").GetComponent<Image>();
+            imgCameraEffectBottom = GameObject.Find("拍照效果下方").GetComponent<Image>();
 
             ToolAndUseButtonsFind();
             ToolButtonsClick();
@@ -87,7 +108,6 @@ namespace KID
         {
             btnFlashLight = GameObject.Find("工具手電筒").GetComponent<Button>();
             btnEvidenceBag = GameObject.Find("工具證物袋").GetComponent<Button>();
-            btnDNA = GameObject.Find("工具DNA").GetComponent<Button>();
             btnScale = GameObject.Find("工具比例尺").GetComponent<Button>();
             btnFingerPrint = GameObject.Find("工具指紋").GetComponent<Button>();
             btnCamera = GameObject.Find("工具相機").GetComponent<Button>();
@@ -101,7 +121,6 @@ namespace KID
         {
             btnFlashLight.onClick.AddListener(() => typeChooseTool = TypeChooseTool.FlashLight);
             btnEvidenceBag.onClick.AddListener(() => typeChooseTool = TypeChooseTool.EvidenceBag);
-            btnDNA.onClick.AddListener(() => typeChooseTool = TypeChooseTool.DNA);
             btnScale.onClick.AddListener(() => typeChooseTool = TypeChooseTool.Scale);
             btnFingerPrint.onClick.AddListener(() => typeChooseTool = TypeChooseTool.FingerPrint);
             btnCamera.onClick.AddListener(() => typeChooseTool = TypeChooseTool.Camera);
@@ -116,27 +135,28 @@ namespace KID
             {
                 if (!dataTargetGoal) return;
 
+                bool result = false;
+
                 switch (typeChooseTool)
                 {
                     case TypeChooseTool.FlashLight:
-                        UseFlashLight();
+                        result = UseFlashLight();
                         break;
                     case TypeChooseTool.EvidenceBag:
-                        UseEvidenceBag();
-                        break;
-                    case TypeChooseTool.DNA:
-                        UseDNA();
+                        result = UseEvidenceBag();
                         break;
                     case TypeChooseTool.Scale:
-                        UseScale();
+                        result = UseScale();
                         break;
                     case TypeChooseTool.FingerPrint:
-                        UseFingerPrint();
+                        result = UseFingerPrint();
                         break;
                     case TypeChooseTool.Camera:
-                        UseCamera();
+                        result = UseCamera();
                         break;
                 }
+
+                if (result) ChangeIcon(typeChooseTool);
 
                 typeChooseTool = TypeChooseTool.None;
             });
@@ -145,7 +165,7 @@ namespace KID
         /// <summary>
         /// 使用手電筒
         /// </summary>
-        private void UseFlashLight()
+        private bool UseFlashLight()
         {
             print("使用手電筒");
 
@@ -154,18 +174,22 @@ namespace KID
                 print("<color=green>使用手電筒成功</color>");
                 textActionMessage.text = nameTarget + " 使用手電筒成功";
                 dataTargetOriginal.needFlashLight = true;
+
+                return true;
             }
             else
             {
                 print("<color=red>此物件不需要使用手電筒</color>");
                 textActionMessage.text = nameTarget + " 此物件不需要使用手電筒";
+
+                return false;
             }
         }
 
         /// <summary>
         /// 放入證物袋
         /// </summary>
-        private void UseEvidenceBag()
+        private bool UseEvidenceBag()
         {
             print("放入證物袋");
 
@@ -174,39 +198,23 @@ namespace KID
                 print("<color=green>放入證物袋成功</color>");
                 textActionMessage.text = nameTarget + " 放入證物袋成功";
                 dataTargetOriginal.needEvidenceBag = true;
-                goTarget.SetActive(false);
+                
+
+                return true;
             }
             else
             {
                 print("<color=red>此物件不需要放入證物袋成功</color>");
                 textActionMessage.text = nameTarget + " 此物件不需要放入證物袋成功";
-            }
-        }
 
-        /// <summary>
-        /// 採集 DNA
-        /// </summary>
-        private void UseDNA()
-        {
-            print("採集 DNA");
-
-            if (dataTargetGoal.needDNA)
-            {
-                print("<color=green>採集 DNA成功</color>");
-                textActionMessage.text = nameTarget + " 採集 DNA成功";
-                dataTargetOriginal.needDNA = true;
-            }
-            else
-            {
-                print("<color=red>此物件不需要採集 DNA</color>");
-                textActionMessage.text = nameTarget + " 此物件不需要採集 DNA";
+                return false;
             }
         }
 
         /// <summary>
         /// 測量尺寸
         /// </summary>
-        private void UseScale()
+        private bool UseScale()
         {
             print("測量尺寸");
 
@@ -215,18 +223,23 @@ namespace KID
                 print("<color=green>測量尺寸成功</color>");
                 textActionMessage.text = nameTarget + " 測量尺寸成功";
                 dataTargetOriginal.needScale = true;
+                objectToCheckCurrent.goScale.SetActive(true);
+
+                return true;
             }
             else
             {
                 print("<color=red>此物件不需要測量尺寸</color>");
                 textActionMessage.text = nameTarget + " 此物件不需要測量尺寸";
+
+                return false;
             }
         }
 
         /// <summary>
         /// 採集指紋
         /// </summary>
-        private void UseFingerPrint()
+        private bool UseFingerPrint()
         {
             print("採集指紋");
 
@@ -236,37 +249,48 @@ namespace KID
                 textActionMessage.text = nameTarget + " 採集指紋成功";
                 dataTargetOriginal.needFingerPrint = true;
 
-                ObjectToCheck objectToCheck = goTarget.GetComponent<ObjectToCheck>();
-
-                for (int i = 0; i < objectToCheck.goFingerPrints.Length; i++)
-                {
-                    objectToCheck.goFingerPrints[i].SetActive(true);
-                }
+                return true;
             }
             else
             {
                 print("<color=red>此物件不需採集指紋</color>");
                 textActionMessage.text = nameTarget + " 此物件不需採集指紋";
+
+                return false;
             }
         }
 
         /// <summary>
         /// 拍照
         /// </summary>
-        private void UseCamera()
+        private bool UseCamera()
         {
             print("拍照");
 
-            if (dataTargetGoal.needCamera)
+            bool fingerPrint = dataTargetGoal.needFingerPrint != dataTargetOriginal.needFingerPrint;
+            bool scale = dataTargetGoal.needScale != dataTargetOriginal.needScale;
+
+            if (fingerPrint || scale)
+            {
+                print("<color=green>拍照失敗，尚未完成作業</color>");
+                textActionMessage.text = nameTarget + " 拍照失敗，尚未完成作業";
+
+                return false;
+            }
+            else if (dataTargetGoal.needCamera)
             {
                 print("<color=green>拍照成功</color>");
                 textActionMessage.text = nameTarget + " 拍照成功";
                 dataTargetOriginal.needCamera = true;
+
+                return true;
             }
             else
             {
                 print("<color=red>此物件不需要拍照</color>");
                 textActionMessage.text = nameTarget + " 此物件不需要拍照";
+
+                return false;
             }
         }
 
@@ -282,9 +306,116 @@ namespace KID
                 goTarget = hit.collider.gameObject;
                 textChooseObject.text = goTarget.name;
 
-                dataTargetGoal = goTarget.GetComponent<ObjectToCheck>().dataGoal;
-                dataTargetOriginal = goTarget.GetComponent<ObjectToCheck>().dataOriginal;
+                objectToCheckCurrent = goTarget.GetComponent<ObjectToCheck>();
+
+                dataTargetGoal = objectToCheckCurrent.dataGoal;
+                dataTargetOriginal = objectToCheckCurrent.dataOriginal;
             }
+        }
+
+        /// <summary>
+        /// 變更圖示
+        /// </summary>
+        /// <param name="typeChooseTool">工具類型</param>
+        public void ChangeIcon(TypeChooseTool typeChooseTool)
+        {
+            Sprite spriteChoose = null;
+            IEnumerator coroutine = null;
+
+            switch (typeChooseTool)
+            {
+                case TypeChooseTool.FlashLight:
+                    break;
+                case TypeChooseTool.EvidenceBag:
+                    spriteChoose = spriteIconEvidenceBag;
+                    coroutine = EvidenceBag();
+                    break;
+                case TypeChooseTool.FingerPrint:
+                    spriteChoose = spriteIconBrush;
+                    coroutine = IconMove();
+                    break;
+                case TypeChooseTool.Camera:
+                    spriteChoose = spriteIconCamera;
+                    coroutine = CameraEffect();
+                    break;
+            }
+
+            if (spriteChoose)
+            {
+                imgIconTool.color = new Color(1, 1, 1, 1);
+                imgIconTool.sprite = spriteChoose;
+            }
+            else
+            {
+                imgIconTool.color = new Color(1, 1, 1, 0);
+            }
+
+            if (coroutine != null) StartCoroutine(coroutine);
+        }
+
+        /// <summary>
+        /// 圖示移動效果：筆刷
+        /// </summary>
+        private IEnumerator IconMove()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                yield return new WaitForSeconds(0.35f);
+                float move = i % 2 == 0 ? 30 : -30;
+                rectImgIconTool.anchoredPosition += Vector2.one * move;
+            }
+
+            imgIconTool.color = new Color(1, 1, 1, 0);
+
+            if (objectToCheckCurrent.psEffect) objectToCheckCurrent.psEffect.Play();
+
+            yield return new WaitForSeconds(2f);
+
+            for (int i = 0; i < objectToCheckCurrent.goFingerPrints.Length; i++)
+            {
+                objectToCheckCurrent.goFingerPrints[i].SetActive(true);
+            }
+        }
+
+        /// <summary>
+        /// 攝影機效果：上方與下方模擬快門
+        /// </summary>
+        private IEnumerator CameraEffect()
+        {
+            float increase = 0.1f;
+
+            for (int i = 0; i < 10; i++)
+            {
+                imgCameraEffectTop.fillAmount += increase;
+                imgCameraEffectBottom.fillAmount += increase;
+                yield return new WaitForSeconds(0.02f);
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                imgCameraEffectTop.fillAmount -= increase;
+                imgCameraEffectBottom.fillAmount -= increase;
+                yield return new WaitForSeconds(0.02f);
+            }
+        }
+
+        /// <summary>
+        /// 放入證物袋
+        /// </summary>
+        private IEnumerator EvidenceBag()
+        {
+
+            for (int i = 0; i < 8; i++)
+            {
+                yield return new WaitForSeconds(0.25f);
+
+                float size = i % 2 == 0 ? -10 : 10;
+                rectImgIconTool.sizeDelta += Vector2.one * size;
+            }
+
+            goTarget.SetActive(false);
+
+            imgIconTool.color = new Color(1, 1, 1, 0);
         }
     }
 }
