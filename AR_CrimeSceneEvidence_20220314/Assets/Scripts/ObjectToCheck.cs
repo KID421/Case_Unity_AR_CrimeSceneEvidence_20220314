@@ -12,7 +12,7 @@ namespace KID
         [Header("物件資料：關卡原始")]
         public DataObject dataOriginal;
         [Header("要顯示的指紋")]
-        public GameObject[] goFingerPrints;
+        public SpriteRenderer[] goFingerPrints;
         [Header("特效")]
         public ParticleSystem psEffect;
         [Header("比例尺")]

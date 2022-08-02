@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d406a34bc01d547adf6d49aff23ea1, type: 3}
   m_Name: "\u95DC\u5361\u76EE\u6A19\u624B\u5957"
   m_EditorClassIdentifier: 
-  needCamera: 1
+  needCamera: 0
   needEvidenceBag: 1
   needScale: 0
   needDNA: 0

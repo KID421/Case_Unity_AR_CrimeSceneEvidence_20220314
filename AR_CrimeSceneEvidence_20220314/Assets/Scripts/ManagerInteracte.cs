@@ -16,8 +16,8 @@ namespace KID
         private float camLength = 10;
         [SerializeField, Header("要偵測的物件圖層")]
         private LayerMask layerToCheck;
-        [SerializeField, Header("圖示棉花棒")]
-        private Sprite spriteIconCottonSwab;
+        [SerializeField, Header("圖示 DNA 棉花棒")]
+        private Sprite spriteIconDNACottonSwab;
         [SerializeField, Header("圖示比例尺")]
         private Sprite spriteIconScale;
         [SerializeField, Header("圖示毛刷")]
@@ -44,6 +44,10 @@ namespace KID
         /// 工具手電筒
         /// </summary>
         private Button btnFlashLight;
+        /// <summary>
+        /// 工具DNA
+        /// </summary>
+        private Button btnDNA;
         /// <summary>
         /// 工具證物袋
         /// </summary>
@@ -93,7 +97,7 @@ namespace KID
 
             ToolAndUseButtonsFind();
             ToolButtonsClick();
-            UseTool();
+            btnUse.onClick.AddListener(() => UseTool());
         }
 
         private void Update()
@@ -107,6 +111,7 @@ namespace KID
         private void ToolAndUseButtonsFind()
         {
             btnFlashLight = GameObject.Find("工具手電筒").GetComponent<Button>();
+            btnDNA = GameObject.Find("工具DNA").GetComponent<Button>();
             btnEvidenceBag = GameObject.Find("工具證物袋").GetComponent<Button>();
             btnScale = GameObject.Find("工具比例尺").GetComponent<Button>();
             btnFingerPrint = GameObject.Find("工具指紋").GetComponent<Button>();
@@ -119,11 +124,53 @@ namespace KID
         /// </summary>
         private void ToolButtonsClick()
         {
-            btnFlashLight.onClick.AddListener(() => typeChooseTool = TypeChooseTool.FlashLight);
-            btnEvidenceBag.onClick.AddListener(() => typeChooseTool = TypeChooseTool.EvidenceBag);
-            btnScale.onClick.AddListener(() => typeChooseTool = TypeChooseTool.Scale);
-            btnFingerPrint.onClick.AddListener(() => typeChooseTool = TypeChooseTool.FingerPrint);
-            btnCamera.onClick.AddListener(() => typeChooseTool = TypeChooseTool.Camera);
+            btnFlashLight.onClick.AddListener(() => ChooseTool(TypeChooseTool.FlashLight));
+            btnDNA.onClick.AddListener(() => ChooseTool(TypeChooseTool.DNA));
+            btnEvidenceBag.onClick.AddListener(() => ChooseTool(TypeChooseTool.EvidenceBag));
+            btnScale.onClick.AddListener(() => ChooseTool(TypeChooseTool.Scale));
+            btnFingerPrint.onClick.AddListener(() => ChooseTool(TypeChooseTool.FingerPrint));
+            btnCamera.onClick.AddListener(() => ChooseTool(TypeChooseTool.Camera));
+        }
+
+        /// <summary>
+        /// 選擇工具
+        /// </summary>
+        private void ChooseTool(TypeChooseTool _typeChooseTool)
+        {
+            typeChooseTool = _typeChooseTool;
+
+            Sprite spriteChoose = null;
+
+            switch (typeChooseTool)
+            {
+                case TypeChooseTool.FlashLight:
+                    break;
+                case TypeChooseTool.EvidenceBag:
+                    spriteChoose = spriteIconEvidenceBag;
+                    break;
+                case TypeChooseTool.DNA:
+                    spriteChoose = spriteIconDNACottonSwab;
+                    break;
+                case TypeChooseTool.Scale:
+                    spriteChoose = spriteIconScale;
+                    break;
+                case TypeChooseTool.FingerPrint:
+                    spriteChoose = spriteIconBrush;
+                    break;
+                case TypeChooseTool.Camera:
+                    spriteChoose = spriteIconCamera;
+                    break;
+            }
+
+            if (spriteChoose)
+            {
+                imgIconTool.color = new Color(1, 1, 1, 1);
+                imgIconTool.sprite = spriteChoose;
+            }
+            else
+            {
+                imgIconTool.color = new Color(1, 1, 1, 0);
+            }
         }
 
         /// <summary>
@@ -131,35 +178,32 @@ namespace KID
         /// </summary>
         private void UseTool()
         {
-            btnUse.onClick.AddListener(() => 
+            if (!dataTargetGoal) return;
+
+            bool result = false;
+
+            switch (typeChooseTool)
             {
-                if (!dataTargetGoal) return;
+                case TypeChooseTool.FlashLight:
+                    result = UseFlashLight();
+                    break;
+                case TypeChooseTool.EvidenceBag:
+                    result = UseEvidenceBag();
+                    break;
+                case TypeChooseTool.Scale:
+                    result = UseScale();
+                    break;
+                case TypeChooseTool.FingerPrint:
+                    result = UseFingerPrint();
+                    break;
+                case TypeChooseTool.Camera:
+                    result = UseCamera();
+                    break;
+            }
 
-                bool result = false;
+            if (result) ToolIconEffect(typeChooseTool);
 
-                switch (typeChooseTool)
-                {
-                    case TypeChooseTool.FlashLight:
-                        result = UseFlashLight();
-                        break;
-                    case TypeChooseTool.EvidenceBag:
-                        result = UseEvidenceBag();
-                        break;
-                    case TypeChooseTool.Scale:
-                        result = UseScale();
-                        break;
-                    case TypeChooseTool.FingerPrint:
-                        result = UseFingerPrint();
-                        break;
-                    case TypeChooseTool.Camera:
-                        result = UseCamera();
-                        break;
-                }
-
-                if (result) ChangeIcon(typeChooseTool);
-
-                typeChooseTool = TypeChooseTool.None;
-            });
+            typeChooseTool = TypeChooseTool.None;
         }
 
         /// <summary>
@@ -198,7 +242,8 @@ namespace KID
                 print("<color=green>放入證物袋成功</color>");
                 textActionMessage.text = nameTarget + " 放入證物袋成功";
                 dataTargetOriginal.needEvidenceBag = true;
-                
+
+                MissionObjectManager.instance.UpdateMission();
 
                 return true;
             }
@@ -224,6 +269,7 @@ namespace KID
                 textActionMessage.text = nameTarget + " 測量尺寸成功";
                 dataTargetOriginal.needScale = true;
                 objectToCheckCurrent.goScale.SetActive(true);
+                imgIconTool.color = new Color(1, 1, 1, 0);
 
                 return true;
             }
@@ -245,9 +291,18 @@ namespace KID
 
             if (dataTargetGoal.needFingerPrint)
             {
-                print("<color=green>採集指紋成功</color>");
-                textActionMessage.text = nameTarget + " 採集指紋成功";
-                dataTargetOriginal.needFingerPrint = true;
+                if (dataTargetOriginal.needFingerPrint)
+                {
+                    print("<color=green>已經採集過指紋</color>");
+
+                    return false;
+                }
+                else
+                {
+                    print("<color=green>採集指紋成功</color>");
+                    textActionMessage.text = nameTarget + " 採集指紋成功";
+                    dataTargetOriginal.needFingerPrint = true;
+                }
 
                 return true;
             }
@@ -270,20 +325,52 @@ namespace KID
             bool fingerPrint = dataTargetGoal.needFingerPrint != dataTargetOriginal.needFingerPrint;
             bool scale = dataTargetGoal.needScale != dataTargetOriginal.needScale;
 
-            if (fingerPrint || scale)
+            if (dataTargetGoal.needFingerPrint)
             {
-                print("<color=green>拍照失敗，尚未完成作業</color>");
-                textActionMessage.text = nameTarget + " 拍照失敗，尚未完成作業";
+                if (!dataTargetOriginal.needFingerPrint)
+                {
+                    print("<color=red>拍照失敗，尚未完成指紋作業</color>");
 
-                return false;
+                    return false;
+                }
+                else
+                {
+                    print("<color=green>指紋已處理完成！</color>");
+                }
             }
-            else if (dataTargetGoal.needCamera)
-            {
-                print("<color=green>拍照成功</color>");
-                textActionMessage.text = nameTarget + " 拍照成功";
-                dataTargetOriginal.needCamera = true;
 
-                return true;
+            if (dataTargetGoal.needScale)
+            {
+                if (!dataTargetOriginal.needScale)
+                {
+                    print("<color=red>拍照失敗，尚未完成測量作業</color>");
+
+                    return false;
+                }
+                else
+                {
+                    print("<color=green>測量已處理完成！</color>");
+                }
+            }
+
+            if (dataTargetGoal.needCamera)
+            {
+                if (!dataTargetOriginal.needCamera)
+                {
+                    print("<color=green>拍照成功</color>");
+                    textActionMessage.text = nameTarget + " 拍照成功";
+                    dataTargetOriginal.needCamera = true;
+
+                    MissionObjectManager.instance.UpdateMission();
+                    
+                    return true;
+                }
+                else
+                {
+                    print("<color=green>拍照已處理完成！</color>");
+
+                    return false;
+                }
             }
             else
             {
@@ -317,9 +404,8 @@ namespace KID
         /// 變更圖示
         /// </summary>
         /// <param name="typeChooseTool">工具類型</param>
-        public void ChangeIcon(TypeChooseTool typeChooseTool)
+        public void ToolIconEffect(TypeChooseTool typeChooseTool)
         {
-            Sprite spriteChoose = null;
             IEnumerator coroutine = null;
 
             switch (typeChooseTool)
@@ -327,27 +413,14 @@ namespace KID
                 case TypeChooseTool.FlashLight:
                     break;
                 case TypeChooseTool.EvidenceBag:
-                    spriteChoose = spriteIconEvidenceBag;
                     coroutine = EvidenceBag();
                     break;
                 case TypeChooseTool.FingerPrint:
-                    spriteChoose = spriteIconBrush;
                     coroutine = IconMove();
                     break;
                 case TypeChooseTool.Camera:
-                    spriteChoose = spriteIconCamera;
                     coroutine = CameraEffect();
                     break;
-            }
-
-            if (spriteChoose)
-            {
-                imgIconTool.color = new Color(1, 1, 1, 1);
-                imgIconTool.sprite = spriteChoose;
-            }
-            else
-            {
-                imgIconTool.color = new Color(1, 1, 1, 0);
             }
 
             if (coroutine != null) StartCoroutine(coroutine);
@@ -373,7 +446,7 @@ namespace KID
 
             for (int i = 0; i < objectToCheckCurrent.goFingerPrints.Length; i++)
             {
-                objectToCheckCurrent.goFingerPrints[i].SetActive(true);
+                objectToCheckCurrent.goFingerPrints[i].color = new Color(1, 1, 1, 1);
             }
         }
 
@@ -382,6 +455,8 @@ namespace KID
         /// </summary>
         private IEnumerator CameraEffect()
         {
+            imgIconTool.color = new Color(1, 1, 1, 0);
+
             float increase = 0.1f;
 
             for (int i = 0; i < 10; i++)

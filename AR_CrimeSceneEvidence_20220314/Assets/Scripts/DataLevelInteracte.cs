@@ -19,8 +19,12 @@ namespace KID
         /// </summary>
         public DataObject[] dataLevelOriginal;
 
+        public static DataLevelInteracte instance;
+
         private void Awake()
         {
+            instance = this;
+
             for (int i = 0; i < dataLevelOriginal.Length; i++)
             {
                 dataLevelOriginal[i].ResetData();
