@@ -12,9 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d406a34bc01d547adf6d49aff23ea1, type: 3}
   m_Name: "\u95DC\u5361\u76EE\u6A19\u624B\u5957"
   m_EditorClassIdentifier: 
+  nameEvidenvce: "\u624B\u5957"
+  sprImage: {fileID: 0}
   needCamera: 0
   needEvidenceBag: 1
   needScale: 0
   needDNA: 0
   needFingerPrint: 0
   needFlashLight: 0
+  typeQuestion: 1
+  stringQuestion: "\u8ACB\u554F\u6B64\u8B49\u7269\u9700\u8981\u9032\u884C\u4F55\u7A2E\u5206\u6790\u65B9\u6CD5\uFF1F"
+  textOption1: "\u6307\u7D0B\u8FA8\u8B58"
+  textOption2: "\u53BB\u6C27\u6838\u91A3\u6838\u9178 (DNA)"
+  textOption3: "\u7121\u9808\u5206\u6790"
+  imgOption1: {fileID: 0}
+  imgOption2: {fileID: 0}
+  imgOption3: {fileID: 0}
+  indexAnswer: 2

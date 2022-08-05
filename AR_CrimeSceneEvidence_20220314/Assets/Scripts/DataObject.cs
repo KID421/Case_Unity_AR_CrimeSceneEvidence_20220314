@@ -8,9 +8,10 @@ namespace KID
     [CreateAssetMenu(menuName = "KID/Data Object", fileName = "Data Object")]
     public class DataObject : ScriptableObject
     {
-        //[Header("物件類型"), EnumFlagsAttribute]
-        //public TypeObjectToCheck type;
-
+        [Header("證物名稱")]
+        public string nameEvidenvce;
+        [Header("證物圖片")]
+        public Sprite sprImage;
         [Header("是否需要拍照")]
         public bool needCamera;
         [Header("是否需要收入證物袋")]
@@ -23,6 +24,18 @@ namespace KID
         public bool needFingerPrint;
         [Header("是否需要手電筒")]
         public bool needFlashLight;
+
+        [Header("題目與選項")]
+        public TypeQuestion typeQuestion;
+        public string stringQuestion;
+        public string textOption1;
+        public string textOption2;
+        public string textOption3;
+        public Sprite imgOption1;
+        public Sprite imgOption2;
+        public Sprite imgOption3;
+        [Header("正確答案"), Range(1, 3)]
+        public int indexAnswer;
 
         /// <summary>
         /// 重設資料

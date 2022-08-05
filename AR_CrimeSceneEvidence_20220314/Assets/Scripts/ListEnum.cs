@@ -13,8 +13,13 @@ namespace KID
 		None = 0, FlashLight = 1, EvidenceBag = 2, DNA = 4, Scale = 8, FingerPrint = 16, Camera = 32
 	}
 
-	public enum TypeChooseTool
+	public enum TypeEvidence
 	{
 		None, FlashLight, EvidenceBag, DNA, Scale, FingerPrint, Camera
+	}
+
+	public enum TypeQuestion
+	{
+		None, Text, Image
 	}
 }

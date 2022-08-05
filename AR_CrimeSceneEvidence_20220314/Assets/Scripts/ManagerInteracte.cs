@@ -72,7 +72,7 @@ namespace KID
         private string nameTarget;
         private DataObject dataTargetGoal;
         private DataObject dataTargetOriginal;
-        private TypeChooseTool typeChooseTool;
+        private TypeEvidence typeChooseTool;
         private GameObject goTarget;
         private ObjectToCheck objectToCheckCurrent;
         private Image imgCameraEffectTop;
@@ -124,18 +124,18 @@ namespace KID
         /// </summary>
         private void ToolButtonsClick()
         {
-            btnFlashLight.onClick.AddListener(() => ChooseTool(TypeChooseTool.FlashLight));
-            btnDNA.onClick.AddListener(() => ChooseTool(TypeChooseTool.DNA));
-            btnEvidenceBag.onClick.AddListener(() => ChooseTool(TypeChooseTool.EvidenceBag));
-            btnScale.onClick.AddListener(() => ChooseTool(TypeChooseTool.Scale));
-            btnFingerPrint.onClick.AddListener(() => ChooseTool(TypeChooseTool.FingerPrint));
-            btnCamera.onClick.AddListener(() => ChooseTool(TypeChooseTool.Camera));
+            btnFlashLight.onClick.AddListener(() => ChooseTool(TypeEvidence.FlashLight));
+            btnDNA.onClick.AddListener(() => ChooseTool(TypeEvidence.DNA));
+            btnEvidenceBag.onClick.AddListener(() => ChooseTool(TypeEvidence.EvidenceBag));
+            btnScale.onClick.AddListener(() => ChooseTool(TypeEvidence.Scale));
+            btnFingerPrint.onClick.AddListener(() => ChooseTool(TypeEvidence.FingerPrint));
+            btnCamera.onClick.AddListener(() => ChooseTool(TypeEvidence.Camera));
         }
 
         /// <summary>
         /// 選擇工具
         /// </summary>
-        private void ChooseTool(TypeChooseTool _typeChooseTool)
+        private void ChooseTool(TypeEvidence _typeChooseTool)
         {
             typeChooseTool = _typeChooseTool;
 
@@ -143,21 +143,21 @@ namespace KID
 
             switch (typeChooseTool)
             {
-                case TypeChooseTool.FlashLight:
+                case TypeEvidence.FlashLight:
                     break;
-                case TypeChooseTool.EvidenceBag:
+                case TypeEvidence.EvidenceBag:
                     spriteChoose = spriteIconEvidenceBag;
                     break;
-                case TypeChooseTool.DNA:
+                case TypeEvidence.DNA:
                     spriteChoose = spriteIconDNACottonSwab;
                     break;
-                case TypeChooseTool.Scale:
+                case TypeEvidence.Scale:
                     spriteChoose = spriteIconScale;
                     break;
-                case TypeChooseTool.FingerPrint:
+                case TypeEvidence.FingerPrint:
                     spriteChoose = spriteIconBrush;
                     break;
-                case TypeChooseTool.Camera:
+                case TypeEvidence.Camera:
                     spriteChoose = spriteIconCamera;
                     break;
             }
@@ -184,26 +184,26 @@ namespace KID
 
             switch (typeChooseTool)
             {
-                case TypeChooseTool.FlashLight:
+                case TypeEvidence.FlashLight:
                     result = UseFlashLight();
                     break;
-                case TypeChooseTool.EvidenceBag:
+                case TypeEvidence.EvidenceBag:
                     result = UseEvidenceBag();
                     break;
-                case TypeChooseTool.Scale:
+                case TypeEvidence.Scale:
                     result = UseScale();
                     break;
-                case TypeChooseTool.FingerPrint:
+                case TypeEvidence.FingerPrint:
                     result = UseFingerPrint();
                     break;
-                case TypeChooseTool.Camera:
+                case TypeEvidence.Camera:
                     result = UseCamera();
                     break;
             }
 
             if (result) ToolIconEffect(typeChooseTool);
 
-            typeChooseTool = TypeChooseTool.None;
+            typeChooseTool = TypeEvidence.None;
         }
 
         /// <summary>
@@ -404,21 +404,21 @@ namespace KID
         /// 變更圖示
         /// </summary>
         /// <param name="typeChooseTool">工具類型</param>
-        public void ToolIconEffect(TypeChooseTool typeChooseTool)
+        public void ToolIconEffect(TypeEvidence typeChooseTool)
         {
             IEnumerator coroutine = null;
 
             switch (typeChooseTool)
             {
-                case TypeChooseTool.FlashLight:
+                case TypeEvidence.FlashLight:
                     break;
-                case TypeChooseTool.EvidenceBag:
+                case TypeEvidence.EvidenceBag:
                     coroutine = EvidenceBag();
                     break;
-                case TypeChooseTool.FingerPrint:
+                case TypeEvidence.FingerPrint:
                     coroutine = IconMove();
                     break;
-                case TypeChooseTool.Camera:
+                case TypeEvidence.Camera:
                     coroutine = CameraEffect();
                     break;
             }

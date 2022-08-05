@@ -12,9 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d406a34bc01d547adf6d49aff23ea1, type: 3}
   m_Name: "\u95DC\u5361\u76EE\u6A19\u4FDD\u96AA\u7BB1"
   m_EditorClassIdentifier: 
+  nameEvidenvce: "\u4FDD\u96AA\u7BB1"
+  sprImage: {fileID: 0}
   needCamera: 1
   needEvidenceBag: 0
   needScale: 0
   needDNA: 0
   needFingerPrint: 1
   needFlashLight: 0
+  typeQuestion: 1
+  stringQuestion: "\u8ACB\u554F\u63A1\u96C6\u5230\u7684\u6307\u7D0B\u5C6C\u65BC\u4E0B\u5217\u54EA\u4E00\u7A2E\u985E\u578B"
+  textOption1: "\u5F27\u5F62\u985E"
+  textOption2: "\u7B95\u5F62\u985E"
+  textOption3: "\u6597\u5F62\u985E"
+  imgOption1: {fileID: 0}
+  imgOption2: {fileID: 0}
+  imgOption3: {fileID: 0}
+  indexAnswer: 1

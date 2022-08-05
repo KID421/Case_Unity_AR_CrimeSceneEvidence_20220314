@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39d406a34bc01d547adf6d49aff23ea1, type: 3}
-  m_Name: "\u95DC\u5361\u76EE\u6A19\u978B\u5370 2"
+  m_Name: "\u95DC\u5361\u539F\u59CB\u7269\u4EF6\u978B\u5370"
   m_EditorClassIdentifier: 
-  needCamera: 1
+  needCamera: 0
   needEvidenceBag: 0
   needScale: 1
   needDNA: 0

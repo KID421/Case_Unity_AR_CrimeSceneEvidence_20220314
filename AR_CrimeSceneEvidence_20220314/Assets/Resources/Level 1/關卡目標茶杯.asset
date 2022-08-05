@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d406a34bc01d547adf6d49aff23ea1, type: 3}
   m_Name: "\u95DC\u5361\u76EE\u6A19\u8336\u676F"
   m_EditorClassIdentifier: 
+  nameEvidenvce: "\u8336\u676F"
+  sprImage: {fileID: 0}
   needCamera: 1
   needEvidenceBag: 0
   needScale: 0
