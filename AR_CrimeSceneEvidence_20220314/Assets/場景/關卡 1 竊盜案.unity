@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -70}
+  m_AnchoredPosition: {x: 160, y: -20}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3811002
@@ -3221,6 +3221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152bb895daf7ce54799023ec3094f82a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataPageContentFingerPrint: {fileID: 11400000, guid: 900d9cc61f299874eb687a28663312ef, type: 2}
 --- !u!1 &842271920
 GameObject:
   m_ObjectHideFlags: 0
@@ -3898,7 +3899,7 @@ GameObject:
   - component: {fileID: 963379100}
   - component: {fileID: 963379099}
   m_Layer: 5
-  m_Name: "\u8CC7\u6599\u5167\u5BB9"
+  m_Name: "\u8CC7\u6599\u9801\u5167\u5BB9"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3947,16 +3948,16 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 429d3c6ce095a494086bfdba167dd8b8, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 24
+    m_MaxSize: 36
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8CC7\u6599\u5167\u5BB9\n\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9\u8CC7\u6599\u5167\u5BB9"
+  m_Text: 
 --- !u!222 &963379100
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4037,7 +4038,7 @@ GameObject:
   - component: {fileID: 993783255}
   - component: {fileID: 993783254}
   m_Layer: 5
-  m_Name: "\u4E0B\u4E00\u7B46\u8CC7\u6599"
+  m_Name: "\u8CC7\u6599\u9801\u4E0B\u4E00\u7B46"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4437,9 +4438,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082786742}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &1116871628
 GameObject:
@@ -5335,7 +5336,7 @@ GameObject:
   - component: {fileID: 1317548834}
   - component: {fileID: 1317548833}
   m_Layer: 5
-  m_Name: "\u8CC7\u6599\u5716\u7247"
+  m_Name: "\u8CC7\u6599\u9801\u5716\u7247"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5373,7 +5374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -5796,7 +5797,7 @@ GameObject:
   - component: {fileID: 1366927690}
   - component: {fileID: 1366927689}
   m_Layer: 5
-  m_Name: "\u4E0A\u4E00\u7B46\u8CC7\u6599"
+  m_Name: "\u8CC7\u6599\u9801\u4E0A\u4E00\u7B46"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12818,9 +12819,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957285054}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!1001 &1968998987
 PrefabInstance:

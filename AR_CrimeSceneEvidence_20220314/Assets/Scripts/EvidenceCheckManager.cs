@@ -11,6 +11,11 @@ namespace KID
     [DefaultExecutionOrder(100)]
     public class EvidenceCheckManager : MonoBehaviour
     {
+        #region 顯示資料
+        [SerializeField, Header("資料頁指紋")]
+        private DataPageContent dataPageContentFingerPrint;
+        #endregion
+
         #region 證物資料
         private List<DataObject> typeCamera = new List<DataObject>();
         private List<DataObject> typeFingerPrint = new List<DataObject>();
@@ -96,6 +101,17 @@ namespace KID
         private Text textResult;
         private CanvasGroup groupText;
         private CanvasGroup groupImage;
+
+        // 資料頁
+        private Button btnDataPagePrev;
+        private Button btnDataPageNext;
+        private Image imgDataPagePicture;
+        private Text textDataPageContent;
+        #endregion
+
+        #region 資料頁資料
+        private int indexDataPage;
+        private DataPageContent dataPageContentCurrent;
         #endregion
 
         /// <summary>
@@ -130,10 +146,7 @@ namespace KID
         /// </summary>
         private void FindUIObject()
         {
-            textEvidenceIndex = GameObject.Find("證物編號").GetComponent<Text>();
-            imgEvidencePicture = GameObject.Find("證物圖片").GetComponent<Image>();
-            btnChange = GameObject.Find("證物轉換").GetComponent<Button>();
-            btnZoomIn = GameObject.Find("證物放大").GetComponent<Button>();
+            #region 採證類型按鈕   
             btnCamera = GameObject.Find("按鈕採證拍照").GetComponent<Button>();
             btnFingerPrint = GameObject.Find("按鈕採證指紋").GetComponent<Button>();
             btnDNA = GameObject.Find("按鈕採證 DNA").GetComponent<Button>();
@@ -141,18 +154,26 @@ namespace KID
             btnShoes = GameObject.Find("按鈕採證鞋印").GetComponent<Button>();
 
             btnCamera.onClick.AddListener(() => InitializeEvidenceInformation(typeCamera));
-            btnFingerPrint.onClick.AddListener(() => InitializeEvidenceInformation(typeFingerPrint));
+            btnFingerPrint.onClick.AddListener(() => InitializeEvidenceInformation(typeFingerPrint, true));
             btnDNA.onClick.AddListener(() => InitializeEvidenceInformation(typeDNA));
             btnEvidenceBag.onClick.AddListener(() => InitializeEvidenceInformation(typeEvidenceBag));
             btnShoes.onClick.AddListener(() => InitializeEvidenceInformation(typeScale));
+            #endregion
 
+            #region 證物框
+            textEvidenceIndex = GameObject.Find("證物編號").GetComponent<Text>();
+            imgEvidencePicture = GameObject.Find("證物圖片").GetComponent<Image>();
             textEvidenceCount = GameObject.Find("證物數量").GetComponent<Text>();
             btnEvidencePrev = GameObject.Find("上一個證物").GetComponent<Button>();
             btnEvidenceNext = GameObject.Find("下一個證物").GetComponent<Button>();
+            btnChange = GameObject.Find("證物轉換").GetComponent<Button>();
+            btnZoomIn = GameObject.Find("證物放大").GetComponent<Button>();
 
             btnEvidencePrev.onClick.AddListener(() => ChangeEvidenceInformation(-1));
             btnEvidenceNext.onClick.AddListener(() => ChangeEvidenceInformation(+1));
+            #endregion
 
+            #region 問答框
             textQuestion = GameObject.Find("問答題目").GetComponent<Text>();
             textResult = GameObject.Find("問答結果").GetComponent<Text>();
             btnTextOption1 = GameObject.Find("文字型選項一").GetComponent<Button>();
@@ -177,12 +198,23 @@ namespace KID
 
             groupText = GameObject.Find("文字型題目").GetComponent<CanvasGroup>();
             groupImage = GameObject.Find("圖片型題目").GetComponent<CanvasGroup>();
+            #endregion
+
+            #region 資料頁
+            btnDataPagePrev = GameObject.Find("資料頁上一筆").GetComponent<Button>();
+            btnDataPageNext = GameObject.Find("資料頁下一筆").GetComponent<Button>();
+            imgDataPagePicture = GameObject.Find("資料頁圖片").GetComponent<Image>();
+            textDataPageContent = GameObject.Find("資料頁內容").GetComponent<Text>();
+
+            btnDataPagePrev.onClick.AddListener(() => PrevAndNextEvidenceDataPage(-1));
+            btnDataPageNext.onClick.AddListener(() => PrevAndNextEvidenceDataPage(+1));
+            #endregion
         }
 
         /// <summary>
         /// 初始化證物框內的資訊
         /// </summary>
-        private void InitializeEvidenceInformation(List<DataObject> _dataObject)
+        private void InitializeEvidenceInformation(List<DataObject> _dataObject, bool isFingerPrint = false)
         {
             if (_dataObject.Count == 0)
             {
@@ -192,6 +224,7 @@ namespace KID
                 textResult.text = "";
                 currentEvidence = null;
                 SwitchOptionGroup(false, false);
+                UpdateEvidenceDataPage(null);
                 return;
             }
 
@@ -199,6 +232,9 @@ namespace KID
             indexEvidence = 0;
 
             UpdateEvidenceTextAndImage(currentEvidence);
+
+            if (isFingerPrint) UpdateEvidenceDataPage(dataPageContentFingerPrint);
+            else UpdateEvidenceDataPage(null);
         }
 
         /// <summary>
@@ -277,6 +313,44 @@ namespace KID
         {
             int answer = currentEvidence[indexEvidence].indexAnswer;
             textResult.text = _option == answer ? "正確答案" : "錯誤答案";
+        }
+
+        /// <summary>
+        /// 更新證物資料頁
+        /// </summary>
+        private void UpdateEvidenceDataPage(DataPageContent _dataPageContent)
+        {
+            if (_dataPageContent == null)
+            {
+                imgDataPagePicture.color = new Color(1, 1, 1, 0);
+                textDataPageContent.text = "";
+                return;
+            }
+
+            dataPageContentCurrent = _dataPageContent;
+            DataPageContentInformation dataPageContentInformation = dataPageContentCurrent.dataPageContents[0];
+            imgDataPagePicture.color = new Color(1, 1, 1, 1);
+            imgDataPagePicture.sprite = dataPageContentInformation.sprPicture;
+            textDataPageContent.text = dataPageContentInformation.stringDescription;
+        }
+
+        /// <summary>
+        /// 上一筆與下一筆資料頁內容
+        /// </summary>
+        /// <param name="direction">方向</param>
+        private void PrevAndNextEvidenceDataPage(int direction = 1)
+        {
+            if (dataPageContentCurrent == null) return;
+
+            indexDataPage += direction;
+
+            DataPageContentInformation[] dataPageContentInformation = dataPageContentCurrent.dataPageContents;
+
+            if (indexDataPage == dataPageContentInformation.Length) indexDataPage = 0;
+            else if (indexDataPage == -1) indexDataPage = dataPageContentInformation.Length;
+
+            imgDataPagePicture.sprite = dataPageContentInformation[indexDataPage].sprPicture;
+            textDataPageContent.text = dataPageContentInformation[indexDataPage].stringDescription;
         }
     }
 }

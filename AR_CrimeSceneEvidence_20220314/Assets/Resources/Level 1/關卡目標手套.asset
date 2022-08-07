@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u95DC\u5361\u76EE\u6A19\u624B\u5957"
   m_EditorClassIdentifier: 
   nameEvidenvce: "\u624B\u5957"
-  sprImage: {fileID: 0}
+  sprImage: {fileID: 21300000, guid: 65affe7d73d7c604c9468bd2551c0709, type: 3}
   needCamera: 0
   needEvidenceBag: 1
   needScale: 0

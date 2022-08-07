@@ -13,10 +13,19 @@ MonoBehaviour:
   m_Name: "\u95DC\u5361\u76EE\u6A19\u8336\u676F"
   m_EditorClassIdentifier: 
   nameEvidenvce: "\u8336\u676F"
-  sprImage: {fileID: 0}
+  sprImage: {fileID: 21300000, guid: 1073ef99c4fff184b9c96d584ef29b20, type: 3}
   needCamera: 1
   needEvidenceBag: 0
   needScale: 0
   needDNA: 0
   needFingerPrint: 0
   needFlashLight: 0
+  typeQuestion: 0
+  stringQuestion: 
+  textOption1: 
+  textOption2: 
+  textOption3: 
+  imgOption1: {fileID: 0}
+  imgOption2: {fileID: 0}
+  imgOption3: {fileID: 0}
+  indexAnswer: 0
