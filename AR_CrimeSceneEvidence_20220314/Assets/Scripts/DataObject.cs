@@ -12,6 +12,8 @@ namespace KID
         public string nameEvidenvce;
         [Header("證物圖片")]
         public Sprite sprImage;
+        [Header("證物指紋圖片")]
+        public Sprite sprImageFingerPrint;
         [Header("是否需要拍照")]
         public bool needCamera;
         [Header("是否需要收入證物袋")]

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u95DC\u5361\u76EE\u6A19\u978B\u5370"
   m_EditorClassIdentifier: 
   nameEvidenvce: "\u978B\u5370"
-  sprImage: {fileID: 21300000, guid: cb01f4f93a0f2d5479a4f50e83336d8e, type: 3}
+  sprImage: {fileID: 21300000, guid: 98f8df0ed0a79bf4a9e1a94735e35c88, type: 3}
   needCamera: 1
   needEvidenceBag: 0
   needScale: 1
@@ -25,7 +25,7 @@ MonoBehaviour:
   textOption1: 
   textOption2: 
   textOption3: 
-  imgOption1: {fileID: 0}
-  imgOption2: {fileID: 0}
-  imgOption3: {fileID: 0}
+  imgOption1: {fileID: 21300000, guid: fba707e66d7f9cf4db2d9dc4925ea584, type: 3}
+  imgOption2: {fileID: 21300000, guid: 378d25147dd820545a3c909cd1097613, type: 3}
+  imgOption3: {fileID: 21300000, guid: ba581dc6f4b033341860c7ee7bd9607d, type: 3}
   indexAnswer: 2

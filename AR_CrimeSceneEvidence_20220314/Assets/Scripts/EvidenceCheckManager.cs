@@ -222,6 +222,7 @@ namespace KID
                 textEvidenceCount.text = "0 / 0";
                 textQuestion.text = "";
                 textResult.text = "";
+                imgEvidencePicture.color = new Color(1, 1, 1, 0);
                 currentEvidence = null;
                 SwitchOptionGroup(false, false);
                 UpdateEvidenceDataPage(null);
@@ -263,6 +264,7 @@ namespace KID
 
             textEvidenceIndex.text = data.nameEvidenvce;
             imgEvidencePicture.sprite = data.sprImage;
+            imgEvidencePicture.color = new Color(1, 1, 1, 1);
             textEvidenceCount.text = (indexEvidence + 1) + " / " + _dataObject.Count;
 
             textResult.text = "";
