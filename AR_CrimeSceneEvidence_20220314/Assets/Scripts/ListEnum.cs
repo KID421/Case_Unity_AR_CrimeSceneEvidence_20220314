@@ -18,8 +18,11 @@ namespace KID
 		None, FlashLight, EvidenceBag, DNA, Scale, FingerPrint, Camera
 	}
 
+	/// <summary>
+	/// 題目類型：無題目、文字、圖片、文字先再圖片
+	/// </summary>
 	public enum TypeQuestion
 	{
-		None, Text, Image
+		None, Text, Image, TextFirstThanImage
 	}
 }

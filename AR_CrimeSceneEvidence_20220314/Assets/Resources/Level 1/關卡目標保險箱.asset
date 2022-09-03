@@ -21,12 +21,15 @@ MonoBehaviour:
   needDNA: 0
   needFingerPrint: 1
   needFlashLight: 0
-  typeQuestion: 1
+  typeQuestion: 2
   stringQuestion: "\u8ACB\u554F\u63A1\u96C6\u5230\u7684\u6307\u7D0B\u5C6C\u65BC\u4E0B\u5217\u54EA\u4E00\u7A2E\u985E\u578B"
   textOption1: "\u5F27\u5F62\u985E"
   textOption2: "\u7B95\u5F62\u985E"
   textOption3: "\u6597\u5F62\u985E"
-  imgOption1: {fileID: 0}
-  imgOption2: {fileID: 0}
-  imgOption3: {fileID: 0}
+  imgOption1: {fileID: 21300000, guid: bb7bd01dfe4410e4eba71565cd82bb77, type: 3}
+  imgOption2: {fileID: 21300000, guid: d67558ee7d000d84e9921755ff95fe33, type: 3}
+  imgOption3: {fileID: 21300000, guid: 464668975a114424f9cddb7dbc1f3a75, type: 3}
   indexAnswer: 1
+  indexAnswerFingerPrint: 2
+  isCorrect: 1
+  isCorrectFingerPrint: 1

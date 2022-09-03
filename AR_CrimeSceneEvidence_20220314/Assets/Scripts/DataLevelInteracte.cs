@@ -29,6 +29,13 @@ namespace KID
             {
                 dataLevelOriginal[i].ResetData();
             }
+
+            for (int i = 0; i < dataLevelGoal.Length; i++)
+            {
+                dataLevelGoal[i].ResetToNotCorrect();
+
+                if (dataLevelGoal[i].needFingerPrint) dataLevelGoal[i].typeQuestion = TypeQuestion.TextFirstThanImage;
+            }
         }
 
         [ContextMenu("Get All Data")]

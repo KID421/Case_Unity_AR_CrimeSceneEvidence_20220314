@@ -38,6 +38,17 @@ namespace KID
         public Sprite imgOption3;
         [Header("正確答案"), Range(1, 3)]
         public int indexAnswer;
+        [Header("指紋比對正確答案"), Range(1, 3)]
+        public int indexAnswerFingerPrint;
+
+        /// <summary>
+        /// 是否答對
+        /// </summary>
+        public bool isCorrect;
+        /// <summary>
+        /// 是否答對指紋比對
+        /// </summary>
+        public bool isCorrectFingerPrint;
 
         /// <summary>
         /// 重設資料
@@ -50,6 +61,12 @@ namespace KID
             needDNA = false;
             needFingerPrint = false;
             needFlashLight = false;
+        }
+
+        public void ResetToNotCorrect()
+        {
+            isCorrect = false;
+            isCorrectFingerPrint = false;
         }
     }
 }

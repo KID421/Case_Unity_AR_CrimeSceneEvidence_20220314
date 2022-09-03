@@ -17,12 +17,14 @@ namespace KID
         private ARRaycastManager arRaycastManager;
         private List<ARRaycastHit> hits = new List<ARRaycastHit>();
         private Vector3 posMouse;
+        private ARPlaneManager arPlaneManager;
 
         private bool isPlace;
 
         private void Awake()
         {
             arRaycastManager = GetComponent<ARRaycastManager>();
+            arPlaneManager = GetComponent<ARPlaneManager>();
         }
 
         private void Update()
@@ -46,7 +48,20 @@ namespace KID
                     Instantiate(goPlaceObject, hitPose.position, Quaternion.identity);
                     
                     isPlace = true;
+
+                    HidePlaneObject();
                 }
+            }
+        }
+
+        /// <summary>
+        /// ÁôÂÃ¦aªOª«¥ó
+        /// </summary>
+        private void HidePlaneObject()
+        {
+            foreach (var plane in arPlaneManager.trackables)
+            {
+                plane.gameObject.SetActive(false);
             }
         }
     }

@@ -30,6 +30,11 @@ namespace KID
         /// 目前選取的證物資料
         /// </summary>
         private List<DataObject> currentEvidence = new List<DataObject>();
+
+        /// <summary>
+        /// 證物框內證物編號
+        /// </summary>
+        private int indexEvidence;
         #endregion
 
         #region 介面資料
@@ -81,6 +86,11 @@ namespace KID
         /// 下一個證物
         /// </summary>
         private Button btnEvidenceNext;
+        /// <summary>
+        /// 指紋比對按鈕
+        /// </summary>
+        private Button btnFingerPrintDetach;
+        private CanvasGroup groupBtnFingerPrintDetach;
 
         /// <summary>
         /// 問答題目
@@ -114,10 +124,8 @@ namespace KID
         private DataPageContent dataPageContentCurrent;
         #endregion
 
-        /// <summary>
-        /// 證物框內證物編號
-        /// </summary>
-        private int indexEvidence;
+        private bool isFingerPrint;
+        private DataObject dataCurrent;
 
         private void Awake()
         {
@@ -198,6 +206,17 @@ namespace KID
 
             groupText = GameObject.Find("文字型題目").GetComponent<CanvasGroup>();
             groupImage = GameObject.Find("圖片型題目").GetComponent<CanvasGroup>();
+
+            btnFingerPrintDetach = GameObject.Find("指紋比對按鈕").GetComponent<Button>();
+            groupBtnFingerPrintDetach = btnFingerPrintDetach.GetComponent<CanvasGroup>();
+            btnFingerPrintDetach.onClick.AddListener(() =>
+            {
+                dataCurrent.typeQuestion = TypeQuestion.Image;
+                UpdateEvidenceTextAndImage(typeFingerPrint);
+                SwitchOptionGroup(false, true);
+                SwitchFingerPrintDetachButton(false);
+                textResult.text = "";
+            });
             #endregion
 
             #region 資料頁
@@ -214,8 +233,10 @@ namespace KID
         /// <summary>
         /// 初始化證物框內的資訊
         /// </summary>
-        private void InitializeEvidenceInformation(List<DataObject> _dataObject, bool isFingerPrint = false)
+        private void InitializeEvidenceInformation(List<DataObject> _dataObject, bool _isFingerPrint = false)
         {
+            isFingerPrint = _isFingerPrint;
+
             if (_dataObject.Count == 0)
             {
                 textEvidenceIndex.text = "無證物";
@@ -234,7 +255,7 @@ namespace KID
 
             UpdateEvidenceTextAndImage(currentEvidence);
 
-            if (isFingerPrint) UpdateEvidenceDataPage(dataPageContentFingerPrint);
+            if (_isFingerPrint) UpdateEvidenceDataPage(dataPageContentFingerPrint);
             else UpdateEvidenceDataPage(null);
         }
 
@@ -260,51 +281,60 @@ namespace KID
         /// <param name="_dataObject">要更新的證物清單</param>
         private void UpdateEvidenceTextAndImage(List<DataObject> _dataObject)
         {
-            DataObject data = _dataObject[indexEvidence];
+            dataCurrent = _dataObject[indexEvidence];
 
-            textEvidenceIndex.text = data.nameEvidenvce;
-            imgEvidencePicture.sprite = data.sprImage;
+            textEvidenceIndex.text = dataCurrent.nameEvidenvce;
+            imgEvidencePicture.sprite = dataCurrent.sprImage;
             imgEvidencePicture.color = new Color(1, 1, 1, 1);
             textEvidenceCount.text = (indexEvidence + 1) + " / " + _dataObject.Count;
 
             textResult.text = "";
 
-            if (data.typeQuestion == TypeQuestion.None)
+            if (dataCurrent.typeQuestion == TypeQuestion.None)
             {
                 textQuestion.text = "";
                 SwitchOptionGroup(false, false);
             }
-            else if (data.typeQuestion == TypeQuestion.Text)
+            else if (dataCurrent.typeQuestion == TypeQuestion.Text || dataCurrent.typeQuestion == TypeQuestion.TextFirstThanImage)
             {
-                textQuestion.text = data.stringQuestion;
-                textBtnTextOption1.text = data.textOption1;
-                textBtnTextOption2.text = data.textOption2;
-                textBtnTextOption3.text = data.textOption3;
-                SwitchOptionGroup();
+                textQuestion.text = dataCurrent.stringQuestion;
+                textBtnTextOption1.text = dataCurrent.textOption1;
+                textBtnTextOption2.text = dataCurrent.textOption2;
+                textBtnTextOption3.text = dataCurrent.textOption3;
+                SwitchOptionGroup(true, false, !dataCurrent.isCorrect);
             }
-            else if (data.typeQuestion == TypeQuestion.Image)
+            else if (dataCurrent.typeQuestion == TypeQuestion.Image)
             {
-                textQuestion.text = data.stringQuestion;
-                imgBtnImageOption1.sprite = data.imgOption1;
-                imgBtnImageOption2.sprite = data.imgOption2;
-                imgBtnImageOption3.sprite = data.imgOption3;
-                SwitchOptionGroup(false, true);
+                textQuestion.text = dataCurrent.stringQuestion;
+                imgBtnImageOption1.sprite = dataCurrent.imgOption1;
+                imgBtnImageOption2.sprite = dataCurrent.imgOption2;
+                imgBtnImageOption3.sprite = dataCurrent.imgOption3;
+                SwitchOptionGroup(false, true, !dataCurrent.isCorrect);
             }
+
+            if (dataCurrent.isCorrect)
+            {
+                textResult.text = "已經答對";
+            }
+
+            SwitchFingerPrintDetachButton(!dataCurrent.isCorrectFingerPrint && isFingerPrint && dataCurrent.isCorrect);
         }
 
         /// <summary>
         /// 切換題目群組
         /// </summary>
-        /// <param name="optionText">文字題目是否要顯示</param>
-        private void SwitchOptionGroup(bool optionText = true, bool optionImage = false)
+        /// <param name="optionText">文字型題目是否要顯示</param>
+        /// <param name="optionImage">圖片型題目是否要顯示</param>
+        /// <param name="cantInteractable">是否能互動，答對是可設定為 false 顯示但不能互動</param>
+        private void SwitchOptionGroup(bool optionText = true, bool optionImage = false, bool cantInteractable = true)
         {
             groupText.alpha = optionText ? 1 : 0;
-            groupText.interactable = optionText;
-            groupText.blocksRaycasts = optionText;
-            
+            groupText.interactable = optionText && cantInteractable;
+            groupText.blocksRaycasts = optionText && cantInteractable;
+
             groupImage.alpha = optionImage ? 1 : 0;
-            groupImage.interactable = optionImage;
-            groupImage.blocksRaycasts = optionImage;
+            groupImage.interactable = optionImage && cantInteractable;
+            groupImage.blocksRaycasts = optionImage && cantInteractable;
         }
 
         /// <summary>
@@ -314,7 +344,38 @@ namespace KID
         private void CheckAnswer(int _option)
         {
             int answer = currentEvidence[indexEvidence].indexAnswer;
-            textResult.text = _option == answer ? "正確答案" : "錯誤答案";
+
+            if (dataCurrent.isCorrect) answer = currentEvidence[indexEvidence].indexAnswerFingerPrint;
+
+            bool result = _option == answer;
+            textResult.text = result ? "正確答案" : "錯誤答案";
+
+
+            if (result)
+            {
+                groupText.interactable = false;
+                groupImage.interactable = false;
+            }
+
+            if (!dataCurrent.isCorrect)
+            {
+                SwitchFingerPrintDetachButton(isFingerPrint && result);     // 是指紋 並且 回答正確
+                dataCurrent.isCorrect = result;
+            }
+            else
+            {
+                dataCurrent.isCorrectFingerPrint = result;
+            }
+        }
+
+        /// <summary>
+        /// 顯示指紋比對題目
+        /// </summary>
+        private void SwitchFingerPrintDetachButton(bool show = true)
+        {
+            groupBtnFingerPrintDetach.alpha = show ? 1 : 0;
+            groupBtnFingerPrintDetach.interactable = show;
+            groupBtnFingerPrintDetach.blocksRaycasts = show;
         }
 
         /// <summary>

@@ -26,6 +26,8 @@ namespace KID
         private Sprite spriteIconCamera;
         [SerializeField, Header("圖示證物袋")]
         private Sprite spriteIconEvidenceBag;
+        [SerializeField, Header("後期處理體積物件")]
+        private GameObject goPPVolume;
 
         /// <summary>
         /// 工具圖示
@@ -178,7 +180,8 @@ namespace KID
         /// </summary>
         private void UseTool()
         {
-            if (!dataTargetGoal) return;
+            // 如果不是手電筒 並且 如果沒有目標資料就跳出
+            if (typeChooseTool != TypeEvidence.FlashLight && !dataTargetGoal ) return;
 
             bool result = false;
 
@@ -213,6 +216,7 @@ namespace KID
         {
             print("使用手電筒");
 
+            /**
             if (dataTargetGoal.needFlashLight)
             {
                 print("<color=green>使用手電筒成功</color>");
@@ -228,6 +232,11 @@ namespace KID
 
                 return false;
             }
+            */
+
+            goPPVolume.SetActive(!goPPVolume.activeInHierarchy);
+
+            return true;
         }
 
         /// <summary>
