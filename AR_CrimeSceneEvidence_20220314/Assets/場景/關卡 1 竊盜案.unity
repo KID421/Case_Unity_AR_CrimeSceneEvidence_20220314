@@ -1238,7 +1238,7 @@ Camera:
   m_GameObject: {fileID: 298153095}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -3975,9 +3975,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082786742}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!1 &1116871628
 GameObject:
@@ -6938,9 +6938,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957285054}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &2103759042
 GameObject:
@@ -7017,6 +7017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goPlaceObject: {fileID: 2182087392932987851, guid: bfebd6f8d20653b48985d043e1d02222, type: 3}
+  materialGround: {fileID: 2100000, guid: 5b7f19f481a53144380ec91c7299e0e8, type: 2}
 --- !u!114 &2103759047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7568,6 +7569,10 @@ PrefabInstance:
     - target: {fileID: 2182087392932987852, guid: bfebd6f8d20653b48985d043e1d02222, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182087392957759522, guid: bfebd6f8d20653b48985d043e1d02222, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfebd6f8d20653b48985d043e1d02222, type: 3}

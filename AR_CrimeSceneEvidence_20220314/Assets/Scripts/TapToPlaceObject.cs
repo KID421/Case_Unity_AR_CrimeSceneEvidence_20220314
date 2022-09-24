@@ -13,6 +13,8 @@ namespace KID
     {
         [SerializeField, Header("要放置的物件")]
         private GameObject goPlaceObject;
+        [SerializeField, Header("地板材質")]
+        private Material materialGround;
 
         private ARRaycastManager arRaycastManager;
         private List<ARRaycastHit> hits = new List<ARRaycastHit>();
@@ -23,6 +25,7 @@ namespace KID
 
         private void Awake()
         {
+            materialGround.color = new Color(1, 1, 1, 1);
             arRaycastManager = GetComponent<ARRaycastManager>();
             arPlaneManager = GetComponent<ARPlaneManager>();
         }
@@ -59,6 +62,8 @@ namespace KID
         /// </summary>
         private void HidePlaneObject()
         {
+            materialGround.color = new Color(1, 1, 1, 0);
+
             foreach (var plane in arPlaneManager.trackables)
             {
                 plane.gameObject.SetActive(false);
