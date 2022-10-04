@@ -124,8 +124,22 @@ namespace KID
         private DataPageContent dataPageContentCurrent;
         #endregion
 
+        #region 未分類私人資料
         private bool isFingerPrint;
         private DataObject dataCurrent;
+        /// <summary>
+        /// 資料頁
+        /// </summary>
+        private Image imgDataPageRoot;
+        /// <summary>
+        /// 開啟與關閉
+        /// </summary>
+        private Button btnOpenAndClose;
+        /// <summary>
+        /// 資料頁無法看的顏色：灰色
+        /// </summary>
+        private Color colorImgDataPageRootCantLook = new Color(0.5f, 0.5f, 0.5f, 1);
+        #endregion
 
         private void Awake()
         {
@@ -227,6 +241,10 @@ namespace KID
 
             btnDataPagePrev.onClick.AddListener(() => PrevAndNextEvidenceDataPage(-1));
             btnDataPageNext.onClick.AddListener(() => PrevAndNextEvidenceDataPage(+1));
+
+            imgDataPageRoot = GameObject.Find("資料頁").GetComponent<Image>();
+            btnOpenAndClose = GameObject.Find("開啟與關閉").GetComponent<Button>();
+            btnOpenAndClose.onClick.AddListener(() => dataCurrent.useDataPage = true);
             #endregion
         }
 
@@ -317,6 +335,7 @@ namespace KID
                 textResult.text = "已經答對";
             }
 
+            CheckIsChooseAndUpdateDataPage();
             SwitchFingerPrintDetachButton(!dataCurrent.isCorrectFingerPrint && isFingerPrint && dataCurrent.isCorrect);
         }
 
@@ -350,6 +369,13 @@ namespace KID
             bool result = _option == answer;
             textResult.text = result ? "正確答案" : "錯誤答案";
 
+            if (!dataCurrent.isCorrect)
+            {
+                dataCurrent.countChooseAnswer++;
+                dataCurrent.isChoose = true;
+                CheckIsChooseAndUpdateDataPage();
+            }
+            else dataCurrent.countChooseAnswerFingerPrint++;
 
             if (result)
             {
@@ -365,6 +391,23 @@ namespace KID
             else
             {
                 dataCurrent.isCorrectFingerPrint = result;
+            }
+        }
+
+        /// <summary>
+        /// 檢查是否選過並更新資料頁
+        /// </summary>
+        private void CheckIsChooseAndUpdateDataPage()
+        {
+            if (dataCurrent.isChoose)
+            {
+                btnOpenAndClose.interactable = true;
+                imgDataPageRoot.color = Color.white;
+            }
+            else
+            {
+                btnOpenAndClose.interactable = false;
+                imgDataPageRoot.color = colorImgDataPageRootCantLook;
             }
         }
 

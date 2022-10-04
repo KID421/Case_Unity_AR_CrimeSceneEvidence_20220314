@@ -21,6 +21,11 @@ namespace KID
 
         public static DataLevelInteracte instance;
 
+        /// <summary>
+        /// 總分
+        /// </summary>
+        public int scoreTotal => ScoreTotal();
+
         private void Awake()
         {
             instance = this;
@@ -49,6 +54,23 @@ namespace KID
                 dataLevelGoal[i] = objectsToCheck[i].dataGoal;
                 dataLevelOriginal[i] = objectsToCheck[i].dataOriginal;
             }
+        }
+
+        /// <summary>
+        /// 分數總分計算
+        /// </summary>
+        /// <returns></returns>
+        private int ScoreTotal()
+        {
+            int scoreTotalResult = 0;
+
+            for (int i = 0; i < dataLevelGoal.Length; i++)
+            {
+                scoreTotalResult += dataLevelGoal[i].score;
+                scoreTotalResult += dataLevelGoal[i].scoreFingerPrint;
+            }
+
+            return scoreTotalResult;
         }
     }
 }

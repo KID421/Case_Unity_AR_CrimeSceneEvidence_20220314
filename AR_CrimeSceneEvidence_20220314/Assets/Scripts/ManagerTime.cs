@@ -19,8 +19,8 @@ namespace KID
         /// </summary>
         private Text textTime;
 
-        private float minute { get => Mathf.Floor(timerCount / 60); }
-        private float second { get => Mathf.Floor(timerCount % 60); }
+        public float minute { get => Mathf.Floor(timerCount / 60); }
+        public float second { get => Mathf.Floor(timerCount % 60); }
 
         public static ManagerTime instance;
 

@@ -49,6 +49,40 @@ namespace KID
         /// 是否答對指紋比對
         /// </summary>
         public bool isCorrectFingerPrint;
+        /// <summary>
+        /// 是否選過此題目
+        /// </summary>
+        public bool isChoose;
+        /// <summary>
+        /// 選取答案的次數
+        /// </summary>
+        public int countChooseAnswer;
+        /// <summary>
+        /// 是否使用資料頁
+        /// </summary>
+        public bool useDataPage;
+        /// <summary>
+        /// 選取答案的次數 - 指紋比對
+        /// </summary>
+        public int countChooseAnswerFingerPrint;
+
+        /// <summary>
+        /// 總分
+        /// </summary>
+        private int scoreTotal = 10;
+        /// <summary>
+        /// 每次錯誤扣分
+        /// </summary>
+        private int scorePerWrong = 5;
+
+        /// <summary>
+        /// 得分
+        /// </summary>
+        public int score => scoreTotal - countChooseAnswer * scorePerWrong;
+        /// <summary>
+        /// 指紋比對分數
+        /// </summary>
+        public int scoreFingerPrint => needFingerPrint ? scoreTotal - countChooseAnswerFingerPrint * scorePerWrong : 0;
 
         /// <summary>
         /// 重設資料
@@ -63,10 +97,17 @@ namespace KID
             needFlashLight = false;
         }
 
+        /// <summary>
+        ///重新定為上未正確狀態：目標資料用
+        /// </summary>
         public void ResetToNotCorrect()
         {
+            isChoose = false;
             isCorrect = false;
             isCorrectFingerPrint = false;
+            countChooseAnswer = 0;
+            useDataPage = false;
+            countChooseAnswerFingerPrint = 0;
         }
     }
 }
