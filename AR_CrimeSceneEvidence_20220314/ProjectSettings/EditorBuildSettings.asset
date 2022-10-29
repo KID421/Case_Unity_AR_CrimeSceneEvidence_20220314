@@ -6,10 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: "Assets/\u5834\u666F/\u958B\u59CB\u756B\u9762.unity"
+    guid: 17681be7c2443fc419be25042d9612e7
+  - enabled: 1
     path: "Assets/\u5834\u666F/\u9078\u53D6\u95DC\u5361.unity"
     guid: cb6156f82f9c3f340a434ca5862bf920
   - enabled: 1
-    path: "Assets/\u5834\u666F/\u95DC\u5361 1 \u7ACA\u76DC\u6848.unity"
+    path: "Assets/\u5834\u666F/\u4F4F\u5B85\u7ACA\u76DC\u6848.unity"
     guid: 6b752416d2d68d047b370884b1b4cc3b
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 32a33bd1971fc9e41a1038577ef12614, type: 2}

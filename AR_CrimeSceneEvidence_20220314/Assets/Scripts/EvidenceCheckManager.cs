@@ -14,6 +14,10 @@ namespace KID
         #region 顯示資料
         [SerializeField, Header("資料頁指紋")]
         private DataPageContent dataPageContentFingerPrint;
+        [SerializeField, Header("資料頁手套")]
+        private DataPageContent dataPageContentGloves;
+        [SerializeField, Header("資料頁檳榔渣")]
+        private DataPageContent dataPageContentBetelNut;
         #endregion
 
         #region 證物資料
@@ -126,6 +130,7 @@ namespace KID
 
         #region 未分類私人資料
         private bool isFingerPrint;
+        private bool isEvidenceBag;
         private DataObject dataCurrent;
         /// <summary>
         /// 資料頁
@@ -178,7 +183,7 @@ namespace KID
             btnCamera.onClick.AddListener(() => InitializeEvidenceInformation(typeCamera));
             btnFingerPrint.onClick.AddListener(() => InitializeEvidenceInformation(typeFingerPrint, true));
             btnDNA.onClick.AddListener(() => InitializeEvidenceInformation(typeDNA));
-            btnEvidenceBag.onClick.AddListener(() => InitializeEvidenceInformation(typeEvidenceBag));
+            btnEvidenceBag.onClick.AddListener(() => InitializeEvidenceInformation(typeEvidenceBag, _isEvidenceBag: true));
             btnShoes.onClick.AddListener(() => InitializeEvidenceInformation(typeScale));
             #endregion
 
@@ -251,9 +256,10 @@ namespace KID
         /// <summary>
         /// 初始化證物框內的資訊
         /// </summary>
-        private void InitializeEvidenceInformation(List<DataObject> _dataObject, bool _isFingerPrint = false)
+        private void InitializeEvidenceInformation(List<DataObject> _dataObject, bool _isFingerPrint = false, bool _isEvidenceBag = false)
         {
             isFingerPrint = _isFingerPrint;
+            isEvidenceBag = _isEvidenceBag;
 
             if (_dataObject.Count == 0)
             {
@@ -274,6 +280,7 @@ namespace KID
             UpdateEvidenceTextAndImage(currentEvidence);
 
             if (_isFingerPrint) UpdateEvidenceDataPage(dataPageContentFingerPrint);
+            else if (_isEvidenceBag) UpdateEvidenceDataPage(new DataPageContent());
             else UpdateEvidenceDataPage(null);
         }
 
@@ -291,6 +298,8 @@ namespace KID
             else if (indexEvidence == currentEvidence.Count) indexEvidence = 0;
 
             UpdateEvidenceTextAndImage(currentEvidence);
+
+            if (isEvidenceBag) UpdateEvidenceDataPage(new DataPageContent()); 
         }
 
         /// <summary>
@@ -426,6 +435,9 @@ namespace KID
         /// </summary>
         private void UpdateEvidenceDataPage(DataPageContent _dataPageContent)
         {
+            if (dataCurrent.nameEvidenvce.Contains("手套")) _dataPageContent = dataPageContentGloves;
+            else if (dataCurrent.nameEvidenvce.Contains("檳榔渣")) _dataPageContent = dataPageContentBetelNut;
+
             if (_dataPageContent == null)
             {
                 imgDataPagePicture.color = new Color(1, 1, 1, 0);
