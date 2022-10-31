@@ -26,7 +26,7 @@ namespace KID
         private Text textMapSelect;
         private string[] nameMaps =
         {
-            "住宅竊盜案", "兇殺事件", "特殊竊盜案"
+            "住宅竊盜案", "兇殺事件", "竊盜案"
         };
         private string[] descriptionMaps =
         {

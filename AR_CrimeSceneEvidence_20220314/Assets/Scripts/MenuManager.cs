@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using TMPro;
 
 namespace KID
 {
@@ -21,15 +22,19 @@ namespace KID
         private int countToRotate = 600;
         private WaitForSeconds secondToShowStart = new WaitForSeconds(0.5f);
         private WaitForSeconds secondToStart = new WaitForSeconds(1f);
+        private TMP_InputField inputFieldID;
 
         private void Awake()
         {
+
             traLoadingCircle = GameObject.Find("載入遊戲圓圈").transform;
             groupLoading = GameObject.Find("載入遊戲群組").GetComponent<CanvasGroup>();
             groupBtnStart = GameObject.Find("按鈕開始遊戲").GetComponent<CanvasGroup>();
             groupLogin = GameObject.Find("登入群組").GetComponent<CanvasGroup>();
             btnStart = groupBtnStart.GetComponent<Button>();
             btnConfirm = GameObject.Find("按鈕確定").GetComponent<Button>();
+            inputFieldID = GameObject.Find("輸入欄位 ID").GetComponent<TMP_InputField>();
+            inputFieldID.onEndEdit.AddListener(input => PlayerPrefs.SetString("id", input));
         }
 
         private void Start()

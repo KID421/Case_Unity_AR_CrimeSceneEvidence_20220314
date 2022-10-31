@@ -78,7 +78,7 @@ namespace KID
         /// <summary>
         /// 得分
         /// </summary>
-        public int score => scoreTotal - countChooseAnswer * scorePerWrong;
+        public int score => countChooseAnswer == 0 ? 0 : scoreTotal - countChooseAnswer * scorePerWrong;
         /// <summary>
         /// 指紋比對分數
         /// </summary>

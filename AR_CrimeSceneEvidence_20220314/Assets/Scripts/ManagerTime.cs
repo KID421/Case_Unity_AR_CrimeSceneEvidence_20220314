@@ -13,7 +13,7 @@ namespace KID
         /// </summary>
         public bool isTimeStop;
 
-        private float timerCount;
+        public float timerCount;
         /// <summary>
         /// ¤å¦r®É¶¡
         /// </summary>

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39d406a34bc01d547adf6d49aff23ea1, type: 3}
+  m_Name: "\u95DC\u5361\u539F\u59CB\u7269\u4EF6\u9838\u90E8\u50B7\u53E3"
+  m_EditorClassIdentifier: 
+  nameEvidenvce: 
+  sprImage: {fileID: 0}
+  sprImageFingerPrint: {fileID: 0}
+  needCamera: 1
+  needEvidenceBag: 0
+  needScale: 0
+  needDNA: 0
+  needFingerPrint: 0
+  needFlashLight: 0
+  typeQuestion: 0
+  stringQuestion: 
+  textOption1: 
+  textOption2: 
+  textOption3: 
+  imgOption1: {fileID: 0}
+  imgOption2: {fileID: 0}
+  imgOption3: {fileID: 0}
+  indexAnswer: 0
+  indexAnswerFingerPrint: 0
+  isCorrect: 0
+  isCorrectFingerPrint: 0
+  isChoose: 0
+  countChooseAnswer: 0
+  useDataPage: 0
+  countChooseAnswerFingerPrint: 0

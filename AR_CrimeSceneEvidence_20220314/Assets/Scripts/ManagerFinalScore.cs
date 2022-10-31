@@ -77,6 +77,8 @@ namespace KID
             textTime.text = string.Format("00 : {0} : {1}", minute, second);
 
             textScore.text = DataLevelInteracte.instance.scoreTotal + "";
+
+            GoogleAppsScriptManager.instance.StartSetGAS();
         }
         #endregion
     }
