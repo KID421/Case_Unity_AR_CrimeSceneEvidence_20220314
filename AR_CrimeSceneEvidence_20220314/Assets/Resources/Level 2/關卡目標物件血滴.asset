@@ -18,10 +18,10 @@ MonoBehaviour:
   needCamera: 1
   needEvidenceBag: 0
   needScale: 0
-  needDNA: 0
-  needFingerPrint: 1
+  needDNA: 1
+  needFingerPrint: 0
   needFlashLight: 0
-  typeQuestion: 0
+  typeQuestion: 3
   stringQuestion: 
   textOption1: 
   textOption2: 

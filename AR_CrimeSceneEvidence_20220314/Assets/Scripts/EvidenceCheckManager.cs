@@ -446,10 +446,14 @@ namespace KID
             }
 
             dataPageContentCurrent = _dataPageContent;
-            DataPageContentInformation dataPageContentInformation = dataPageContentCurrent.dataPageContents[0];
-            imgDataPagePicture.color = new Color(1, 1, 1, 1);
-            imgDataPagePicture.sprite = dataPageContentInformation.sprPicture;
-            textDataPageContent.text = dataPageContentInformation.stringDescription;
+
+            if (dataPageContentCurrent.dataPageContents.Length > 0)
+            {
+                DataPageContentInformation dataPageContentInformation = dataPageContentCurrent.dataPageContents[0];
+                imgDataPagePicture.color = new Color(1, 1, 1, 1);
+                imgDataPagePicture.sprite = dataPageContentInformation.sprPicture;
+                textDataPageContent.text = dataPageContentInformation.stringDescription;
+            }
         }
 
         /// <summary>
