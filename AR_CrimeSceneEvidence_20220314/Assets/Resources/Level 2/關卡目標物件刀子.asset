@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d406a34bc01d547adf6d49aff23ea1, type: 3}
   m_Name: "\u95DC\u5361\u76EE\u6A19\u7269\u4EF6\u5200\u5B50"
   m_EditorClassIdentifier: 
-  nameEvidenvce: 
-  sprImage: {fileID: 0}
+  nameEvidenvce: "\u5200\u5B50"
+  sprImage: {fileID: 21300000, guid: 0b4f4cd52e1f0e94fa0393ea1995c8f8, type: 3}
   sprImageFingerPrint: {fileID: 0}
   needCamera: 1
   needEvidenceBag: 0
@@ -23,14 +23,14 @@ MonoBehaviour:
   needFlashLight: 0
   typeQuestion: 2
   stringQuestion: "\u8ACB\u554F\u63A1\u96C6\u5230\u7684\u6307\u7D0B\u5C6C\u65BC\u4E0B\u5217\u54EA\u4E00\u7A2E\u985E\u578B"
-  textOption1: 
-  textOption2: 
-  textOption3: 
-  imgOption1: {fileID: 0}
-  imgOption2: {fileID: 0}
-  imgOption3: {fileID: 0}
-  indexAnswer: 1
-  indexAnswerFingerPrint: 1
+  textOption1: "\u8944\u578B"
+  textOption2: "\u5E33\u578B"
+  textOption3: "\u5F27\u578B"
+  imgOption1: {fileID: 21300000, guid: af04675c6ce97164aa7b3d0773c9e1eb, type: 3}
+  imgOption2: {fileID: 21300000, guid: 5a04e5f7eebc6064194e3caa5a05c218, type: 3}
+  imgOption3: {fileID: 21300000, guid: 22652741cc65cee4691715e6d4bb734f, type: 3}
+  indexAnswer: 2
+  indexAnswerFingerPrint: 2
   isCorrect: 0
   isCorrectFingerPrint: 0
   isChoose: 0

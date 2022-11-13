@@ -16,11 +16,11 @@ MonoBehaviour:
   sprImage: {fileID: 0}
   sprImageFingerPrint: {fileID: 0}
   needCamera: 0
-  needEvidenceBag: 1
+  needEvidenceBag: 0
   needScale: 0
   needDNA: 0
   needFingerPrint: 0
-  needFlashLight: 1
+  needFlashLight: 0
   typeQuestion: 0
   stringQuestion: 
   textOption1: 

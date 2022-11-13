@@ -202,6 +202,9 @@ namespace KID
                 case TypeEvidence.Camera:
                     result = UseCamera();
                     break;
+                case TypeEvidence.DNA:
+                    result = UseDNA();
+                    break;
             }
 
             if (result) ToolIconEffect(typeChooseTool);
@@ -216,13 +219,14 @@ namespace KID
         {
             print("使用手電筒");
 
-            /**
+            
             if (dataTargetGoal.needFlashLight)
             {
                 print("<color=green>使用手電筒成功</color>");
                 textActionMessage.text = nameTarget + " 使用手電筒成功";
                 dataTargetOriginal.needFlashLight = true;
 
+                goPPVolume.SetActive(!goPPVolume.activeInHierarchy);
                 return true;
             }
             else
@@ -232,11 +236,6 @@ namespace KID
 
                 return false;
             }
-            */
-
-            goPPVolume.SetActive(!goPPVolume.activeInHierarchy);
-
-            return true;
         }
 
         /// <summary>
@@ -245,6 +244,34 @@ namespace KID
         private bool UseEvidenceBag()
         {
             print("放入證物袋");
+
+            if (dataTargetGoal.needFlashLight)
+            {
+                if (!dataTargetOriginal.needFlashLight)
+                {
+                    print("<color=red>放入證物袋失敗，尚未完成手電筒偵測</color>");
+
+                    return false;
+                }
+                else
+                {
+                    print("<color=green>手電筒偵測已處理完成！</color>");
+                }
+            }
+
+            if (dataTargetGoal.needCamera)
+            {
+                if (!dataTargetOriginal.needCamera)
+                {
+                    print("<color=red>放入證物袋失敗，尚未完成拍照</color>");
+
+                    return false;
+                }
+                else
+                {
+                    print("<color=green>拍照已處理完成！</color>");
+                }
+            }
 
             if (dataTargetGoal.needEvidenceBag)
             {
@@ -258,8 +285,8 @@ namespace KID
             }
             else
             {
-                print("<color=red>此物件不需要放入證物袋成功</color>");
-                textActionMessage.text = nameTarget + " 此物件不需要放入證物袋成功";
+                print("<color=red>此物件不需要放入證物袋</color>");
+                textActionMessage.text = nameTarget + " 此物件不需要放入證物袋";
 
                 return false;
             }
@@ -333,6 +360,7 @@ namespace KID
 
             bool fingerPrint = dataTargetGoal.needFingerPrint != dataTargetOriginal.needFingerPrint;
             bool scale = dataTargetGoal.needScale != dataTargetOriginal.needScale;
+            bool dna = dataTargetGoal.needDNA != dataTargetOriginal.needDNA;
 
             if (dataTargetGoal.needFingerPrint)
             {
@@ -362,6 +390,20 @@ namespace KID
                 }
             }
 
+            if (dataTargetGoal.needDNA)
+            {
+                if (!dataTargetOriginal.needDNA)
+                {
+                    print("<color=red>拍照失敗，尚未完成 DNA作業</color>");
+
+                    return false;
+                }
+                else
+                {
+                    print("<color=green>DNA 已處理完成！</color>");
+                }
+            }
+
             if (dataTargetGoal.needCamera)
             {
                 if (!dataTargetOriginal.needCamera)
@@ -385,6 +427,33 @@ namespace KID
             {
                 print("<color=red>此物件不需要拍照</color>");
                 textActionMessage.text = nameTarget + " 此物件不需要拍照";
+
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 檢查 DNA
+        /// </summary>
+        /// <returns></returns>
+        private bool UseDNA()
+        {
+            print("檢查 DNA");
+
+            if (dataTargetGoal.needDNA)
+            {
+                print("<color=green>檢查 DNA 成功</color>");
+                textActionMessage.text = nameTarget + " 檢查 DNA 成功";
+                dataTargetOriginal.needDNA = true;
+
+                MissionObjectManager.instance.UpdateMission();
+
+                return true;
+            }
+            else
+            {
+                print("<color=red>此物件不需要檢查 DNA</color>");
+                textActionMessage.text = nameTarget + " 此物件不需要檢查 DNA";
 
                 return false;
             }
@@ -425,6 +494,7 @@ namespace KID
                     coroutine = EvidenceBag();
                     break;
                 case TypeEvidence.FingerPrint:
+                case TypeEvidence.DNA:
                     coroutine = IconMove();
                     break;
                 case TypeEvidence.Camera:

@@ -12,24 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d406a34bc01d547adf6d49aff23ea1, type: 3}
   m_Name: "\u95DC\u5361\u76EE\u6A19\u7269\u4EF6\u978B\u5370"
   m_EditorClassIdentifier: 
-  nameEvidenvce: 
-  sprImage: {fileID: 0}
+  nameEvidenvce: "\u978B\u5370"
+  sprImage: {fileID: 21300000, guid: c173ef706e275434f95ccf0614baf5c0, type: 3}
   sprImageFingerPrint: {fileID: 0}
   needCamera: 1
   needEvidenceBag: 0
-  needScale: 0
+  needScale: 1
   needDNA: 0
   needFingerPrint: 0
   needFlashLight: 0
-  typeQuestion: 0
-  stringQuestion: 
+  typeQuestion: 2
+  stringQuestion: "\u8ACB\u54EA\u4E00\u500B\u70BA\u6B63\u78BA\u7684\u978B\u5370"
   textOption1: 
   textOption2: 
   textOption3: 
-  imgOption1: {fileID: 0}
-  imgOption2: {fileID: 0}
-  imgOption3: {fileID: 0}
-  indexAnswer: 0
+  imgOption1: {fileID: 21300000, guid: 8161f8edd6ae5b946b8903a95be691bf, type: 3}
+  imgOption2: {fileID: 21300000, guid: 77c0f6377d6c80e47b11da65d6fa9622, type: 3}
+  imgOption3: {fileID: 21300000, guid: 54445ef28a7907640b5a2a0c3b575d32, type: 3}
+  indexAnswer: 3
   indexAnswerFingerPrint: 0
   isCorrect: 0
   isCorrectFingerPrint: 0

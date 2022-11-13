@@ -447,7 +447,7 @@ namespace KID
 
             dataPageContentCurrent = _dataPageContent;
 
-            if (dataPageContentCurrent.dataPageContents.Length > 0)
+            if (dataPageContentCurrent.dataPageContents != null)
             {
                 DataPageContentInformation dataPageContentInformation = dataPageContentCurrent.dataPageContents[0];
                 imgDataPagePicture.color = new Color(1, 1, 1, 1);

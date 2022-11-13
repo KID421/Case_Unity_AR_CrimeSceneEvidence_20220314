@@ -12,24 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d406a34bc01d547adf6d49aff23ea1, type: 3}
   m_Name: "\u95DC\u5361\u76EE\u6A19\u7269\u4EF6\u83F8\u8482"
   m_EditorClassIdentifier: 
-  nameEvidenvce: 
-  sprImage: {fileID: 0}
+  nameEvidenvce: "\u83F8\u8482"
+  sprImage: {fileID: 21300000, guid: 6cd55d18994dfa84c8b92f510d9fb261, type: 3}
   sprImageFingerPrint: {fileID: 0}
   needCamera: 1
-  needEvidenceBag: 1
+  needEvidenceBag: 0
   needScale: 0
   needDNA: 0
   needFingerPrint: 0
   needFlashLight: 0
-  typeQuestion: 0
-  stringQuestion: 
-  textOption1: 
-  textOption2: 
-  textOption3: 
+  typeQuestion: 1
+  stringQuestion: "\u8B49\u7269\u8A72\u9032\u884C\u751A\u9EBC\u6A23\u7684\u5206\u6790\uFF1F"
+  textOption1: DNA
+  textOption2: "\u6307\u7D0B"
+  textOption3: "\u624B\u5370\u6BD4\u5C0D"
   imgOption1: {fileID: 0}
   imgOption2: {fileID: 0}
   imgOption3: {fileID: 0}
-  indexAnswer: 0
+  indexAnswer: 1
   indexAnswerFingerPrint: 0
   isCorrect: 0
   isCorrectFingerPrint: 0

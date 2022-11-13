@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39d406a34bc01d547adf6d49aff23ea1, type: 3}
-  m_Name: "\u95DC\u5361\u539F\u59CB\u7269\u4EF6\u8840\u8DE1"
+  m_Name: "\u95DC\u5361\u539F\u59CB\u7269\u4EF6\u978B\u5370"
   m_EditorClassIdentifier: 
   nameEvidenvce: 
   sprImage: {fileID: 0}
   sprImageFingerPrint: {fileID: 0}
   needCamera: 1
   needEvidenceBag: 0
-  needScale: 0
-  needDNA: 1
+  needScale: 1
+  needDNA: 0
   needFingerPrint: 0
   needFlashLight: 0
   typeQuestion: 0

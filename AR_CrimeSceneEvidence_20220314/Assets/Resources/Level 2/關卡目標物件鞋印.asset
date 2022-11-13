@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39d406a34bc01d547adf6d49aff23ea1, type: 3}
-  m_Name: "\u95DC\u5361\u76EE\u6A19\u7269\u4EF6\u8336\u676F"
+  m_Name: "\u95DC\u5361\u76EE\u6A19\u7269\u4EF6\u978B\u5370"
   m_EditorClassIdentifier: 
-  nameEvidenvce: 
-  sprImage: {fileID: 0}
+  nameEvidenvce: "\u978B\u5370"
+  sprImage: {fileID: 21300000, guid: 4e2be7d0ef4b9044f82c1f96152ddde2, type: 3}
   sprImageFingerPrint: {fileID: 0}
   needCamera: 1
   needEvidenceBag: 0
-  needScale: 0
+  needScale: 1
   needDNA: 0
-  needFingerPrint: 1
+  needFingerPrint: 0
   needFlashLight: 0
   typeQuestion: 2
-  stringQuestion: "\u8ACB\u554F\u63A1\u96C6\u5230\u7684\u6307\u7D0B\u5C6C\u65BC\u4E0B\u5217\u54EA\u4E00\u7A2E\u985E\u578B"
+  stringQuestion: 
   textOption1: 
   textOption2: 
   textOption3: 
