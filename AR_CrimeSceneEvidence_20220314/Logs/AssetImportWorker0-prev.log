@@ -15,11 +15,11 @@ C:/KID/Projects/Unity/Case_Unity_AR_CrimeSceneEvidence_20220314/AR_CrimeSceneEvi
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-8733
+13930
 Successfully changed project path to: C:/KID/Projects/Unity/Case_Unity_AR_CrimeSceneEvidence_20220314/AR_CrimeSceneEvidence_20220314
 C:/KID/Projects/Unity/Case_Unity_AR_CrimeSceneEvidence_20220314/AR_CrimeSceneEvidence_20220314
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 48.70 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 74.98 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.31f1 (6b54b7616050)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.31f1/Editor/Data/Resources/UnitySubsystems
@@ -35,92 +35,92 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.31f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.31f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.31f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56352
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56464
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.31f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.31f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002419 seconds.
+Registered in 0.003209 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 42.52 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 64.60 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.595 seconds
+- Completed reload, in  0.790 seconds
 Domain Reload Profiling:
-	ReloadAssembly (596ms)
-		BeginReloadAssembly (67ms)
+	ReloadAssembly (791ms)
+		BeginReloadAssembly (87ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (460ms)
-			LoadAssemblies (65ms)
+		EndReloadAssembly (598ms)
+			LoadAssemblies (85ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (140ms)
+			SetupTypeCache (204ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (29ms)
-			SetupLoadedEditorAssemblies (187ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (230ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (43ms)
-				BeforeProcessingInitializeOnLoad (15ms)
-				ProcessInitializeOnLoadAttributes (88ms)
-				ProcessInitializeOnLoadMethodAttributes (37ms)
+				RefreshPlugins (65ms)
+				BeforeProcessingInitializeOnLoad (22ms)
+				ProcessInitializeOnLoadAttributes (99ms)
+				ProcessInitializeOnLoadMethodAttributes (36ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004994 seconds.
+Registered in 0.003983 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 48.28 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 64.50 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.116 seconds
+- Completed reload, in  1.738 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1117ms)
-		BeginReloadAssembly (144ms)
+	ReloadAssembly (1739ms)
+		BeginReloadAssembly (282ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (913ms)
-			LoadAssemblies (96ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (1340ms)
+			LoadAssemblies (204ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (283ms)
+			SetupTypeCache (504ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (46ms)
-			SetupLoadedEditorAssemblies (364ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (465ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (48ms)
-				BeforeProcessingInitializeOnLoad (87ms)
-				ProcessInitializeOnLoadAttributes (209ms)
-				ProcessInitializeOnLoadMethodAttributes (8ms)
-				AfterProcessingInitializeOnLoad (7ms)
+				RefreshPlugins (65ms)
+				BeforeProcessingInitializeOnLoad (129ms)
+				ProcessInitializeOnLoadAttributes (243ms)
+				ProcessInitializeOnLoadMethodAttributes (10ms)
+				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.55 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 97.0 MB.
+System memory in use before: 97.1 MB.
 System memory in use after: 97.1 MB.
 
 Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2528.
-Total: 2.551500 ms (FindLiveObjects: 0.128300 ms CreateObjectMapping: 0.063800 ms MarkObjects: 2.291200 ms  DeleteObjects: 0.067300 ms)
+Total: 6.721100 ms (FindLiveObjects: 0.511400 ms CreateObjectMapping: 0.696600 ms MarkObjects: 5.353800 ms  DeleteObjects: 0.157900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -135,331 +135,29 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/場景/住宅竊盜案.unity
-  artifactKey: Guid(6b752416d2d68d047b370884b1b4cc3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/場景/住宅竊盜案.unity using Guid(6b752416d2d68d047b370884b1b4cc3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '301f7628e8c43390fb053ee70e9815f8') in 0.008653 seconds 
+  path: Assets/Scripts/DataObject.cs
+  artifactKey: Guid(39d406a34bc01d547adf6d49aff23ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/DataObject.cs using Guid(39d406a34bc01d547adf6d49aff23ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90cfb84eda236155940f2f9fb2e0dcab') in 0.054661 seconds 
 ========================================================================
-Received Import Request.
-  Time since last request: 1264.232919 seconds.
-  path: Assets/場景/住宅竊盜案.unity
-  artifactKey: Guid(6b752416d2d68d047b370884b1b4cc3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/場景/住宅竊盜案.unity using Guid(6b752416d2d68d047b370884b1b4cc3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbfb4ad78cf26940558e371e069a5806') in 0.008412 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 15.764726 seconds.
-  path: Assets/場景/住宅竊盜案.unity
-  artifactKey: Guid(6b752416d2d68d047b370884b1b4cc3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/場景/住宅竊盜案.unity using Guid(6b752416d2d68d047b370884b1b4cc3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b0faf6fe78afbba6b7d8abeb7df9282') in 0.003040 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 182.371682 seconds.
-  path: Assets/圖片/指紋 2 兇殺事件/指紋_兇殺事件_刀子_白色.png
-  artifactKey: Guid(a84e7a63358de794aa49fe648c2162a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/指紋 2 兇殺事件/指紋_兇殺事件_刀子_白色.png using Guid(a84e7a63358de794aa49fe648c2162a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5393fd6f8e041c4bbe2a34b605b4d991') in 0.083746 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.444995 seconds.
-  path: Assets/圖片/指紋 2 兇殺事件/指紋_兇殺事件_刀子_選項1_0009.png
-  artifactKey: Guid(af04675c6ce97164aa7b3d0773c9e1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/指紋 2 兇殺事件/指紋_兇殺事件_刀子_選項1_0009.png using Guid(af04675c6ce97164aa7b3d0773c9e1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59c4036604841227a7b396b2b4caf9cb') in 0.017055 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.709525 seconds.
-  path: Assets/圖片/指紋 2 兇殺事件/指紋_兇殺事件_刀子_選項1_0009.png
-  artifactKey: Guid(af04675c6ce97164aa7b3d0773c9e1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/指紋 2 兇殺事件/指紋_兇殺事件_刀子_選項1_0009.png using Guid(af04675c6ce97164aa7b3d0773c9e1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '958efc7acfccfef434ed5316aa8aa9a5') in 0.052814 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 15.168730 seconds.
-  path: Assets/圖片/指紋 3 竊盜案
-  artifactKey: Guid(a25a6c38cd0004b47bae44334d9ba341) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/指紋 3 竊盜案 using Guid(a25a6c38cd0004b47bae44334d9ba341) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe3f71f37d9868e0dc341c7d30899747') in 0.007478 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.545707 seconds.
-  path: Assets/圖片/指紋 3 竊盜案/指紋_竊盜案_保險櫃_白色.png
-  artifactKey: Guid(106aec30e914db24599bb18c6ae4ff3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/指紋 3 竊盜案/指紋_竊盜案_保險櫃_白色.png using Guid(106aec30e914db24599bb18c6ae4ff3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcbcf86c9021b25e93479e11791b69d3') in 0.015110 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.969978 seconds.
-  path: Assets/圖片/指紋 3 竊盜案/指紋_竊盜案_保險櫃_選項1_0013.png
-  artifactKey: Guid(74f28ff1197ad4e44b2201d3bdfd43c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/指紋 3 竊盜案/指紋_竊盜案_保險櫃_選項1_0013.png using Guid(74f28ff1197ad4e44b2201d3bdfd43c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dd6b39d3ec1fa2ff537b19bb246211a') in 0.017506 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.898270 seconds.
-  path: Assets/圖片/指紋 3 竊盜案/指紋_竊盜案_保險櫃_選項1_0013.png
-  artifactKey: Guid(74f28ff1197ad4e44b2201d3bdfd43c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/指紋 3 竊盜案/指紋_竊盜案_保險櫃_選項1_0013.png using Guid(74f28ff1197ad4e44b2201d3bdfd43c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fde14aeb773f5de02e3385ac109748d') in 0.023689 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.490985 seconds.
-  path: Assets/圖片/指紋 3 竊盜案/指紋_竊盜案_保險櫃_白色.png
-  artifactKey: Guid(106aec30e914db24599bb18c6ae4ff3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/指紋 3 竊盜案/指紋_竊盜案_保險櫃_白色.png using Guid(106aec30e914db24599bb18c6ae4ff3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69d320ac6ba5160fa40463a40b64a1f8') in 0.019342 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 431.855217 seconds.
-  path: Assets/Resources/Level 2/關卡目標物件女性人物.asset
-  artifactKey: Guid(e850785f6fe0a0341bf4bb977c0f3887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡目標物件女性人物.asset using Guid(e850785f6fe0a0341bf4bb977c0f3887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '621db8981d2fba7e9e60f70192ca1dd5') in 0.017562 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.876360 seconds.
-  path: Assets/Resources/Level 2/關卡目標物件相框.asset
-  artifactKey: Guid(6453aa66862eff94fa45898e28f5bfb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡目標物件相框.asset using Guid(6453aa66862eff94fa45898e28f5bfb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae166588ce79d4cb3a0672f714e6982c') in 0.008403 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.470245 seconds.
-  path: Assets/Resources/Level 2/關卡目標物件茶杯.asset
-  artifactKey: Guid(745d5db2770e7d849be3b15dac813b9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡目標物件茶杯.asset using Guid(745d5db2770e7d849be3b15dac813b9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3662a32976ce09657ef75cf6192f35ca') in 0.009341 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.050996 seconds.
-  path: Assets/Resources/Level 2/關卡目標物件血滴.asset
-  artifactKey: Guid(c12fba7b5e15f58438ca41f6aaaf4a0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡目標物件血滴.asset using Guid(c12fba7b5e15f58438ca41f6aaaf4a0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '544d1c26c7bfea170583cd78d45a19e8') in 0.009356 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 11.506977 seconds.
-  path: Assets/Resources/Level 2/關卡目標物件頸部傷口.asset
-  artifactKey: Guid(5a161c30836660048980ffe099c33901) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡目標物件頸部傷口.asset using Guid(5a161c30836660048980ffe099c33901) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '197ec87fcdf8da02d3a2a96664846657') in 0.007382 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 470.127665 seconds.
-  path: Assets/Resources/Level 3/關卡目標物件保險櫃.asset
-  artifactKey: Guid(c02f2821d9f40584c987b55cbcbc7793) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 3/關卡目標物件保險櫃.asset using Guid(c02f2821d9f40584c987b55cbcbc7793) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5936a94b2ac1534fb242d8e5a5c56602') in 0.009747 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.808742 seconds.
-  path: Assets/Resources/Level 3/關卡目標物件文件.asset
-  artifactKey: Guid(d08452f5240e1e145951aeb191619b3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 3/關卡目標物件文件.asset using Guid(d08452f5240e1e145951aeb191619b3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1ba1e9541ddfae1089602b35b11e99e') in 0.007099 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.774494 seconds.
-  path: Assets/Resources/Level 3/關卡目標物件菸蒂.asset
-  artifactKey: Guid(6ac8c22b2c788bc4b99ba2999d277be2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 3/關卡目標物件菸蒂.asset using Guid(6ac8c22b2c788bc4b99ba2999d277be2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67a609af2626c8dacc620b0b435a393c') in 0.007741 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.209909 seconds.
-  path: Assets/Resources/Level 3/關卡目標物件門牌.asset
-  artifactKey: Guid(59997a18da18d7348b5a0a8c07b8cf23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 3/關卡目標物件門牌.asset using Guid(59997a18da18d7348b5a0a8c07b8cf23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3e447224683adec2a49679049cf23e7') in 0.008170 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.565945 seconds.
-  path: Assets/Resources/Level 3/關卡目標物件門鎖.asset
-  artifactKey: Guid(145d96c9c2892094aacb16191a6defc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 3/關卡目標物件門鎖.asset using Guid(145d96c9c2892094aacb16191a6defc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e4a1105a57f5c511b889c19fbc3ef52') in 0.008071 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.747249 seconds.
-  path: Assets/Resources/Level 3/關卡目標物件鞋印.asset
-  artifactKey: Guid(6958066add1cbef4fbc9dd4080f95ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 3/關卡目標物件鞋印.asset using Guid(6958066add1cbef4fbc9dd4080f95ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0f3321f18de014872cb5c2e933630c1') in 0.008054 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 99.511538 seconds.
-  path: Assets/Resources/Level 2/關卡目標物件血跡.asset
-  artifactKey: Guid(6397bb1d7e1c166429727329f24f4919) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡目標物件血跡.asset using Guid(6397bb1d7e1c166429727329f24f4919) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b3165bd4b91336005aa86e06a0b8e5b') in 0.007462 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 70.485530 seconds.
-  path: Assets/Resources/Level 2/關卡目標物件茶杯.asset
-  artifactKey: Guid(745d5db2770e7d849be3b15dac813b9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡目標物件茶杯.asset using Guid(745d5db2770e7d849be3b15dac813b9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ff8ee8877c453ce5121514a8ab38106') in 0.003188 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 591.777046 seconds.
-  path: Assets/Resources/Level 2/關卡目標物件刀子.asset
-  artifactKey: Guid(1dcbd20fa7b17c34ea8e7cdafbff8784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡目標物件刀子.asset using Guid(1dcbd20fa7b17c34ea8e7cdafbff8784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09441f918573d555d498fc15b1d3fa5e') in 0.011731 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.178290 seconds.
-  path: Assets/圖片/介面_遊戲畫面
-  artifactKey: Guid(d14be560f4074b546804b1289c4146e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/介面_遊戲畫面 using Guid(d14be560f4074b546804b1289c4146e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e23aeb4eeed79c0f0eed01ca1299b9c') in 0.007201 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 87.359116 seconds.
-  path: Assets/圖片/刀與傷口
-  artifactKey: Guid(970e9309e5336464aa764423a0054177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/刀與傷口 using Guid(970e9309e5336464aa764423a0054177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5bf262416dbf48947b4e026068c12c5') in 0.009582 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.846600 seconds.
-  path: Assets/圖片/刀與傷口/刀刃_匕首.png
-  artifactKey: Guid(74e7185ae65e34e4aa9e2d092c8c9af2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/刀與傷口/刀刃_匕首.png using Guid(74e7185ae65e34e4aa9e2d092c8c9af2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbcb20ee8408093f985542a3fbcf9993') in 0.022944 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.741061 seconds.
-  path: Assets/圖片/刀與傷口/刀刃_開山刀.png
-  artifactKey: Guid(eda663c6c60e9b440ac0d5f584487d83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/刀與傷口/刀刃_開山刀.png using Guid(eda663c6c60e9b440ac0d5f584487d83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f9264625a4858c234e0207959c9e566') in 0.045699 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.250143 seconds.
-  path: Assets/圖片/刀與傷口/刀刃_開山刀.png
-  artifactKey: Guid(eda663c6c60e9b440ac0d5f584487d83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/刀與傷口/刀刃_開山刀.png using Guid(eda663c6c60e9b440ac0d5f584487d83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fd5d939e63f9a449570e25d4d4c25d8') in 0.031426 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.161256 seconds.
-  path: Assets/圖片/刀與傷口/刀刃切口表面_匕首.png
-  artifactKey: Guid(8b9bef11cc9f1904080cd4b39b9b78a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/刀與傷口/刀刃切口表面_匕首.png using Guid(8b9bef11cc9f1904080cd4b39b9b78a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78c380a447764e0de9a61c7aed190e83') in 0.034875 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.646304 seconds.
-  path: Assets/圖片/刀與傷口/刀刃切口表面_菜刀.png
-  artifactKey: Guid(a8d44eb8350898e4db93ae0db3ea59d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/刀與傷口/刀刃切口表面_菜刀.png using Guid(a8d44eb8350898e4db93ae0db3ea59d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0fd68a5b56c59a21408de6cc4b65e89') in 0.023051 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.070295 seconds.
-  path: Assets/圖片/刀與傷口/刀刃切口表面_鋸子.png
-  artifactKey: Guid(e688342132563b24881fa55429008a27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/刀與傷口/刀刃切口表面_鋸子.png using Guid(e688342132563b24881fa55429008a27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd53910988ad5cfd8c0a965dabc5f020') in 0.022964 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.776562 seconds.
-  path: Assets/圖片/刀與傷口/刀刃切口表面_開山刀.png
-  artifactKey: Guid(429a51add897b894bb7e2676092a9b28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/刀與傷口/刀刃切口表面_開山刀.png using Guid(429a51add897b894bb7e2676092a9b28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81104e0133a3057bac906f54b0e2409d') in 0.022382 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 42.229138 seconds.
-  path: Assets/圖片/刀與傷口/刀刃切口表面_菜刀.png
-  artifactKey: Guid(a8d44eb8350898e4db93ae0db3ea59d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/刀與傷口/刀刃切口表面_菜刀.png using Guid(a8d44eb8350898e4db93ae0db3ea59d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56b142d5e8097faff6bb685f8a07093c') in 0.017059 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1427.246243 seconds.
-  path: Assets/圖片/證物截圖
-  artifactKey: Guid(348163372c7b16042a4d42de06707ff7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/證物截圖 using Guid(348163372c7b16042a4d42de06707ff7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72270a192fb071f9dbda5434709dc7a4') in 0.009350 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 18.498217 seconds.
-  path: Assets/圖片/證物截圖/住宅竊盜案
-  artifactKey: Guid(585a9553ab6d44c4f8cd58edb0fbca15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/證物截圖/住宅竊盜案 using Guid(585a9553ab6d44c4f8cd58edb0fbca15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81298d010327c3428eb7bc8662d8a70b') in 0.008551 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.961059 seconds.
-  path: Assets/圖片/證物截圖/兇殺事件
-  artifactKey: Guid(5a33561f87968e4479a9ad284011efdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/證物截圖/兇殺事件 using Guid(5a33561f87968e4479a9ad284011efdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c9e6078a771ac83fa518e57bc23cb78') in 0.007881 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 548.488118 seconds.
-  path: Assets/圖片/證物截圖/兇殺事件/女性人物.png
-  artifactKey: Guid(c3daa8e00a4a9ab4087277dc8302d3b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/證物截圖/兇殺事件/女性人物.png using Guid(c3daa8e00a4a9ab4087277dc8302d3b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af1d399b0000036686e836dd3e320933') in 0.019615 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.058037 seconds.
-  path: Assets/圖片/證物截圖/兇殺事件/女性人物.png
-  artifactKey: Guid(c3daa8e00a4a9ab4087277dc8302d3b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/證物截圖/兇殺事件/女性人物.png using Guid(c3daa8e00a4a9ab4087277dc8302d3b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a83e89aba0800f58707fd8290416fbb') in 0.019320 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.281265 seconds.
-  path: Assets/圖片/證物截圖/竊盜案
-  artifactKey: Guid(f1fd995e323ddd0478cd710302b16a45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/證物截圖/竊盜案 using Guid(f1fd995e323ddd0478cd710302b16a45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f83647e79fcde401825d5b44ff77fd2') in 0.006119 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.967533 seconds.
-  path: Assets/圖片/證物截圖/竊盜案/門鎖.png
-  artifactKey: Guid(1cfccc5444c3fa340876d5b9ec014f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/證物截圖/竊盜案/門鎖.png using Guid(1cfccc5444c3fa340876d5b9ec014f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8932488681a11b0a1c9aa08a7f10f30a') in 0.017012 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.798738 seconds.
-  path: Assets/圖片/證物截圖/竊盜案/門鎖.png
-  artifactKey: Guid(1cfccc5444c3fa340876d5b9ec014f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/證物截圖/竊盜案/門鎖.png using Guid(1cfccc5444c3fa340876d5b9ec014f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c58e5076045daf19ffe6e84e3b652c2') in 0.020899 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 143.950766 seconds.
-  path: Assets/圖片/證物截圖/竊盜案/鞋印.png
-  artifactKey: Guid(c173ef706e275434f95ccf0614baf5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/證物截圖/竊盜案/鞋印.png using Guid(c173ef706e275434f95ccf0614baf5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f29cfda96f9fa0cf3b8c19cccb5e1b6') in 0.019712 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.774759 seconds.
-  path: Assets/圖片/證物截圖/竊盜案/鞋印.png
-  artifactKey: Guid(c173ef706e275434f95ccf0614baf5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/圖片/證物截圖/竊盜案/鞋印.png using Guid(c173ef706e275434f95ccf0614baf5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76d4419af3ffadb1c63ae08d0c43eb59') in 0.023557 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 39.109673 seconds.
-  path: Assets/Resources/Level 2/關卡目標物件藥罐.asset
-  artifactKey: Guid(c75b8384967073a49aac17a5757add16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡目標物件藥罐.asset using Guid(c75b8384967073a49aac17a5757add16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '902c505116a612349453cd2c2a60d042') in 0.009654 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.281905 seconds.
-  path: Assets/Resources/Level 2/關卡目標物件血滴.asset
-  artifactKey: Guid(c12fba7b5e15f58438ca41f6aaaf4a0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡目標物件血滴.asset using Guid(c12fba7b5e15f58438ca41f6aaaf4a0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62bd5b908b630630cd2bee1a51e362ee') in 0.007437 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 29.365407 seconds.
-  path: Assets/Resources/Level 3/關卡目標物件鞋印.asset
-  artifactKey: Guid(6958066add1cbef4fbc9dd4080f95ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 3/關卡目標物件鞋印.asset using Guid(6958066add1cbef4fbc9dd4080f95ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef872768434fdb6ac3a3790ff69dee1e') in 0.003025 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.046964 seconds.
-  path: Assets/Resources/Level 2/關卡原始物件頸部傷口 1.asset
-  artifactKey: Guid(6d1bd41211d4836488bde5fa750626ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡原始物件頸部傷口 1.asset using Guid(6d1bd41211d4836488bde5fa750626ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77d4a4f7a91759da6b9640aad8c96c5f') in 0.007510 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.876900 seconds.
-  path: Assets/Resources/Level 2/關卡原始物件鞋印.asset
-  artifactKey: Guid(6d1bd41211d4836488bde5fa750626ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡原始物件鞋印.asset using Guid(6d1bd41211d4836488bde5fa750626ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ea0402e98e451ca7ad11919777d566b') in 0.007648 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 14.003708 seconds.
-  path: Assets/Resources/Level 2/關卡原始物件鞋印 1.asset
-  artifactKey: Guid(73f9a1b1fb02866468e825ae8a73e79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡原始物件鞋印 1.asset using Guid(73f9a1b1fb02866468e825ae8a73e79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78919847c8a9a2c83395ebd21ecfaf6a') in 0.010176 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.204643 seconds.
-  path: Assets/Resources/Level 2/關卡目標物件鞋印.asset
-  artifactKey: Guid(73f9a1b1fb02866468e825ae8a73e79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡目標物件鞋印.asset using Guid(73f9a1b1fb02866468e825ae8a73e79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08c8c82df5f25f0fbf6c1b7220f90dca') in 0.003508 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.439222 seconds.
-  path: Assets/Resources/Level 2/關卡原始物件鞋印.asset
-  artifactKey: Guid(6d1bd41211d4836488bde5fa750626ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡原始物件鞋印.asset using Guid(6d1bd41211d4836488bde5fa750626ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbda82a3897b908acec42bc406f62e03') in 0.003991 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.410434 seconds.
-  path: Assets/Resources/Level 2/關卡目標物件頸部傷口.asset
-  artifactKey: Guid(5a161c30836660048980ffe099c33901) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡目標物件頸部傷口.asset using Guid(5a161c30836660048980ffe099c33901) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a618e6014abf04e55898a0bc7103540') in 0.008672 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.129143 seconds.
-  path: Assets/Resources/Level 2/關卡目標物件藥罐.asset
-  artifactKey: Guid(c75b8384967073a49aac17a5757add16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Level 2/關卡目標物件藥罐.asset using Guid(c75b8384967073a49aac17a5757add16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4112bf04f061f9773bea9c58946eebd4') in 0.003789 seconds 
+Received Prepare
+Refreshing native plugins compatible for Editor in 3.90 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 51.2 MB.
+System memory in use after: 51.3 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 2529.
+Total: 4.533900 ms (FindLiveObjects: 0.223600 ms CreateObjectMapping: 0.129300 ms MarkObjects: 4.141000 ms  DeleteObjects: 0.038800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -169,7 +169,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6453aa66862eff94fa45898e28f5bfb7, type: 2}
   - {fileID: 11400000, guid: c75b8384967073a49aac17a5757add16, type: 2}
   dataLevelOriginal:
-  - {fileID: 11400000, guid: 2c07b98c3a96ddd42a2b91470114cb7f, type: 2}
+  - {fileID: 11400000, guid: 83cb2475e86493143b8fa3e5ec5a106f, type: 2}
   - {fileID: 11400000, guid: e3dad6271c615db4e9e7b89f6485786b, type: 2}
   - {fileID: 11400000, guid: e5c750c1390174648a95484d35a501ec, type: 2}
   - {fileID: 11400000, guid: 6c4b19d5f7c42a84f9aaf772c0625ed3, type: 2}
@@ -455,6 +455,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 415809889, guid: c6c491101bd3fc344b89842ef07917f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8331252263983637070, guid: c6c491101bd3fc344b89842ef07917f9, type: 3}
       propertyPath: m_Name
       value: "\u5168\u90E8\u7269\u4EF6\u5147\u6BBA\u4E8B\u4EF6"

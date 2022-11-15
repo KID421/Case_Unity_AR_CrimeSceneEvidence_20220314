@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameEvidenvce: "\u978B\u5370"
   sprImage: {fileID: 21300000, guid: 98f8df0ed0a79bf4a9e1a94735e35c88, type: 3}
+  sprImageFingerPrint: {fileID: 0}
   needCamera: 1
   needEvidenceBag: 0
   needScale: 1
@@ -21,7 +22,7 @@ MonoBehaviour:
   needFingerPrint: 0
   needFlashLight: 0
   typeQuestion: 2
-  stringQuestion: "\u8ACB\u54EA\u4E00\u500B\u70BA\u6B63\u78BA\u7684\u978B\u5370"
+  stringQuestion: "\u8ACB\u554F\u54EA\u4E00\u500B\u70BA\u6B63\u78BA\u7684\u978B\u5370\uFF1F"
   textOption1: 
   textOption2: 
   textOption3: 
@@ -29,3 +30,10 @@ MonoBehaviour:
   imgOption2: {fileID: 21300000, guid: 378d25147dd820545a3c909cd1097613, type: 3}
   imgOption3: {fileID: 21300000, guid: ba581dc6f4b033341860c7ee7bd9607d, type: 3}
   indexAnswer: 2
+  indexAnswerFingerPrint: 0
+  isCorrect: 0
+  isCorrectFingerPrint: 0
+  isChoose: 0
+  countChooseAnswer: 0
+  useDataPage: 0
+  countChooseAnswerFingerPrint: 0

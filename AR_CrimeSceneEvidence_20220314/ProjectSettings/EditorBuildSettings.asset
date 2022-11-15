@@ -14,12 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/\u5834\u666F/\u4F4F\u5B85\u7ACA\u76DC\u6848.unity"
     guid: 6b752416d2d68d047b370884b1b4cc3b
-  - enabled: 1
-    path: "Assets/\u5834\u666F/\u5147\u6BBA\u4E8B\u4EF6.unity"
-    guid: e694df27a47ab9640bf2418597b3de67
-  - enabled: 1
-    path: "Assets/\u5834\u666F/\u7ACA\u76DC\u6848.unity"
-    guid: abff152b4fce94647a8807d632fb5e06
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 32a33bd1971fc9e41a1038577ef12614, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b7ec55c2dc5319440a6cdb1616717caa, type: 2}

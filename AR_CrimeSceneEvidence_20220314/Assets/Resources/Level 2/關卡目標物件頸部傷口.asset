@@ -26,10 +26,10 @@ MonoBehaviour:
   textOption1: 
   textOption2: 
   textOption3: 
-  imgOption1: {fileID: 0}
-  imgOption2: {fileID: 0}
-  imgOption3: {fileID: 0}
-  indexAnswer: 0
+  imgOption1: {fileID: 21300000, guid: 7820542f1e53f6e469d67e218bdc9ce9, type: 3}
+  imgOption2: {fileID: 21300000, guid: 3972698119739e44f94a3c6c63e55965, type: 3}
+  imgOption3: {fileID: 21300000, guid: 6a7392902ee982a4881f4eac50bb7360, type: 3}
+  indexAnswer: 2
   indexAnswerFingerPrint: 0
   isCorrect: 0
   isCorrectFingerPrint: 0

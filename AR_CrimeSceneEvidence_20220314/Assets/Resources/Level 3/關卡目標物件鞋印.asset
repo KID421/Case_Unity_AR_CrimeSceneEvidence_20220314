@@ -22,7 +22,7 @@ MonoBehaviour:
   needFingerPrint: 0
   needFlashLight: 0
   typeQuestion: 2
-  stringQuestion: "\u8ACB\u54EA\u4E00\u500B\u70BA\u6B63\u78BA\u7684\u978B\u5370"
+  stringQuestion: "\u8ACB\u554F\u54EA\u4E00\u500B\u70BA\u6B63\u78BA\u7684\u978B\u5370\uFF1F"
   textOption1: 
   textOption2: 
   textOption3: 
