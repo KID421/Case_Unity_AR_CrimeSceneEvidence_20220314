@@ -15,11 +15,11 @@ C:/KID/Projects/Unity/Case_Unity_AR_CrimeSceneEvidence_20220314/AR_CrimeSceneEvi
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-13930
+8386
 Successfully changed project path to: C:/KID/Projects/Unity/Case_Unity_AR_CrimeSceneEvidence_20220314/AR_CrimeSceneEvidence_20220314
 C:/KID/Projects/Unity/Case_Unity_AR_CrimeSceneEvidence_20220314/AR_CrimeSceneEvidence_20220314
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 74.98 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 133.78 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.31f1 (6b54b7616050)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.31f1/Editor/Data/Resources/UnitySubsystems
@@ -35,92 +35,92 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.31f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.31f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.31f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56464
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56404
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.31f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.31f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003209 seconds.
+Registered in 0.245943 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 64.60 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 43.62 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.790 seconds
+- Completed reload, in  4.097 seconds
 Domain Reload Profiling:
-	ReloadAssembly (791ms)
-		BeginReloadAssembly (87ms)
+	ReloadAssembly (4097ms)
+		BeginReloadAssembly (2872ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (598ms)
-			LoadAssemblies (85ms)
+		EndReloadAssembly (800ms)
+			LoadAssemblies (2875ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (204ms)
+			SetupTypeCache (483ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (35ms)
-			SetupLoadedEditorAssemblies (230ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (170ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (65ms)
-				BeforeProcessingInitializeOnLoad (22ms)
-				ProcessInitializeOnLoadAttributes (99ms)
-				ProcessInitializeOnLoadMethodAttributes (36ms)
+				RefreshPlugins (44ms)
+				BeforeProcessingInitializeOnLoad (15ms)
+				ProcessInitializeOnLoadAttributes (76ms)
+				ProcessInitializeOnLoadMethodAttributes (30ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003983 seconds.
+Registered in 0.464803 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 64.50 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 41.97 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.738 seconds
+- Completed reload, in  5.634 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1739ms)
-		BeginReloadAssembly (282ms)
+	ReloadAssembly (5638ms)
+		BeginReloadAssembly (143ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (1340ms)
-			LoadAssemblies (204ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (5437ms)
+			LoadAssemblies (3009ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (504ms)
+			SetupTypeCache (967ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (59ms)
-			SetupLoadedEditorAssemblies (465ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (1293ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (65ms)
-				BeforeProcessingInitializeOnLoad (129ms)
-				ProcessInitializeOnLoadAttributes (243ms)
-				ProcessInitializeOnLoadMethodAttributes (10ms)
-				AfterProcessingInitializeOnLoad (8ms)
+				RefreshPlugins (42ms)
+				BeforeProcessingInitializeOnLoad (84ms)
+				ProcessInitializeOnLoadAttributes (414ms)
+				ProcessInitializeOnLoadMethodAttributes (743ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.52 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 97.1 MB.
 System memory in use after: 97.1 MB.
 
 Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2528.
-Total: 6.721100 ms (FindLiveObjects: 0.511400 ms CreateObjectMapping: 0.696600 ms MarkObjects: 5.353800 ms  DeleteObjects: 0.157900 ms)
+Total: 2.647200 ms (FindLiveObjects: 0.132900 ms CreateObjectMapping: 0.063200 ms MarkObjects: 2.375800 ms  DeleteObjects: 0.074400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -135,19 +135,37 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/DataObject.cs
-  artifactKey: Guid(39d406a34bc01d547adf6d49aff23ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/DataObject.cs using Guid(39d406a34bc01d547adf6d49aff23ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90cfb84eda236155940f2f9fb2e0dcab') in 0.054661 seconds 
+  path: Assets/Resources/Level 2/關卡目標物件鞋印.asset
+  artifactKey: Guid(73f9a1b1fb02866468e825ae8a73e79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Level 2/關卡目標物件鞋印.asset using Guid(73f9a1b1fb02866468e825ae8a73e79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd61c7482ff4c1fb676c6683ba35e909c') in 0.052459 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 144.683727 seconds.
+  path: Assets/Resources/Level 2/關卡目標物件鞋印.asset
+  artifactKey: Guid(73f9a1b1fb02866468e825ae8a73e79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Level 2/關卡目標物件鞋印.asset using Guid(73f9a1b1fb02866468e825ae8a73e79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee59c932163f92d1065a5c31e580fb89') in 0.004754 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.488480 seconds.
+  path: Assets/Resources/Level 2/關卡目標物件鞋印.asset
+  artifactKey: Guid(73f9a1b1fb02866468e825ae8a73e79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Level 2/關卡目標物件鞋印.asset using Guid(73f9a1b1fb02866468e825ae8a73e79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f33273026bf055bc807c1fb52b90dc97') in 0.005769 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 578.598089 seconds.
+  path: Assets/Resources/Level 3/關卡目標物件鞋印.asset
+  artifactKey: Guid(6958066add1cbef4fbc9dd4080f95ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Level 3/關卡目標物件鞋印.asset using Guid(6958066add1cbef4fbc9dd4080f95ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1544fe0760ef8ad2885a4e9587959ddb') in 0.005088 seconds 
 ========================================================================
 Received Prepare
-Refreshing native plugins compatible for Editor in 3.90 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 2.98 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 51.2 MB.
-System memory in use after: 51.3 MB.
+System memory in use before: 51.3 MB.
+System memory in use after: 51.4 MB.
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 2529.
-Total: 4.533900 ms (FindLiveObjects: 0.223600 ms CreateObjectMapping: 0.129300 ms MarkObjects: 4.141000 ms  DeleteObjects: 0.038800 ms)
+Total: 3.536200 ms (FindLiveObjects: 0.156900 ms CreateObjectMapping: 0.085000 ms MarkObjects: 3.270900 ms  DeleteObjects: 0.022500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 

@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -6,33 +6,33 @@ using TMPro;
 namespace KID
 {
     /// <summary>
-    /// ºŞ²z¾¹¡G¿ï¨ú¦a¹Ï
+    /// ç®¡ç†å™¨ï¼šé¸å–åœ°åœ–
     /// </summary>
     public class ManagerSelectionMap : MonoBehaviour
     {
-        [SerializeField, Header("Ãö¥d«ö¶s")]
+        [SerializeField, Header("é—œå¡æŒ‰éˆ•")]
         private Button[] btnMaps;
-        [SerializeField, Header("Ãö¥d»y­µ»¡©ú")]
+        [SerializeField, Header("é—œå¡èªéŸ³èªªæ˜")]
         private AudioClip[] soundDescriptions;
 
         private RectTransform[] rectMaps;
         /// <summary>
-        /// ¿ï¨ú¹Ï¥Ü
+        /// é¸å–åœ–ç¤º
         /// </summary>
         private RectTransform rectSelect;
         /// <summary>
-        /// ³õ´º¼ĞÃD
+        /// å ´æ™¯æ¨™é¡Œ
         /// </summary>
         private Text textMapSelect;
         private string[] nameMaps =
         {
-            "¦í¦vÅÑµs®×", "¥û±ş¨Æ¥ó", "ÅÑµs®×"
+            "ä½å®…ç«Šç›œæ¡ˆ", "å…‡æ®ºäº‹ä»¶", "ç«Šç›œæ¡ˆ"
         };
         private string[] descriptionMaps =
         {
-            "§õ¥ı¥Í©~¦í¦b¤p¤½´J¡A¤U¯Zªğ®a«á¡Aµo²{¦í®aºÃ¦ü¾D¤H«I¤J¡A¦³°]ª«·l¥¢¡A³øÄµ³B²z¡C",
-            "¤ı¤p©j©~¦í¦b¤½´J¤p®M©Ğ¡A¦³¤@¤é¨S¦³¨Ó¤W¯Z¡A¦P¨Æ¤]³sµ¸¤£¤W¡A©ó¬O¨ì±JªÙ§ä¦o¡Aµo²{­Ëª×¦a¤W¡A¤w¸g¨S¦³¤ß¸õ...",
-            "¬Y¤j¼Ó1¼Óµo¥Í¤@°_¦í¦vÅÑµs®×¡A¾Ú³Q®`«Î¥D³¯­z¦@¦³ª÷¹¢¼Æ±ø¡B¯]Ä_¤@§åµ¥ª«¾DÅÑ¡A°]ª«·l¥¢²Ê¦ô¹F¤W¦Ê¸U¤¸..."
+            "æå…ˆç”Ÿå±…ä½åœ¨å°å…¬å¯“ï¼Œä¸‹ç­è¿”å®¶å¾Œï¼Œç™¼ç¾ä½å®¶ç–‘ä¼¼é­äººä¾µå…¥ï¼Œæœ‰è²¡ç‰©æå¤±ï¼Œå ±è­¦è™•ç†ã€‚",
+            "ç‹å°å§å±…ä½åœ¨å…¬å¯“å°å¥—æˆ¿ï¼Œæœ‰ä¸€æ—¥æ²’æœ‰ä¾†ä¸Šç­ï¼ŒåŒäº‹ä¹Ÿé€£çµ¡ä¸ä¸Šï¼Œæ–¼æ˜¯åˆ°å®¿èˆæ‰¾å¥¹ï¼Œç™¼ç¾å€’è‡¥åœ°ä¸Šï¼Œå·²ç¶“æ²’æœ‰å¿ƒè·³...",
+            "æŸå¤§æ¨“1æ¨“ç™¼ç”Ÿä¸€èµ·ä½å®…ç«Šç›œæ¡ˆï¼Œæ“šè¢«å®³å±‹ä¸»é™³è¿°å…±æœ‰é‡‘é£¾æ•¸æ¢ã€ç å¯¶ä¸€æ‰¹ç­‰ç‰©é­ç«Šï¼Œè²¡ç‰©æå¤±ç²—ä¼°é”ä¸Šç™¾è¬å…ƒ..."
         };
         private AudioSource aud;
         private CanvasGroup groupLevelDescription;
@@ -44,13 +44,13 @@ namespace KID
         {
             aud = GetComponent<AudioSource>();
 
-            rectSelect = GameObject.Find("¿ï¨ú¹Ï¥Ü").GetComponent<RectTransform>();
-            textMapSelect = GameObject.Find("³õ´º¼ĞÃD").GetComponent<Text>();
+            rectSelect = GameObject.Find("é¸å–åœ–ç¤º").GetComponent<RectTransform>();
+            textMapSelect = GameObject.Find("å ´æ™¯æ¨™é¡Œ").GetComponent<Text>();
 
-            groupLevelDescription = GameObject.Find("Ãö¥d¤¶²Ğ¸s²Õ").GetComponent<CanvasGroup>();
-            btnSelectConfirm = GameObject.Find("«ö¶sÃö¥d½T©w").GetComponent<Button>();
-            btnSelectCancel = GameObject.Find("«ö¶sÃö¥d¨ú®ø").GetComponent<Button>();
-            textDescription = GameObject.Find("Ãö¥d¤¶²Ğ¤å¦r").GetComponent<TextMeshProUGUI>();
+            groupLevelDescription = GameObject.Find("é—œå¡ä»‹ç´¹ç¾¤çµ„").GetComponent<CanvasGroup>();
+            btnSelectConfirm = GameObject.Find("æŒ‰éˆ•é—œå¡ç¢ºå®š").GetComponent<Button>();
+            btnSelectCancel = GameObject.Find("æŒ‰éˆ•é—œå¡å–æ¶ˆ").GetComponent<Button>();
+            textDescription = GameObject.Find("é—œå¡ä»‹ç´¹æ–‡å­—").GetComponent<TextMeshProUGUI>();
 
             btnSelectCancel.onClick.AddListener(() =>
             {
@@ -70,7 +70,7 @@ namespace KID
         }
 
         /// <summary>
-        /// ¿ï¨úÃö¥d
+        /// é¸å–é—œå¡
         /// </summary>
         private void SelectMap()
         {

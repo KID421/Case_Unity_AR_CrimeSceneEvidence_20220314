@@ -1,11 +1,11 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
 namespace KID
 {
     /// <summary>
-    /// �ϥܺ޲z��
+    /// 圖示管理器
     /// </summary>
     public class ManagerIcon : MonoBehaviour
     {

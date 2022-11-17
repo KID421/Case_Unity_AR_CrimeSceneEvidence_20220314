@@ -1,28 +1,28 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace KID
 {
     /// <summary>
-    /// Ãö¥d¤¬°Ê¸ê®Æ
+    /// é—œå¡äº’å‹•è³‡æ–™
     /// </summary>
     public class DataLevelInteracte : MonoBehaviour
     {
-        [Header("­n³Q°»´úªº©Ò¦³ª«¥ó")]
+        [Header("è¦è¢«åµæ¸¬çš„æ‰€æœ‰ç‰©ä»¶")]
         public ObjectToCheck[] objectsToCheck;
 
         /// <summary>
-        /// Ãö¥d­n§¹¦¨ªº¥Ø¼Ğ
+        /// é—œå¡è¦å®Œæˆçš„ç›®æ¨™
         /// </summary>
         public DataObject[] dataLevelGoal;
         /// <summary>
-        /// Ãö¥d¤º­ì©lªºª«¥ó
+        /// é—œå¡å…§åŸå§‹çš„ç‰©ä»¶
         /// </summary>
         public DataObject[] dataLevelOriginal;
 
         public static DataLevelInteracte instance;
 
         /// <summary>
-        /// Á`¤À
+        /// ç¸½åˆ†
         /// </summary>
         public int scoreTotal => ScoreTotal();
 
@@ -57,7 +57,7 @@ namespace KID
         }
 
         /// <summary>
-        /// ¤À¼ÆÁ`¤À­pºâ
+        /// åˆ†æ•¸ç¸½åˆ†è¨ˆç®—
         /// </summary>
         /// <returns></returns>
         private int ScoreTotal()

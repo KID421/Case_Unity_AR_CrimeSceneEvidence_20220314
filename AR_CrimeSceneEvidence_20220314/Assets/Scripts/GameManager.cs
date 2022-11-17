@@ -1,39 +1,39 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace KID
 {
     /// <summary>
-    /// ¹CÀ¸ºŞ²z¾¹¡G¼È°±¡Bªğ¦^
+    /// éŠæˆ²ç®¡ç†å™¨ï¼šæš«åœã€è¿”å›
     /// </summary>
     public class GameManager : MonoBehaviour
     {
-        [SerializeField, Header("¼È°±¶Â¹õ")]
+        [SerializeField, Header("æš«åœé»‘å¹•")]
         private GameObject goPauseBlack;
 
         /// <summary>
-        /// ¼È°±
+        /// æš«åœ
         /// </summary>
         private Button btnPause;
         /// <summary>
-        /// ªğ¦^
+        /// è¿”å›
         /// </summary>
         private Button btnBack;
 
-        private string nameBackScene = "¿ï¨úÃö¥d";
+        private string nameBackScene = "é¸å–é—œå¡";
 
         private void Awake()
         {
-            btnPause = GameObject.Find("¼È°±").GetComponent<Button>();
-            btnBack = GameObject.Find("ªğ¦^").GetComponent<Button>();
+            btnPause = GameObject.Find("æš«åœ").GetComponent<Button>();
+            btnBack = GameObject.Find("è¿”å›").GetComponent<Button>();
 
             btnPause.onClick.AddListener(Pause);
             btnBack.onClick.AddListener(BackToMenu);
         }
 
         /// <summary>
-        /// ¼È°±
+        /// æš«åœ
         /// </summary>
         private void Pause()
         {
@@ -42,7 +42,7 @@ namespace KID
         }
 
         /// <summary>
-        /// ªğ¦^
+        /// è¿”å›
         /// </summary>
         private void BackToMenu()
         {

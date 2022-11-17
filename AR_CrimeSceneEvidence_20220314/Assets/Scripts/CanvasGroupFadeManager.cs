@@ -1,10 +1,10 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 
 namespace KID
 {
     /// <summary>
-    /// µe¥¬¸s²ÕºŞ²z¾¹¡G²H¤J²H¥X
+    /// ç•«å¸ƒç¾¤çµ„ç®¡ç†å™¨ï¼šæ·¡å…¥æ·¡å‡º
     /// </summary>
     public class CanvasGroupFadeManager : MonoBehaviour
     {
@@ -21,10 +21,10 @@ namespace KID
         }
 
         /// <summary>
-        /// ²H¤J²H¥X
+        /// æ·¡å…¥æ·¡å‡º
         /// </summary>
-        /// <param name="_groupTarget">¸s²Õ¥Ø¼Ğ</param>
-        /// <param name="_fadeIn">¬O§_²H¤J</param>
+        /// <param name="_groupTarget">ç¾¤çµ„ç›®æ¨™</param>
+        /// <param name="_fadeIn">æ˜¯å¦æ·¡å…¥</param>
         public void Fade(CanvasGroup _groupTarget, bool _fadeIn = true)
         {
             groupTarget = _groupTarget;
@@ -33,7 +33,7 @@ namespace KID
         }
 
         /// <summary>
-        /// ²H¤J²H¥X®ÄªG
+        /// æ·¡å…¥æ·¡å‡ºæ•ˆæœ
         /// </summary>
         private IEnumerator FadeEffect()
         {

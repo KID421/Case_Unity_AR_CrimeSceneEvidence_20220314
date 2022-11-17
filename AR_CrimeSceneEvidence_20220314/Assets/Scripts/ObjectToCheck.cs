@@ -1,21 +1,21 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace KID
 {
     /// <summary>
-    /// »İ­n³QÀË¬dªºª«¥ó
+    /// éœ€è¦è¢«æª¢æŸ¥çš„ç‰©ä»¶
     /// </summary>
     public class ObjectToCheck : MonoBehaviour
     {
-        [Header("ª«¥ó¸ê®Æ¡GÃö¥d¥Ø¼Ğ")]
+        [Header("ç‰©ä»¶è³‡æ–™ï¼šé—œå¡ç›®æ¨™")]
         public DataObject dataGoal;
-        [Header("ª«¥ó¸ê®Æ¡GÃö¥d­ì©l")]
+        [Header("ç‰©ä»¶è³‡æ–™ï¼šé—œå¡åŸå§‹")]
         public DataObject dataOriginal;
-        [Header("­nÅã¥Üªº«ü¯¾")]
+        [Header("è¦é¡¯ç¤ºçš„æŒ‡ç´‹")]
         public SpriteRenderer[] goFingerPrints;
-        [Header("¯S®Ä")]
+        [Header("ç‰¹æ•ˆ")]
         public ParticleSystem psEffect;
-        [Header("¤ñ¨Ò¤Ø")]
+        [Header("æ¯”ä¾‹å°º")]
         public GameObject goScale;
     }
 }

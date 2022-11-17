@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
@@ -7,11 +7,11 @@ using TMPro;
 namespace KID
 {
     /// <summary>
-    /// ¶}©lµe­±ºŞ²z¾¹
+    /// é–‹å§‹ç•«é¢ç®¡ç†å™¨
     /// </summary>
     public class MenuManager : MonoBehaviour
     {
-        private string sceneToLoad = "¿ï¨úÃö¥d";
+        private string sceneToLoad = "é¸å–é—œå¡";
         private Transform traLoadingCircle;
         private float angleToRotate = 90;
         private CanvasGroup groupLoading;
@@ -27,13 +27,13 @@ namespace KID
         private void Awake()
         {
 
-            traLoadingCircle = GameObject.Find("¸ü¤J¹CÀ¸¶ê°é").transform;
-            groupLoading = GameObject.Find("¸ü¤J¹CÀ¸¸s²Õ").GetComponent<CanvasGroup>();
-            groupBtnStart = GameObject.Find("«ö¶s¶}©l¹CÀ¸").GetComponent<CanvasGroup>();
-            groupLogin = GameObject.Find("µn¤J¸s²Õ").GetComponent<CanvasGroup>();
+            traLoadingCircle = GameObject.Find("è¼‰å…¥éŠæˆ²åœ“åœˆ").transform;
+            groupLoading = GameObject.Find("è¼‰å…¥éŠæˆ²ç¾¤çµ„").GetComponent<CanvasGroup>();
+            groupBtnStart = GameObject.Find("æŒ‰éˆ•é–‹å§‹éŠæˆ²").GetComponent<CanvasGroup>();
+            groupLogin = GameObject.Find("ç™»å…¥ç¾¤çµ„").GetComponent<CanvasGroup>();
             btnStart = groupBtnStart.GetComponent<Button>();
-            btnConfirm = GameObject.Find("«ö¶s½T©w").GetComponent<Button>();
-            inputFieldID = GameObject.Find("¿é¤JÄæ¦ì ID").GetComponent<TMP_InputField>();
+            btnConfirm = GameObject.Find("æŒ‰éˆ•ç¢ºå®š").GetComponent<Button>();
+            inputFieldID = GameObject.Find("è¼¸å…¥æ¬„ä½ ID").GetComponent<TMP_InputField>();
             inputFieldID.onEndEdit.AddListener(input => PlayerPrefs.SetString("id", input));
         }
 
@@ -43,7 +43,7 @@ namespace KID
         }
 
         /// <summary>
-        /// ¸ü¤J
+        /// è¼‰å…¥
         /// </summary>
         private IEnumerator Loading()
         {
@@ -61,7 +61,7 @@ namespace KID
         }
 
         /// <summary>
-        /// ÂIÀ»¶}©l
+        /// é»æ“Šé–‹å§‹
         /// </summary>
         private IEnumerator ClickStart()
         {

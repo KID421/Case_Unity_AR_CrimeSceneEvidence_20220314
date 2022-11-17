@@ -1,73 +1,73 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
 namespace KID
 {
     /// <summary>
-    /// ¤¬°ÊºŞ²z¾¹
+    /// äº’å‹•ç®¡ç†å™¨
     /// </summary>
     public class ManagerInteracte : MonoBehaviour
     {
-        #region ¸ê®Æ
+        #region è³‡æ–™
         [SerializeField, Header("AR Camera")]
         private Camera cam;
-        [SerializeField, Header("®g½u¶ZÂ÷"), Range(0, 100)]
+        [SerializeField, Header("å°„ç·šè·é›¢"), Range(0, 100)]
         private float camLength = 10;
-        [SerializeField, Header("­n°»´úªºª«¥ó¹Ï¼h")]
+        [SerializeField, Header("è¦åµæ¸¬çš„ç‰©ä»¶åœ–å±¤")]
         private LayerMask layerToCheck;
-        [SerializeField, Header("¹Ï¥Ü DNA ´Öªá´Î")]
+        [SerializeField, Header("åœ–ç¤º DNA æ£‰èŠ±æ£’")]
         private Sprite spriteIconDNACottonSwab;
-        [SerializeField, Header("¹Ï¥Ü¤ñ¨Ò¤Ø")]
+        [SerializeField, Header("åœ–ç¤ºæ¯”ä¾‹å°º")]
         private Sprite spriteIconScale;
-        [SerializeField, Header("¹Ï¥Ü¤ò¨ê")]
+        [SerializeField, Header("åœ–ç¤ºæ¯›åˆ·")]
         private Sprite spriteIconBrush;
-        [SerializeField, Header("¹Ï¥Ü¬Û¾÷")]
+        [SerializeField, Header("åœ–ç¤ºç›¸æ©Ÿ")]
         private Sprite spriteIconCamera;
-        [SerializeField, Header("¹Ï¥ÜÃÒª«³U")]
+        [SerializeField, Header("åœ–ç¤ºè­‰ç‰©è¢‹")]
         private Sprite spriteIconEvidenceBag;
-        [SerializeField, Header("«á´Á³B²zÅé¿nª«¥ó")]
+        [SerializeField, Header("å¾ŒæœŸè™•ç†é«”ç©ç‰©ä»¶")]
         private GameObject goPPVolume;
 
         /// <summary>
-        /// ¤u¨ã¹Ï¥Ü
+        /// å·¥å…·åœ–ç¤º
         /// </summary>
         private Image imgIconTool;
         private RectTransform rectImgIconTool;
         /// <summary>
-        /// ¿ï¤¤ªºª«¥ó
+        /// é¸ä¸­çš„ç‰©ä»¶
         /// </summary>
         private Text textChooseObject;
         /// <summary>
-        /// °Ê§@°T®§
+        /// å‹•ä½œè¨Šæ¯
         /// </summary>
         private Text textActionMessage;
         /// <summary>
-        /// ¤u¨ã¤â¹qµ©
+        /// å·¥å…·æ‰‹é›»ç­’
         /// </summary>
         private Button btnFlashLight;
         /// <summary>
-        /// ¤u¨ãDNA
+        /// å·¥å…·DNA
         /// </summary>
         private Button btnDNA;
         /// <summary>
-        /// ¤u¨ãÃÒª«³U
+        /// å·¥å…·è­‰ç‰©è¢‹
         /// </summary>
         private Button btnEvidenceBag;
         /// <summary>
-        /// ¤u¨ã¤ñ¨Ò¤Ø
+        /// å·¥å…·æ¯”ä¾‹å°º
         /// </summary>
         private Button btnScale;
         /// <summary>
-        /// ¤u¨ã«ü¯¾
+        /// å·¥å…·æŒ‡ç´‹
         /// </summary>
         private Button btnFingerPrint;
         /// <summary>
-        /// ¤u¨ã¬Û¾÷
+        /// å·¥å…·ç›¸æ©Ÿ
         /// </summary>
         private Button btnCamera;
         /// <summary>
-        /// ¨Ï¥Î
+        /// ä½¿ç”¨
         /// </summary>
         private Button btnUse;
 
@@ -90,12 +90,12 @@ namespace KID
         private void Awake()
         {
             cam = GameObject.Find("AR Camera").GetComponent<Camera>();
-            textChooseObject = GameObject.Find("¿ï¤¤ªºª«¥ó").GetComponent<Text>();
-            textActionMessage = GameObject.Find("°Ê§@°T®§").GetComponent<Text>();
-            imgIconTool = GameObject.Find("¤u¨ã¹Ï¥Ü").GetComponent<Image>();
+            textChooseObject = GameObject.Find("é¸ä¸­çš„ç‰©ä»¶").GetComponent<Text>();
+            textActionMessage = GameObject.Find("å‹•ä½œè¨Šæ¯").GetComponent<Text>();
+            imgIconTool = GameObject.Find("å·¥å…·åœ–ç¤º").GetComponent<Image>();
             rectImgIconTool = imgIconTool.GetComponent<RectTransform>();
-            imgCameraEffectTop = GameObject.Find("©ç·Ó®ÄªG¤W¤è").GetComponent<Image>();
-            imgCameraEffectBottom = GameObject.Find("©ç·Ó®ÄªG¤U¤è").GetComponent<Image>();
+            imgCameraEffectTop = GameObject.Find("æ‹ç…§æ•ˆæœä¸Šæ–¹").GetComponent<Image>();
+            imgCameraEffectBottom = GameObject.Find("æ‹ç…§æ•ˆæœä¸‹æ–¹").GetComponent<Image>();
 
             ToolAndUseButtonsFind();
             ToolButtonsClick();
@@ -108,21 +108,21 @@ namespace KID
         }
 
         /// <summary>
-        /// ¤u¨ã»P¨Ï¥Î«ö¶s´M§ä
+        /// å·¥å…·èˆ‡ä½¿ç”¨æŒ‰éˆ•å°‹æ‰¾
         /// </summary>
         private void ToolAndUseButtonsFind()
         {
-            btnFlashLight = GameObject.Find("¤u¨ã¤â¹qµ©").GetComponent<Button>();
-            btnDNA = GameObject.Find("¤u¨ãDNA").GetComponent<Button>();
-            btnEvidenceBag = GameObject.Find("¤u¨ãÃÒª«³U").GetComponent<Button>();
-            btnScale = GameObject.Find("¤u¨ã¤ñ¨Ò¤Ø").GetComponent<Button>();
-            btnFingerPrint = GameObject.Find("¤u¨ã«ü¯¾").GetComponent<Button>();
-            btnCamera = GameObject.Find("¤u¨ã¬Û¾÷").GetComponent<Button>();
-            btnUse = GameObject.Find("¨Ï¥Î").GetComponent<Button>();
+            btnFlashLight = GameObject.Find("å·¥å…·æ‰‹é›»ç­’").GetComponent<Button>();
+            btnDNA = GameObject.Find("å·¥å…·DNA").GetComponent<Button>();
+            btnEvidenceBag = GameObject.Find("å·¥å…·è­‰ç‰©è¢‹").GetComponent<Button>();
+            btnScale = GameObject.Find("å·¥å…·æ¯”ä¾‹å°º").GetComponent<Button>();
+            btnFingerPrint = GameObject.Find("å·¥å…·æŒ‡ç´‹").GetComponent<Button>();
+            btnCamera = GameObject.Find("å·¥å…·ç›¸æ©Ÿ").GetComponent<Button>();
+            btnUse = GameObject.Find("ä½¿ç”¨").GetComponent<Button>();
         }
 
         /// <summary>
-        /// ¤u¨ã«ö¶sÂIÀ»
+        /// å·¥å…·æŒ‰éˆ•é»æ“Š
         /// </summary>
         private void ToolButtonsClick()
         {
@@ -135,7 +135,7 @@ namespace KID
         }
 
         /// <summary>
-        /// ¿ï¾Ü¤u¨ã
+        /// é¸æ“‡å·¥å…·
         /// </summary>
         private void ChooseTool(TypeEvidence _typeChooseTool)
         {
@@ -176,11 +176,11 @@ namespace KID
         }
 
         /// <summary>
-        /// ¨Ï¥Î¤u¨ã
+        /// ä½¿ç”¨å·¥å…·
         /// </summary>
         private void UseTool()
         {
-            // ¦pªG¤£¬O¤â¹qµ© ¨Ã¥B ¦pªG¨S¦³¥Ø¼Ğ¸ê®Æ´N¸õ¥X
+            // å¦‚æœä¸æ˜¯æ‰‹é›»ç­’ ä¸¦ä¸” å¦‚æœæ²’æœ‰ç›®æ¨™è³‡æ–™å°±è·³å‡º
             if (typeChooseTool != TypeEvidence.FlashLight && !dataTargetGoal ) return;
 
             bool result = false;
@@ -213,17 +213,17 @@ namespace KID
         }
 
         /// <summary>
-        /// ¨Ï¥Î¤â¹qµ©
+        /// ä½¿ç”¨æ‰‹é›»ç­’
         /// </summary>
         private bool UseFlashLight()
         {
-            print("¨Ï¥Î¤â¹qµ©");
+            print("ä½¿ç”¨æ‰‹é›»ç­’");
 
             
             if (dataTargetGoal.needFlashLight)
             {
-                print("<color=green>¨Ï¥Î¤â¹qµ©¦¨¥\</color>");
-                textActionMessage.text = nameTarget + " ¨Ï¥Î¤â¹qµ©¦¨¥\";
+                print("<color=green>ä½¿ç”¨æ‰‹é›»ç­’æˆåŠŸ</color>");
+                textActionMessage.text = nameTarget + " ä½¿ç”¨æ‰‹é›»ç­’æˆåŠŸ";
                 dataTargetOriginal.needFlashLight = true;
 
                 goPPVolume.SetActive(!goPPVolume.activeInHierarchy);
@@ -231,31 +231,31 @@ namespace KID
             }
             else
             {
-                print("<color=red>¦¹ª«¥ó¤£»İ­n¨Ï¥Î¤â¹qµ©</color>");
-                textActionMessage.text = nameTarget + " ¦¹ª«¥ó¤£»İ­n¨Ï¥Î¤â¹qµ©";
+                print("<color=red>æ­¤ç‰©ä»¶ä¸éœ€è¦ä½¿ç”¨æ‰‹é›»ç­’</color>");
+                textActionMessage.text = nameTarget + " æ­¤ç‰©ä»¶ä¸éœ€è¦ä½¿ç”¨æ‰‹é›»ç­’";
 
                 return false;
             }
         }
 
         /// <summary>
-        /// ©ñ¤JÃÒª«³U
+        /// æ”¾å…¥è­‰ç‰©è¢‹
         /// </summary>
         private bool UseEvidenceBag()
         {
-            print("©ñ¤JÃÒª«³U");
+            print("æ”¾å…¥è­‰ç‰©è¢‹");
 
             if (dataTargetGoal.needFlashLight)
             {
                 if (!dataTargetOriginal.needFlashLight)
                 {
-                    print("<color=red>©ñ¤JÃÒª«³U¥¢±Ñ¡A©|¥¼§¹¦¨¤â¹qµ©°»´ú</color>");
+                    print("<color=red>æ”¾å…¥è­‰ç‰©è¢‹å¤±æ•—ï¼Œå°šæœªå®Œæˆæ‰‹é›»ç­’åµæ¸¬</color>");
 
                     return false;
                 }
                 else
                 {
-                    print("<color=green>¤â¹qµ©°»´ú¤w³B²z§¹¦¨¡I</color>");
+                    print("<color=green>æ‰‹é›»ç­’åµæ¸¬å·²è™•ç†å®Œæˆï¼</color>");
                 }
             }
 
@@ -263,20 +263,20 @@ namespace KID
             {
                 if (!dataTargetOriginal.needCamera)
                 {
-                    print("<color=red>©ñ¤JÃÒª«³U¥¢±Ñ¡A©|¥¼§¹¦¨©ç·Ó</color>");
+                    print("<color=red>æ”¾å…¥è­‰ç‰©è¢‹å¤±æ•—ï¼Œå°šæœªå®Œæˆæ‹ç…§</color>");
 
                     return false;
                 }
                 else
                 {
-                    print("<color=green>©ç·Ó¤w³B²z§¹¦¨¡I</color>");
+                    print("<color=green>æ‹ç…§å·²è™•ç†å®Œæˆï¼</color>");
                 }
             }
 
             if (dataTargetGoal.needEvidenceBag)
             {
-                print("<color=green>©ñ¤JÃÒª«³U¦¨¥\</color>");
-                textActionMessage.text = nameTarget + " ©ñ¤JÃÒª«³U¦¨¥\";
+                print("<color=green>æ”¾å…¥è­‰ç‰©è¢‹æˆåŠŸ</color>");
+                textActionMessage.text = nameTarget + " æ”¾å…¥è­‰ç‰©è¢‹æˆåŠŸ";
                 dataTargetOriginal.needEvidenceBag = true;
 
                 MissionObjectManager.instance.UpdateMission();
@@ -285,24 +285,24 @@ namespace KID
             }
             else
             {
-                print("<color=red>¦¹ª«¥ó¤£»İ­n©ñ¤JÃÒª«³U</color>");
-                textActionMessage.text = nameTarget + " ¦¹ª«¥ó¤£»İ­n©ñ¤JÃÒª«³U";
+                print("<color=red>æ­¤ç‰©ä»¶ä¸éœ€è¦æ”¾å…¥è­‰ç‰©è¢‹</color>");
+                textActionMessage.text = nameTarget + " æ­¤ç‰©ä»¶ä¸éœ€è¦æ”¾å…¥è­‰ç‰©è¢‹";
 
                 return false;
             }
         }
 
         /// <summary>
-        /// ´ú¶q¤Ø¤o
+        /// æ¸¬é‡å°ºå¯¸
         /// </summary>
         private bool UseScale()
         {
-            print("´ú¶q¤Ø¤o");
+            print("æ¸¬é‡å°ºå¯¸");
 
             if (dataTargetGoal.needScale)
             {
-                print("<color=green>´ú¶q¤Ø¤o¦¨¥\</color>");
-                textActionMessage.text = nameTarget + " ´ú¶q¤Ø¤o¦¨¥\";
+                print("<color=green>æ¸¬é‡å°ºå¯¸æˆåŠŸ</color>");
+                textActionMessage.text = nameTarget + " æ¸¬é‡å°ºå¯¸æˆåŠŸ";
                 dataTargetOriginal.needScale = true;
                 objectToCheckCurrent.goScale.SetActive(true);
                 imgIconTool.color = new Color(1, 1, 1, 0);
@@ -311,32 +311,32 @@ namespace KID
             }
             else
             {
-                print("<color=red>¦¹ª«¥ó¤£»İ­n´ú¶q¤Ø¤o</color>");
-                textActionMessage.text = nameTarget + " ¦¹ª«¥ó¤£»İ­n´ú¶q¤Ø¤o";
+                print("<color=red>æ­¤ç‰©ä»¶ä¸éœ€è¦æ¸¬é‡å°ºå¯¸</color>");
+                textActionMessage.text = nameTarget + " æ­¤ç‰©ä»¶ä¸éœ€è¦æ¸¬é‡å°ºå¯¸";
 
                 return false;
             }
         }
 
         /// <summary>
-        /// ±Ä¶°«ü¯¾
+        /// æ¡é›†æŒ‡ç´‹
         /// </summary>
         private bool UseFingerPrint()
         {
-            print("±Ä¶°«ü¯¾");
+            print("æ¡é›†æŒ‡ç´‹");
 
             if (dataTargetGoal.needFingerPrint)
             {
                 if (dataTargetOriginal.needFingerPrint)
                 {
-                    print("<color=green>¤w¸g±Ä¶°¹L«ü¯¾</color>");
+                    print("<color=green>å·²ç¶“æ¡é›†éæŒ‡ç´‹</color>");
 
                     return false;
                 }
                 else
                 {
-                    print("<color=green>±Ä¶°«ü¯¾¦¨¥\</color>");
-                    textActionMessage.text = nameTarget + " ±Ä¶°«ü¯¾¦¨¥\";
+                    print("<color=green>æ¡é›†æŒ‡ç´‹æˆåŠŸ</color>");
+                    textActionMessage.text = nameTarget + " æ¡é›†æŒ‡ç´‹æˆåŠŸ";
                     dataTargetOriginal.needFingerPrint = true;
                 }
 
@@ -344,19 +344,19 @@ namespace KID
             }
             else
             {
-                print("<color=red>¦¹ª«¥ó¤£»İ±Ä¶°«ü¯¾</color>");
-                textActionMessage.text = nameTarget + " ¦¹ª«¥ó¤£»İ±Ä¶°«ü¯¾";
+                print("<color=red>æ­¤ç‰©ä»¶ä¸éœ€æ¡é›†æŒ‡ç´‹</color>");
+                textActionMessage.text = nameTarget + " æ­¤ç‰©ä»¶ä¸éœ€æ¡é›†æŒ‡ç´‹";
 
                 return false;
             }
         }
 
         /// <summary>
-        /// ©ç·Ó
+        /// æ‹ç…§
         /// </summary>
         private bool UseCamera()
         {
-            print("©ç·Ó");
+            print("æ‹ç…§");
 
             bool fingerPrint = dataTargetGoal.needFingerPrint != dataTargetOriginal.needFingerPrint;
             bool scale = dataTargetGoal.needScale != dataTargetOriginal.needScale;
@@ -366,13 +366,13 @@ namespace KID
             {
                 if (!dataTargetOriginal.needFingerPrint)
                 {
-                    print("<color=red>©ç·Ó¥¢±Ñ¡A©|¥¼§¹¦¨«ü¯¾§@·~</color>");
+                    print("<color=red>æ‹ç…§å¤±æ•—ï¼Œå°šæœªå®ŒæˆæŒ‡ç´‹ä½œæ¥­</color>");
 
                     return false;
                 }
                 else
                 {
-                    print("<color=green>«ü¯¾¤w³B²z§¹¦¨¡I</color>");
+                    print("<color=green>æŒ‡ç´‹å·²è™•ç†å®Œæˆï¼</color>");
                 }
             }
 
@@ -380,13 +380,13 @@ namespace KID
             {
                 if (!dataTargetOriginal.needScale)
                 {
-                    print("<color=red>©ç·Ó¥¢±Ñ¡A©|¥¼§¹¦¨´ú¶q§@·~</color>");
+                    print("<color=red>æ‹ç…§å¤±æ•—ï¼Œå°šæœªå®Œæˆæ¸¬é‡ä½œæ¥­</color>");
 
                     return false;
                 }
                 else
                 {
-                    print("<color=green>´ú¶q¤w³B²z§¹¦¨¡I</color>");
+                    print("<color=green>æ¸¬é‡å·²è™•ç†å®Œæˆï¼</color>");
                 }
             }
 
@@ -394,13 +394,13 @@ namespace KID
             {
                 if (!dataTargetOriginal.needDNA)
                 {
-                    print("<color=red>©ç·Ó¥¢±Ñ¡A©|¥¼§¹¦¨ DNA§@·~</color>");
+                    print("<color=red>æ‹ç…§å¤±æ•—ï¼Œå°šæœªå®Œæˆ DNAä½œæ¥­</color>");
 
                     return false;
                 }
                 else
                 {
-                    print("<color=green>DNA ¤w³B²z§¹¦¨¡I</color>");
+                    print("<color=green>DNA å·²è™•ç†å®Œæˆï¼</color>");
                 }
             }
 
@@ -408,8 +408,8 @@ namespace KID
             {
                 if (!dataTargetOriginal.needCamera)
                 {
-                    print("<color=green>©ç·Ó¦¨¥\</color>");
-                    textActionMessage.text = nameTarget + " ©ç·Ó¦¨¥\";
+                    print("<color=green>æ‹ç…§æˆåŠŸ</color>");
+                    textActionMessage.text = nameTarget + " æ‹ç…§æˆåŠŸ";
                     dataTargetOriginal.needCamera = true;
 
                     MissionObjectManager.instance.UpdateMission();
@@ -418,32 +418,32 @@ namespace KID
                 }
                 else
                 {
-                    print("<color=green>©ç·Ó¤w³B²z§¹¦¨¡I</color>");
+                    print("<color=green>æ‹ç…§å·²è™•ç†å®Œæˆï¼</color>");
 
                     return false;
                 }
             }
             else
             {
-                print("<color=red>¦¹ª«¥ó¤£»İ­n©ç·Ó</color>");
-                textActionMessage.text = nameTarget + " ¦¹ª«¥ó¤£»İ­n©ç·Ó";
+                print("<color=red>æ­¤ç‰©ä»¶ä¸éœ€è¦æ‹ç…§</color>");
+                textActionMessage.text = nameTarget + " æ­¤ç‰©ä»¶ä¸éœ€è¦æ‹ç…§";
 
                 return false;
             }
         }
 
         /// <summary>
-        /// ÀË¬d DNA
+        /// æª¢æŸ¥ DNA
         /// </summary>
         /// <returns></returns>
         private bool UseDNA()
         {
-            print("ÀË¬d DNA");
+            print("æª¢æŸ¥ DNA");
 
             if (dataTargetGoal.needDNA)
             {
-                print("<color=green>ÀË¬d DNA ¦¨¥\</color>");
-                textActionMessage.text = nameTarget + " ÀË¬d DNA ¦¨¥\";
+                print("<color=green>æª¢æŸ¥ DNA æˆåŠŸ</color>");
+                textActionMessage.text = nameTarget + " æª¢æŸ¥ DNA æˆåŠŸ";
                 dataTargetOriginal.needDNA = true;
 
                 MissionObjectManager.instance.UpdateMission();
@@ -452,15 +452,15 @@ namespace KID
             }
             else
             {
-                print("<color=red>¦¹ª«¥ó¤£»İ­nÀË¬d DNA</color>");
-                textActionMessage.text = nameTarget + " ¦¹ª«¥ó¤£»İ­nÀË¬d DNA";
+                print("<color=red>æ­¤ç‰©ä»¶ä¸éœ€è¦æª¢æŸ¥ DNA</color>");
+                textActionMessage.text = nameTarget + " æ­¤ç‰©ä»¶ä¸éœ€è¦æª¢æŸ¥ DNA";
 
                 return false;
             }
         }
 
         /// <summary>
-        /// ÀË¬d¬İ¨ìªºª«¥ó
+        /// æª¢æŸ¥çœ‹åˆ°çš„ç‰©ä»¶
         /// </summary>
         private void CheckLookObject()
         {
@@ -479,9 +479,9 @@ namespace KID
         }
 
         /// <summary>
-        /// ÅÜ§ó¹Ï¥Ü
+        /// è®Šæ›´åœ–ç¤º
         /// </summary>
-        /// <param name="typeChooseTool">¤u¨ãÃş«¬</param>
+        /// <param name="typeChooseTool">å·¥å…·é¡å‹</param>
         public void ToolIconEffect(TypeEvidence typeChooseTool)
         {
             IEnumerator coroutine = null;
@@ -506,7 +506,7 @@ namespace KID
         }
 
         /// <summary>
-        /// ¹Ï¥Ü²¾°Ê®ÄªG¡Gµ§¨ê
+        /// åœ–ç¤ºç§»å‹•æ•ˆæœï¼šç­†åˆ·
         /// </summary>
         private IEnumerator IconMove()
         {
@@ -530,7 +530,7 @@ namespace KID
         }
 
         /// <summary>
-        /// Äá¼v¾÷®ÄªG¡G¤W¤è»P¤U¤è¼ÒÀÀ§Öªù
+        /// æ”å½±æ©Ÿæ•ˆæœï¼šä¸Šæ–¹èˆ‡ä¸‹æ–¹æ¨¡æ“¬å¿«é–€
         /// </summary>
         private IEnumerator CameraEffect()
         {
@@ -554,7 +554,7 @@ namespace KID
         }
 
         /// <summary>
-        /// ©ñ¤JÃÒª«³U
+        /// æ”¾å…¥è­‰ç‰©è¢‹
         /// </summary>
         private IEnumerator EvidenceBag()
         {

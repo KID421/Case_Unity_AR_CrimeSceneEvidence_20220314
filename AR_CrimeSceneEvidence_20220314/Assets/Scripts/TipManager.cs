@@ -1,10 +1,10 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 namespace KID
 {
     /// <summary>
-    /// ´£¥ÜºŞ²z¾¹
+    /// æç¤ºç®¡ç†å™¨
     /// </summary>
     public class TipManager : MonoBehaviour
     {
@@ -13,8 +13,8 @@ namespace KID
 
         private void Awake()
         {
-            groupTip = GameObject.Find("µe¥¬´£¥Ü").GetComponent<CanvasGroup>();
-            btnConfirmTip = GameObject.Find("«ö¶s½T¥ô´£¥Ü").GetComponent<Button>();
+            groupTip = GameObject.Find("ç•«å¸ƒæç¤º").GetComponent<CanvasGroup>();
+            btnConfirmTip = GameObject.Find("æŒ‰éˆ•ç¢ºä»»æç¤º").GetComponent<Button>();
             btnConfirmTip.onClick.AddListener(() => FadeCanvasGroupSystem.instance.StartFadeCanvasGroup(groupTip, false));
         }
     }

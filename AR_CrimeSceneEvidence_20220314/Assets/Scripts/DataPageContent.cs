@@ -1,23 +1,23 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace KID
 {
     /// <summary>
-    /// ¸ê®Æ­¶­±¤º®e
+    /// è³‡æ–™é é¢å…§å®¹
     /// </summary>
     [CreateAssetMenu(menuName = "KID/Data Page Content", fileName = "Data Page Content")]
     public class DataPageContent : ScriptableObject
     {
-        [Header("¸ê®Æ­¶¤º®e")]
+        [Header("è³‡æ–™é å…§å®¹")]
         public DataPageContentInformation[] dataPageContents;
     }
 
     [System.Serializable]
     public class DataPageContentInformation
     {
-        [Header("¸ê®Æ­¶¤º®e¹Ï¤ù")]
+        [Header("è³‡æ–™é å…§å®¹åœ–ç‰‡")]
         public Sprite sprPicture;
-        [Header("¸ê®Æ­¶¤º®e¤å¦r´y­z"), TextArea(2, 5)]
+        [Header("è³‡æ–™é å…§å®¹æ–‡å­—æè¿°"), TextArea(2, 5)]
         public string stringDescription;
     }
 }

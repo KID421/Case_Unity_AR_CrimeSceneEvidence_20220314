@@ -1,11 +1,11 @@
-using System;
+ï»¿using System;
 using UnityEngine;
 using UnityEditor;
 
 namespace KID
 {
 	/// <summary>
-	/// ª«¥óÃş«¬
+	/// ç‰©ä»¶é¡å‹
 	/// </summary>
 	[Flags]
 	public enum TypeObjectToCheck
@@ -19,7 +19,7 @@ namespace KID
 	}
 
 	/// <summary>
-	/// ÃD¥ØÃş«¬¡GµLÃD¥Ø¡B¤å¦r¡B¹Ï¤ù¡B¤å¦r¥ı¦A¹Ï¤ù
+	/// é¡Œç›®é¡å‹ï¼šç„¡é¡Œç›®ã€æ–‡å­—ã€åœ–ç‰‡ã€æ–‡å­—å…ˆå†åœ–ç‰‡
 	/// </summary>
 	public enum TypeQuestion
 	{

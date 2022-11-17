@@ -1,9 +1,9 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace KID
 {
     /// <summary>
-    /// Ãö¥d 1 ÅÑµs®×
+    /// é—œå¡ 1 ç«Šç›œæ¡ˆ
     /// </summary>
     public class DataLevel_1 : DataLevelInteracte
     {

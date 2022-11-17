@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -6,21 +6,21 @@ using UnityEngine.UI;
 namespace KID
 {
     /// <summary>
-    /// ÃÒª«ÀË¬dºŞ²z¾¹
+    /// è­‰ç‰©æª¢æŸ¥ç®¡ç†å™¨
     /// </summary>
     [DefaultExecutionOrder(100)]
     public class EvidenceCheckManager : MonoBehaviour
     {
-        #region Åã¥Ü¸ê®Æ
-        [SerializeField, Header("¸ê®Æ­¶«ü¯¾")]
+        #region é¡¯ç¤ºè³‡æ–™
+        [SerializeField, Header("è³‡æ–™é æŒ‡ç´‹")]
         private DataPageContent dataPageContentFingerPrint;
-        [SerializeField, Header("¸ê®Æ­¶¤â®M")]
+        [SerializeField, Header("è³‡æ–™é æ‰‹å¥—")]
         private DataPageContent dataPageContentGloves;
-        [SerializeField, Header("¸ê®Æ­¶Âb·}´í")]
+        [SerializeField, Header("è³‡æ–™é æª³æ¦”æ¸£")]
         private DataPageContent dataPageContentBetelNut;
         #endregion
 
-        #region ÃÒª«¸ê®Æ
+        #region è­‰ç‰©è³‡æ–™
         private List<DataObject> typeCamera = new List<DataObject>();
         private List<DataObject> typeFingerPrint = new List<DataObject>();
         private List<DataObject> typeDNA = new List<DataObject>();
@@ -31,73 +31,73 @@ namespace KID
         private List<DataObject> allEvidence = new List<DataObject>();
 
         /// <summary>
-        /// ¥Ø«e¿ï¨úªºÃÒª«¸ê®Æ
+        /// ç›®å‰é¸å–çš„è­‰ç‰©è³‡æ–™
         /// </summary>
         private List<DataObject> currentEvidence = new List<DataObject>();
 
         /// <summary>
-        /// ÃÒª«®Ø¤ºÃÒª«½s¸¹
+        /// è­‰ç‰©æ¡†å…§è­‰ç‰©ç·¨è™Ÿ
         /// </summary>
         private int indexEvidence;
         #endregion
 
-        #region ¤¶­±¸ê®Æ
+        #region ä»‹é¢è³‡æ–™
         /// <summary>
-        /// ÃÒª«½s¸¹
+        /// è­‰ç‰©ç·¨è™Ÿ
         /// </summary>
         private Text textEvidenceIndex;
         /// <summary>
-        /// ÃÒª«¹Ï¤ù
+        /// è­‰ç‰©åœ–ç‰‡
         /// </summary>
         private Image imgEvidencePicture;
         /// <summary>
-        /// ÃÒª«Âà´«
+        /// è­‰ç‰©è½‰æ›
         /// </summary>
         private Button btnChange;
         /// <summary>
-        /// ÃÒª«©ñ¤j
+        /// è­‰ç‰©æ”¾å¤§
         /// </summary>
         private Button btnZoomIn;
         /// <summary>
-        /// «ö¶s±ÄÃÒ©ç·Ó
+        /// æŒ‰éˆ•æ¡è­‰æ‹ç…§
         /// </summary>
         private Button btnCamera;
         /// <summary>
-        /// «ö¶s±ÄÃÒ«ü¯¾
+        /// æŒ‰éˆ•æ¡è­‰æŒ‡ç´‹
         /// </summary>
         private Button btnFingerPrint;
         /// <summary>
-        /// «ö¶s±ÄÃÒ DNA
+        /// æŒ‰éˆ•æ¡è­‰ DNA
         /// </summary>
         private Button btnDNA;
         /// <summary>
-        /// «ö¶s±ÄÃÒÃÒª«³U
+        /// æŒ‰éˆ•æ¡è­‰è­‰ç‰©è¢‹
         /// </summary>
         private Button btnEvidenceBag;
         /// <summary>
-        /// «ö¶s±ÄÃÒ¾c¦L
+        /// æŒ‰éˆ•æ¡è­‰é‹å°
         /// </summary>
         private Button btnShoes;
         /// <summary>
-        /// ÃÒª«¼Æ¶q
+        /// è­‰ç‰©æ•¸é‡
         /// </summary>
         private Text textEvidenceCount;
         /// <summary>
-        /// ¤W¤@­ÓÃÒª«
+        /// ä¸Šä¸€å€‹è­‰ç‰©
         /// </summary>
         private Button btnEvidencePrev;
         /// <summary>
-        /// ¤U¤@­ÓÃÒª«
+        /// ä¸‹ä¸€å€‹è­‰ç‰©
         /// </summary>
         private Button btnEvidenceNext;
         /// <summary>
-        /// «ü¯¾¤ñ¹ï«ö¶s
+        /// æŒ‡ç´‹æ¯”å°æŒ‰éˆ•
         /// </summary>
         private Button btnFingerPrintDetach;
         private CanvasGroup groupBtnFingerPrintDetach;
 
         /// <summary>
-        /// °İµªÃD¥Ø
+        /// å•ç­”é¡Œç›®
         /// </summary>
         private Text textQuestion;
         private Button btnTextOption1;
@@ -116,32 +116,32 @@ namespace KID
         private CanvasGroup groupText;
         private CanvasGroup groupImage;
 
-        // ¸ê®Æ­¶
+        // è³‡æ–™é 
         private Button btnDataPagePrev;
         private Button btnDataPageNext;
         private Image imgDataPagePicture;
         private Text textDataPageContent;
         #endregion
 
-        #region ¸ê®Æ­¶¸ê®Æ
+        #region è³‡æ–™é è³‡æ–™
         private int indexDataPage;
         private DataPageContent dataPageContentCurrent;
         #endregion
 
-        #region ¥¼¤ÀÃş¨p¤H¸ê®Æ
+        #region æœªåˆ†é¡ç§äººè³‡æ–™
         private bool isFingerPrint;
         private bool isEvidenceBag;
         private DataObject dataCurrent;
         /// <summary>
-        /// ¸ê®Æ­¶
+        /// è³‡æ–™é 
         /// </summary>
         private Image imgDataPageRoot;
         /// <summary>
-        /// ¶}±Ò»PÃö³¬
+        /// é–‹å•Ÿèˆ‡é—œé–‰
         /// </summary>
         private Button btnOpenAndClose;
         /// <summary>
-        /// ¸ê®Æ­¶µLªk¬İªºÃC¦â¡G¦Ç¦â
+        /// è³‡æ–™é ç„¡æ³•çœ‹çš„é¡è‰²ï¼šç°è‰²
         /// </summary>
         private Color colorImgDataPageRootCantLook = new Color(0.5f, 0.5f, 0.5f, 1);
         #endregion
@@ -154,7 +154,7 @@ namespace KID
         }
 
         /// <summary>
-        /// ÃÒª«¤ÀÃş
+        /// è­‰ç‰©åˆ†é¡
         /// </summary>
         private void ClassifyEvidence()
         {
@@ -169,16 +169,16 @@ namespace KID
         }
 
         /// <summary>
-        /// ´M§ä¤¶­±ª«¥ó
+        /// å°‹æ‰¾ä»‹é¢ç‰©ä»¶
         /// </summary>
         private void FindUIObject()
         {
-            #region ±ÄÃÒÃş«¬«ö¶s   
-            btnCamera = GameObject.Find("«ö¶s±ÄÃÒ©ç·Ó").GetComponent<Button>();
-            btnFingerPrint = GameObject.Find("«ö¶s±ÄÃÒ«ü¯¾").GetComponent<Button>();
-            btnDNA = GameObject.Find("«ö¶s±ÄÃÒ DNA").GetComponent<Button>();
-            btnEvidenceBag = GameObject.Find("«ö¶s±ÄÃÒÃÒª«³U").GetComponent<Button>();
-            btnShoes = GameObject.Find("«ö¶s±ÄÃÒ¾c¦L").GetComponent<Button>();
+            #region æ¡è­‰é¡å‹æŒ‰éˆ•   
+            btnCamera = GameObject.Find("æŒ‰éˆ•æ¡è­‰æ‹ç…§").GetComponent<Button>();
+            btnFingerPrint = GameObject.Find("æŒ‰éˆ•æ¡è­‰æŒ‡ç´‹").GetComponent<Button>();
+            btnDNA = GameObject.Find("æŒ‰éˆ•æ¡è­‰ DNA").GetComponent<Button>();
+            btnEvidenceBag = GameObject.Find("æŒ‰éˆ•æ¡è­‰è­‰ç‰©è¢‹").GetComponent<Button>();
+            btnShoes = GameObject.Find("æŒ‰éˆ•æ¡è­‰é‹å°").GetComponent<Button>();
 
             btnCamera.onClick.AddListener(() => InitializeEvidenceInformation(typeCamera));
             btnFingerPrint.onClick.AddListener(() => InitializeEvidenceInformation(typeFingerPrint, true));
@@ -187,31 +187,31 @@ namespace KID
             btnShoes.onClick.AddListener(() => InitializeEvidenceInformation(typeScale));
             #endregion
 
-            #region ÃÒª«®Ø
-            textEvidenceIndex = GameObject.Find("ÃÒª«½s¸¹").GetComponent<Text>();
-            imgEvidencePicture = GameObject.Find("ÃÒª«¹Ï¤ù").GetComponent<Image>();
-            textEvidenceCount = GameObject.Find("ÃÒª«¼Æ¶q").GetComponent<Text>();
-            btnEvidencePrev = GameObject.Find("¤W¤@­ÓÃÒª«").GetComponent<Button>();
-            btnEvidenceNext = GameObject.Find("¤U¤@­ÓÃÒª«").GetComponent<Button>();
-            btnChange = GameObject.Find("ÃÒª«Âà´«").GetComponent<Button>();
-            btnZoomIn = GameObject.Find("ÃÒª«©ñ¤j").GetComponent<Button>();
+            #region è­‰ç‰©æ¡†
+            textEvidenceIndex = GameObject.Find("è­‰ç‰©ç·¨è™Ÿ").GetComponent<Text>();
+            imgEvidencePicture = GameObject.Find("è­‰ç‰©åœ–ç‰‡").GetComponent<Image>();
+            textEvidenceCount = GameObject.Find("è­‰ç‰©æ•¸é‡").GetComponent<Text>();
+            btnEvidencePrev = GameObject.Find("ä¸Šä¸€å€‹è­‰ç‰©").GetComponent<Button>();
+            btnEvidenceNext = GameObject.Find("ä¸‹ä¸€å€‹è­‰ç‰©").GetComponent<Button>();
+            btnChange = GameObject.Find("è­‰ç‰©è½‰æ›").GetComponent<Button>();
+            btnZoomIn = GameObject.Find("è­‰ç‰©æ”¾å¤§").GetComponent<Button>();
 
             btnEvidencePrev.onClick.AddListener(() => ChangeEvidenceInformation(-1));
             btnEvidenceNext.onClick.AddListener(() => ChangeEvidenceInformation(+1));
             #endregion
 
-            #region °İµª®Ø
-            textQuestion = GameObject.Find("°İµªÃD¥Ø").GetComponent<Text>();
-            textResult = GameObject.Find("°İµªµ²ªG").GetComponent<Text>();
-            btnTextOption1 = GameObject.Find("¤å¦r«¬¿ï¶µ¤@").GetComponent<Button>();
-            btnTextOption2 = GameObject.Find("¤å¦r«¬¿ï¶µ¤G").GetComponent<Button>();
-            btnTextOption3 = GameObject.Find("¤å¦r«¬¿ï¶µ¤T").GetComponent<Button>();
+            #region å•ç­”æ¡†
+            textQuestion = GameObject.Find("å•ç­”é¡Œç›®").GetComponent<Text>();
+            textResult = GameObject.Find("å•ç­”çµæœ").GetComponent<Text>();
+            btnTextOption1 = GameObject.Find("æ–‡å­—å‹é¸é …ä¸€").GetComponent<Button>();
+            btnTextOption2 = GameObject.Find("æ–‡å­—å‹é¸é …äºŒ").GetComponent<Button>();
+            btnTextOption3 = GameObject.Find("æ–‡å­—å‹é¸é …ä¸‰").GetComponent<Button>();
             textBtnTextOption1 = btnTextOption1.GetComponentInChildren<Text>();
             textBtnTextOption2 = btnTextOption2.GetComponentInChildren<Text>();
             textBtnTextOption3 = btnTextOption3.GetComponentInChildren<Text>();
-            btnImageOption1 = GameObject.Find("¹Ï¤ù«¬¿ï¶µ¤@").GetComponent<Button>();
-            btnImageOption2 = GameObject.Find("¹Ï¤ù«¬¿ï¶µ¤G").GetComponent<Button>();
-            btnImageOption3 = GameObject.Find("¹Ï¤ù«¬¿ï¶µ¤T").GetComponent<Button>();
+            btnImageOption1 = GameObject.Find("åœ–ç‰‡å‹é¸é …ä¸€").GetComponent<Button>();
+            btnImageOption2 = GameObject.Find("åœ–ç‰‡å‹é¸é …äºŒ").GetComponent<Button>();
+            btnImageOption3 = GameObject.Find("åœ–ç‰‡å‹é¸é …ä¸‰").GetComponent<Button>();
             imgBtnImageOption1 = btnImageOption1.GetComponent<Image>();
             imgBtnImageOption2 = btnImageOption2.GetComponent<Image>();
             imgBtnImageOption3 = btnImageOption3.GetComponent<Image>();
@@ -223,10 +223,10 @@ namespace KID
             btnImageOption2.onClick.AddListener(() => CheckAnswer(2));
             btnImageOption3.onClick.AddListener(() => CheckAnswer(3));
 
-            groupText = GameObject.Find("¤å¦r«¬ÃD¥Ø").GetComponent<CanvasGroup>();
-            groupImage = GameObject.Find("¹Ï¤ù«¬ÃD¥Ø").GetComponent<CanvasGroup>();
+            groupText = GameObject.Find("æ–‡å­—å‹é¡Œç›®").GetComponent<CanvasGroup>();
+            groupImage = GameObject.Find("åœ–ç‰‡å‹é¡Œç›®").GetComponent<CanvasGroup>();
 
-            btnFingerPrintDetach = GameObject.Find("«ü¯¾¤ñ¹ï«ö¶s").GetComponent<Button>();
+            btnFingerPrintDetach = GameObject.Find("æŒ‡ç´‹æ¯”å°æŒ‰éˆ•").GetComponent<Button>();
             groupBtnFingerPrintDetach = btnFingerPrintDetach.GetComponent<CanvasGroup>();
             btnFingerPrintDetach.onClick.AddListener(() =>
             {
@@ -238,23 +238,23 @@ namespace KID
             });
             #endregion
 
-            #region ¸ê®Æ­¶
-            btnDataPagePrev = GameObject.Find("¸ê®Æ­¶¤W¤@µ§").GetComponent<Button>();
-            btnDataPageNext = GameObject.Find("¸ê®Æ­¶¤U¤@µ§").GetComponent<Button>();
-            imgDataPagePicture = GameObject.Find("¸ê®Æ­¶¹Ï¤ù").GetComponent<Image>();
-            textDataPageContent = GameObject.Find("¸ê®Æ­¶¤º®e").GetComponent<Text>();
+            #region è³‡æ–™é 
+            btnDataPagePrev = GameObject.Find("è³‡æ–™é ä¸Šä¸€ç­†").GetComponent<Button>();
+            btnDataPageNext = GameObject.Find("è³‡æ–™é ä¸‹ä¸€ç­†").GetComponent<Button>();
+            imgDataPagePicture = GameObject.Find("è³‡æ–™é åœ–ç‰‡").GetComponent<Image>();
+            textDataPageContent = GameObject.Find("è³‡æ–™é å…§å®¹").GetComponent<Text>();
 
             btnDataPagePrev.onClick.AddListener(() => PrevAndNextEvidenceDataPage(-1));
             btnDataPageNext.onClick.AddListener(() => PrevAndNextEvidenceDataPage(+1));
 
-            imgDataPageRoot = GameObject.Find("¸ê®Æ­¶").GetComponent<Image>();
-            btnOpenAndClose = GameObject.Find("¶}±Ò»PÃö³¬").GetComponent<Button>();
+            imgDataPageRoot = GameObject.Find("è³‡æ–™é ").GetComponent<Image>();
+            btnOpenAndClose = GameObject.Find("é–‹å•Ÿèˆ‡é—œé–‰").GetComponent<Button>();
             btnOpenAndClose.onClick.AddListener(() => dataCurrent.useDataPage = true);
             #endregion
         }
 
         /// <summary>
-        /// ªì©l¤ÆÃÒª«®Ø¤ºªº¸ê°T
+        /// åˆå§‹åŒ–è­‰ç‰©æ¡†å…§çš„è³‡è¨Š
         /// </summary>
         private void InitializeEvidenceInformation(List<DataObject> _dataObject, bool _isFingerPrint = false, bool _isEvidenceBag = false)
         {
@@ -263,7 +263,7 @@ namespace KID
 
             if (_dataObject.Count == 0)
             {
-                textEvidenceIndex.text = "µLÃÒª«";
+                textEvidenceIndex.text = "ç„¡è­‰ç‰©";
                 textEvidenceCount.text = "0 / 0";
                 textQuestion.text = "";
                 textResult.text = "";
@@ -285,9 +285,9 @@ namespace KID
         }
 
         /// <summary>
-        /// ÅÜ§óÃÒª«®Ø¤ºªº¸ê°T
+        /// è®Šæ›´è­‰ç‰©æ¡†å…§çš„è³‡è¨Š
         /// </summary>
-        /// <param name="direction">-1 ¤W¤@­Ó©Î 1 ¤U¤@­Ó</param>
+        /// <param name="direction">-1 ä¸Šä¸€å€‹æˆ– 1 ä¸‹ä¸€å€‹</param>
         private void ChangeEvidenceInformation(int direction)
         {
             if (currentEvidence == null) return;
@@ -303,9 +303,9 @@ namespace KID
         }
 
         /// <summary>
-        /// §ó·sÃÒª«®Ø¤ºªº¤å¦r»P¹Ï¤ù
+        /// æ›´æ–°è­‰ç‰©æ¡†å…§çš„æ–‡å­—èˆ‡åœ–ç‰‡
         /// </summary>
-        /// <param name="_dataObject">­n§ó·sªºÃÒª«²M³æ</param>
+        /// <param name="_dataObject">è¦æ›´æ–°çš„è­‰ç‰©æ¸…å–®</param>
         private void UpdateEvidenceTextAndImage(List<DataObject> _dataObject)
         {
             dataCurrent = _dataObject[indexEvidence];
@@ -341,7 +341,7 @@ namespace KID
 
             if (dataCurrent.isCorrect)
             {
-                textResult.text = "¤w¸gµª¹ï";
+                textResult.text = "å·²ç¶“ç­”å°";
             }
 
             CheckIsChooseAndUpdateDataPage();
@@ -349,11 +349,11 @@ namespace KID
         }
 
         /// <summary>
-        /// ¤Á´«ÃD¥Ø¸s²Õ
+        /// åˆ‡æ›é¡Œç›®ç¾¤çµ„
         /// </summary>
-        /// <param name="optionText">¤å¦r«¬ÃD¥Ø¬O§_­nÅã¥Ü</param>
-        /// <param name="optionImage">¹Ï¤ù«¬ÃD¥Ø¬O§_­nÅã¥Ü</param>
-        /// <param name="cantInteractable">¬O§_¯à¤¬°Ê¡Aµª¹ï¬O¥i³]©w¬° false Åã¥Ü¦ı¤£¯à¤¬°Ê</param>
+        /// <param name="optionText">æ–‡å­—å‹é¡Œç›®æ˜¯å¦è¦é¡¯ç¤º</param>
+        /// <param name="optionImage">åœ–ç‰‡å‹é¡Œç›®æ˜¯å¦è¦é¡¯ç¤º</param>
+        /// <param name="cantInteractable">æ˜¯å¦èƒ½äº’å‹•ï¼Œç­”å°æ˜¯å¯è¨­å®šç‚º false é¡¯ç¤ºä½†ä¸èƒ½äº’å‹•</param>
         private void SwitchOptionGroup(bool optionText = true, bool optionImage = false, bool cantInteractable = true)
         {
             groupText.alpha = optionText ? 1 : 0;
@@ -366,9 +366,9 @@ namespace KID
         }
 
         /// <summary>
-        /// ÀË¬dµª®×
+        /// æª¢æŸ¥ç­”æ¡ˆ
         /// </summary>
-        /// <param name="_option">¿ï¶µ</param>
+        /// <param name="_option">é¸é …</param>
         private void CheckAnswer(int _option)
         {
             int answer = currentEvidence[indexEvidence].indexAnswer;
@@ -376,7 +376,7 @@ namespace KID
             if (dataCurrent.isCorrect) answer = currentEvidence[indexEvidence].indexAnswerFingerPrint;
 
             bool result = _option == answer;
-            textResult.text = result ? "¥¿½Tµª®×" : "¿ù»~µª®×";
+            textResult.text = result ? "æ­£ç¢ºç­”æ¡ˆ" : "éŒ¯èª¤ç­”æ¡ˆ";
 
             if (!dataCurrent.isCorrect)
             {
@@ -394,7 +394,7 @@ namespace KID
 
             if (!dataCurrent.isCorrect)
             {
-                SwitchFingerPrintDetachButton(isFingerPrint && result);     // ¬O«ü¯¾ ¨Ã¥B ¦^µª¥¿½T
+                SwitchFingerPrintDetachButton(isFingerPrint && result);     // æ˜¯æŒ‡ç´‹ ä¸¦ä¸” å›ç­”æ­£ç¢º
                 dataCurrent.isCorrect = result;
             }
             else
@@ -404,7 +404,7 @@ namespace KID
         }
 
         /// <summary>
-        /// ÀË¬d¬O§_¿ï¹L¨Ã§ó·s¸ê®Æ­¶
+        /// æª¢æŸ¥æ˜¯å¦é¸éä¸¦æ›´æ–°è³‡æ–™é 
         /// </summary>
         private void CheckIsChooseAndUpdateDataPage()
         {
@@ -421,7 +421,7 @@ namespace KID
         }
 
         /// <summary>
-        /// Åã¥Ü«ü¯¾¤ñ¹ïÃD¥Ø
+        /// é¡¯ç¤ºæŒ‡ç´‹æ¯”å°é¡Œç›®
         /// </summary>
         private void SwitchFingerPrintDetachButton(bool show = true)
         {
@@ -431,12 +431,12 @@ namespace KID
         }
 
         /// <summary>
-        /// §ó·sÃÒª«¸ê®Æ­¶
+        /// æ›´æ–°è­‰ç‰©è³‡æ–™é 
         /// </summary>
         private void UpdateEvidenceDataPage(DataPageContent _dataPageContent)
         {
-            if (dataCurrent.nameEvidenvce.Contains("¤â®M")) _dataPageContent = dataPageContentGloves;
-            else if (dataCurrent.nameEvidenvce.Contains("Âb·}´í")) _dataPageContent = dataPageContentBetelNut;
+            if (dataCurrent.nameEvidenvce.Contains("æ‰‹å¥—")) _dataPageContent = dataPageContentGloves;
+            else if (dataCurrent.nameEvidenvce.Contains("æª³æ¦”æ¸£")) _dataPageContent = dataPageContentBetelNut;
 
             if (_dataPageContent == null)
             {
@@ -457,9 +457,9 @@ namespace KID
         }
 
         /// <summary>
-        /// ¤W¤@µ§»P¤U¤@µ§¸ê®Æ­¶¤º®e
+        /// ä¸Šä¸€ç­†èˆ‡ä¸‹ä¸€ç­†è³‡æ–™é å…§å®¹
         /// </summary>
-        /// <param name="direction">¤è¦V</param>
+        /// <param name="direction">æ–¹å‘</param>
         private void PrevAndNextEvidenceDataPage(int direction = 1)
         {
             if (dataPageContentCurrent == null) return;

@@ -1,37 +1,37 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 namespace KID
 {
     /// <summary>
-    /// ºŞ²z³Ì«á¤À¼Æ¤¶­±¡AÁÙ¦³®É¶¡
+    /// ç®¡ç†æœ€å¾Œåˆ†æ•¸ä»‹é¢ï¼Œé‚„æœ‰æ™‚é–“
     /// </summary>
     public class ManagerFinalScore : MonoBehaviour
     {
-        #region ¤¶­±ª«¥ó¸ê®Æ
+        #region ä»‹é¢ç‰©ä»¶è³‡æ–™
         /// <summary>
-        /// «ö¶s±ÄÃÒµ²§ô
+        /// æŒ‰éˆ•æ¡è­‰çµæŸ
         /// </summary>
         private Button btnCheckEnd;
         /// <summary>
-        /// µe¥¬µ²ºâ¤¶­±
+        /// ç•«å¸ƒçµç®—ä»‹é¢
         /// </summary>
         private CanvasGroup groupFinal;
         /// <summary>
-        /// ¤å¦r¥N¸¹
+        /// æ–‡å­—ä»£è™Ÿ
         /// </summary>
         private Text textNumber;
         /// <summary>
-        /// ¤å¦rªá¶O®É¶¡
+        /// æ–‡å­—èŠ±è²»æ™‚é–“
         /// </summary>
         private Text textTime;
         /// <summary>
-        /// ¤å¦r´úÅç¤À¼Æ
+        /// æ–‡å­—æ¸¬é©—åˆ†æ•¸
         /// </summary>
         private Text textScore;
         #endregion
 
-        #region ¨Æ¥ó
+        #region äº‹ä»¶
         private void Awake()
         {
             FindObject();
@@ -39,21 +39,21 @@ namespace KID
         }
         #endregion
 
-        #region ¤èªk
+        #region æ–¹æ³•
         /// <summary>
-        /// ´M§äª«¥ó
+        /// å°‹æ‰¾ç‰©ä»¶
         /// </summary>
         private void FindObject()
         {
-            btnCheckEnd = GameObject.Find("«ö¶s±ÄÃÒµ²§ô").GetComponent<Button>();
-            groupFinal = GameObject.Find("µe¥¬µ²ºâ¤¶­±").GetComponent<CanvasGroup>();
-            textNumber = GameObject.Find("¤å¦r¥N¸¹").GetComponent<Text>();
-            textTime = GameObject.Find("¤å¦rªá¶O®É¶¡").GetComponent<Text>();
-            textScore = GameObject.Find("¤å¦r´úÅç¤À¼Æ").GetComponent<Text>();
+            btnCheckEnd = GameObject.Find("æŒ‰éˆ•æ¡è­‰çµæŸ").GetComponent<Button>();
+            groupFinal = GameObject.Find("ç•«å¸ƒçµç®—ä»‹é¢").GetComponent<CanvasGroup>();
+            textNumber = GameObject.Find("æ–‡å­—ä»£è™Ÿ").GetComponent<Text>();
+            textTime = GameObject.Find("æ–‡å­—èŠ±è²»æ™‚é–“").GetComponent<Text>();
+            textScore = GameObject.Find("æ–‡å­—æ¸¬é©—åˆ†æ•¸").GetComponent<Text>();
         }
 
         /// <summary>
-        /// «ö¶s²K¥[ºÊÅ¥¾¹
+        /// æŒ‰éˆ•æ·»åŠ ç›£è½å™¨
         /// </summary>
         private void ButtonAddLinstener()
         {
@@ -66,7 +66,7 @@ namespace KID
         }
 
         /// <summary>
-        ///ºŞ²z¤å¦r¡G®É¶¡»P¤À¼Æ
+        ///ç®¡ç†æ–‡å­—ï¼šæ™‚é–“èˆ‡åˆ†æ•¸
         /// </summary>
         private void UpdateTextTimeAndScore()
         {

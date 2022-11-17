@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 using System;
@@ -8,14 +8,14 @@ namespace KID
 {
     [DefaultExecutionOrder(200)]
     /// <summary>
-    /// Google App Script ºŞ²z¾¹
-    /// Àx¦s¸ê®Æ©ó GAS ¤º
+    /// Google App Script ç®¡ç†å™¨
+    /// å„²å­˜è³‡æ–™æ–¼ GAS å…§
     /// </summary>
     public class GoogleAppsScriptManager : MonoBehaviour
     {
         private string gasURL = "https://script.google.com/macros/s/AKfycbzW2miVL3nlZHRC9L3lgVyYK8tX3ldsmyLJDrG-ssXwWE4czqQwpgOx1prxI8dOS2a2/exec";
         private string stringMethod = "method";
-        private string stringSave = "Àx¦s¥Ç¸o²{³õ±ÄÃÒ¸ê®Æ";
+        private string stringSave = "å„²å­˜çŠ¯ç½ªç¾å ´æ¡è­‰è³‡æ–™";
         private DataLevelInteracte dataLevel;
 
         public static GoogleAppsScriptManager instance;
@@ -27,7 +27,7 @@ namespace KID
         }
         
         /// <summary>
-        /// ¶}©l³]©w GAS ¸ê®Æ
+        /// é–‹å§‹è¨­å®š GAS è³‡æ–™
         /// </summary>
         public void StartSetGAS()
         {
@@ -35,7 +35,7 @@ namespace KID
         }
 
         /// <summary>
-        /// ¶}©l³]©wÀx¦s¸ê®Æ
+        /// é–‹å§‹è¨­å®šå„²å­˜è³‡æ–™
         /// </summary>
         private IEnumerator StartSetSheetData()
         {
@@ -51,7 +51,7 @@ namespace KID
             {
                 string nameTitle = dataLevel.dataLevelGoal[i].name;
                 string nameScore = dataLevel.dataLevelGoal[i].score.ToString();
-                string nameUseDataPage = dataLevel.dataLevelGoal[i].useDataPage ? "¦³¨Ï¥Î" : "¨S¨Ï¥Î";
+                string nameUseDataPage = dataLevel.dataLevelGoal[i].useDataPage ? "æœ‰ä½¿ç”¨" : "æ²’ä½¿ç”¨";
             
                 form.AddField("title" + i, nameTitle);
                 form.AddField("score" + i, nameScore);

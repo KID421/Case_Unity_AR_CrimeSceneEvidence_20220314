@@ -1,21 +1,21 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 namespace KID
 {
     /// <summary>
-    /// ®É¶¡ºŞ²z
+    /// æ™‚é–“ç®¡ç†
     /// </summary>
     public class ManagerTime : MonoBehaviour
     {
         /// <summary>
-        /// ¬O§_°±¤î
+        /// æ˜¯å¦åœæ­¢
         /// </summary>
         public bool isTimeStop;
 
         public float timerCount;
         /// <summary>
-        /// ¤å¦r®É¶¡
+        /// æ–‡å­—æ™‚é–“
         /// </summary>
         private Text textTime;
 
@@ -28,7 +28,7 @@ namespace KID
         {
             instance = this;
 
-            textTime = GameObject.Find("¤å¦r®É¶¡").GetComponent<Text>();
+            textTime = GameObject.Find("æ–‡å­—æ™‚é–“").GetComponent<Text>();
         }
 
         private void Update()
@@ -37,7 +37,7 @@ namespace KID
         }
 
         /// <summary>
-        /// §ó·s®É¶¡»P¤¶­±
+        /// æ›´æ–°æ™‚é–“èˆ‡ä»‹é¢
         /// </summary>
         private void UpdateTimeAndUI()
         {

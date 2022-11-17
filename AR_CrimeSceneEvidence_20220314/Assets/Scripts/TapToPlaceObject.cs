@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
@@ -6,14 +6,14 @@ using UnityEngine.XR.ARSubsystems;
 namespace KID
 {
     /// <summary>
-    /// ¦aªO°»´ú¨ÃÂIÀ»©ñ¸mª«¥ó
+    /// åœ°æ¿åµæ¸¬ä¸¦é»æ“Šæ”¾ç½®ç‰©ä»¶
     /// </summary>
     [RequireComponent(typeof(ARRaycastManager))]
     public class TapToPlaceObject : MonoBehaviour
     {
-        [SerializeField, Header("­n©ñ¸mªºª«¥ó")]
+        [SerializeField, Header("è¦æ”¾ç½®çš„ç‰©ä»¶")]
         private GameObject goPlaceObject;
-        [SerializeField, Header("¦aªO§÷½è")]
+        [SerializeField, Header("åœ°æ¿æè³ª")]
         private Material materialGround;
 
         private ARRaycastManager arRaycastManager;
@@ -36,7 +36,7 @@ namespace KID
         }
 
         /// <summary>
-        /// ÂIÀ»©ñ¸mª«¥ó
+        /// é»æ“Šæ”¾ç½®ç‰©ä»¶
         /// </summary>
         private void TapToPlace()
         {
@@ -58,7 +58,7 @@ namespace KID
         }
 
         /// <summary>
-        /// ÁôÂÃ¦aªOª«¥ó
+        /// éš±è—åœ°æ¿ç‰©ä»¶
         /// </summary>
         private void HidePlaneObject()
         {

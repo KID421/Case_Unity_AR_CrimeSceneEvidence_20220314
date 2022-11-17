@@ -1,33 +1,33 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace KID
 {
     /// <summary>
-    /// ª«¥ó¸ê®Æ
+    /// ç‰©ä»¶è³‡æ–™
     /// </summary>
     [CreateAssetMenu(menuName = "KID/Data Object", fileName = "Data Object")]
     public class DataObject : ScriptableObject
     {
-        [Header("ÃÒª«¦WºÙ")]
+        [Header("è­‰ç‰©åç¨±")]
         public string nameEvidenvce;
-        [Header("ÃÒª«¹Ï¤ù")]
+        [Header("è­‰ç‰©åœ–ç‰‡")]
         public Sprite sprImage;
-        [Header("ÃÒª««ü¯¾¹Ï¤ù")]
+        [Header("è­‰ç‰©æŒ‡ç´‹åœ–ç‰‡")]
         public Sprite sprImageFingerPrint;
-        [Header("¬O§_»İ­n©ç·Ó")]
+        [Header("æ˜¯å¦éœ€è¦æ‹ç…§")]
         public bool needCamera;
-        [Header("¬O§_»İ­n¦¬¤JÃÒª«³U")]
+        [Header("æ˜¯å¦éœ€è¦æ”¶å…¥è­‰ç‰©è¢‹")]
         public bool needEvidenceBag;
-        [Header("¬O§_»İ­n´ú¶q¤Ø¤o")]
+        [Header("æ˜¯å¦éœ€è¦æ¸¬é‡å°ºå¯¸")]
         public bool needScale;
-        [Header("¬O§_»İ­n±Ä¶° DNA")]
+        [Header("æ˜¯å¦éœ€è¦æ¡é›† DNA")]
         public bool needDNA;
-        [Header("¬O§_»İ­n±Ä¶°«ü¯¾")]
+        [Header("æ˜¯å¦éœ€è¦æ¡é›†æŒ‡ç´‹")]
         public bool needFingerPrint;
-        [Header("¬O§_»İ­n¤â¹qµ©")]
+        [Header("æ˜¯å¦éœ€è¦æ‰‹é›»ç­’")]
         public bool needFlashLight;
 
-        [Header("ÃD¥Ø»P¿ï¶µ")]
+        [Header("é¡Œç›®èˆ‡é¸é …")]
         public TypeQuestion typeQuestion;
         public string stringQuestion;
         public string textOption1;
@@ -36,56 +36,56 @@ namespace KID
         public Sprite imgOption1;
         public Sprite imgOption2;
         public Sprite imgOption3;
-        [Header("¥¿½Tµª®×"), Range(1, 3)]
+        [Header("æ­£ç¢ºç­”æ¡ˆ"), Range(1, 3)]
         public int indexAnswer;
-        [Header("«ü¯¾¤ñ¹ï¥¿½Tµª®×"), Range(1, 3)]
+        [Header("æŒ‡ç´‹æ¯”å°æ­£ç¢ºç­”æ¡ˆ"), Range(1, 3)]
         public int indexAnswerFingerPrint;
 
         /// <summary>
-        /// ¬O§_µª¹ï
+        /// æ˜¯å¦ç­”å°
         /// </summary>
         public bool isCorrect;
         /// <summary>
-        /// ¬O§_µª¹ï«ü¯¾¤ñ¹ï
+        /// æ˜¯å¦ç­”å°æŒ‡ç´‹æ¯”å°
         /// </summary>
         public bool isCorrectFingerPrint;
         /// <summary>
-        /// ¬O§_¿ï¹L¦¹ÃD¥Ø
+        /// æ˜¯å¦é¸éæ­¤é¡Œç›®
         /// </summary>
         public bool isChoose;
         /// <summary>
-        /// ¿ï¨úµª®×ªº¦¸¼Æ
+        /// é¸å–ç­”æ¡ˆçš„æ¬¡æ•¸
         /// </summary>
         public int countChooseAnswer;
         /// <summary>
-        /// ¬O§_¨Ï¥Î¸ê®Æ­¶
+        /// æ˜¯å¦ä½¿ç”¨è³‡æ–™é 
         /// </summary>
         public bool useDataPage;
         /// <summary>
-        /// ¿ï¨úµª®×ªº¦¸¼Æ - «ü¯¾¤ñ¹ï
+        /// é¸å–ç­”æ¡ˆçš„æ¬¡æ•¸ - æŒ‡ç´‹æ¯”å°
         /// </summary>
         public int countChooseAnswerFingerPrint;
 
         /// <summary>
-        /// Á`¤À
+        /// ç¸½åˆ†
         /// </summary>
         private int scoreTotal = 10;
         /// <summary>
-        /// ¨C¦¸¿ù»~¦©¤À
+        /// æ¯æ¬¡éŒ¯èª¤æ‰£åˆ†
         /// </summary>
         private int scorePerWrong = 5;
 
         /// <summary>
-        /// ±o¤À
+        /// å¾—åˆ†
         /// </summary>
         public int score => countChooseAnswer == 0 ? 0 : scoreTotal - countChooseAnswer * scorePerWrong;
         /// <summary>
-        /// «ü¯¾¤ñ¹ï¤À¼Æ
+        /// æŒ‡ç´‹æ¯”å°åˆ†æ•¸
         /// </summary>
         public int scoreFingerPrint => needFingerPrint ? scoreTotal - countChooseAnswerFingerPrint * scorePerWrong : 0;
 
         /// <summary>
-        /// ­«³]¸ê®Æ
+        /// é‡è¨­è³‡æ–™
         /// </summary>
         public void ResetData()
         {
@@ -98,7 +98,7 @@ namespace KID
         }
 
         /// <summary>
-        ///­«·s©w¬°¤W¥¼¥¿½Tª¬ºA¡G¥Ø¼Ğ¸ê®Æ¥Î
+        ///é‡æ–°å®šç‚ºä¸Šæœªæ­£ç¢ºç‹€æ…‹ï¼šç›®æ¨™è³‡æ–™ç”¨
         /// </summary>
         public void ResetToNotCorrect()
         {

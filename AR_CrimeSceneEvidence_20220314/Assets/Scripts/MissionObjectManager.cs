@@ -1,31 +1,31 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 namespace KID
 {
     /// <summary>
-    /// ¥ô°Èª«¥óºŞ²z¾¹
+    /// ä»»å‹™ç‰©ä»¶ç®¡ç†å™¨
     /// </summary>
     public class MissionObjectManager : MonoBehaviour
     {
         public static MissionObjectManager instance;
 
-        [SerializeField, Header("¶}©lÀË´ú")]
+        [SerializeField, Header("é–‹å§‹æª¢æ¸¬")]
         private GameObject goBtnStartCheck;
         private Button btnStartCheck;
 
         /// <summary>
-        /// ¥ô°È¶i«×
+        /// ä»»å‹™é€²åº¦
         /// </summary>
         private Text textMission;
-        private string stringMission = "ÃÒª«¼Æ¶q¡G";
+        private string stringMission = "è­‰ç‰©æ•¸é‡ï¼š";
         private int countMissionFinish;
         /// <summary>
-        /// ¤u¨ã©³¹Ï
+        /// å·¥å…·åº•åœ–
         /// </summary>
         private CanvasGroup groupTools;
         /// <summary>
-        /// µe¥¬±ÄÃÒ¤¶­±
+        /// ç•«å¸ƒæ¡è­‰ä»‹é¢
         /// </summary>
         private CanvasGroup groupCheck;
 
@@ -38,15 +38,15 @@ namespace KID
             btnStartCheck = goBtnStartCheck.GetComponent<Button>();
             btnStartCheck.onClick.AddListener(StartCheck);
 
-            textMission = GameObject.Find("¥ô°È¶i«×").GetComponent<Text>();
+            textMission = GameObject.Find("ä»»å‹™é€²åº¦").GetComponent<Text>();
             textMission.text = stringMission + "0 / " + countMissionTotal;
 
-            groupTools = GameObject.Find("¤u¨ã©³¹Ï").GetComponent<CanvasGroup>();
-            groupCheck = GameObject.Find("µe¥¬±ÄÃÒ¤¶­±").GetComponent<CanvasGroup>();
+            groupTools = GameObject.Find("å·¥å…·åº•åœ–").GetComponent<CanvasGroup>();
+            groupCheck = GameObject.Find("ç•«å¸ƒæ¡è­‰ä»‹é¢").GetComponent<CanvasGroup>();
         }
 
         /// <summary>
-        /// ¶}©lÀË´ú
+        /// é–‹å§‹æª¢æ¸¬
         /// </summary>
         private void StartCheck()
         {
@@ -60,7 +60,7 @@ namespace KID
         }
 
         /// <summary>
-        /// §ó·s¥ô°È
+        /// æ›´æ–°ä»»å‹™
         /// </summary>
         public void UpdateMission()
         {
