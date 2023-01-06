@@ -70,7 +70,8 @@ namespace KID
         /// </summary>
         private void UpdateTextTimeAndScore()
         {
-            textNumber.text = Random.Range(1, 1000).ToString("000000");
+            //textNumber.text = Random.Range(1, 1000).ToString("000000");
+            textNumber.text = PlayerPrefs.GetString("id");
 
             string minute = ManagerTime.instance.minute.ToString("00");
             string second = ManagerTime.instance.second.ToString("00");
